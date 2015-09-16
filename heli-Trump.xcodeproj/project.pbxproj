@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462691BA9C0D9001CB724 /* AppDelegate.swift */; };
+		EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04626B1BA9C0D9001CB724 /* ViewController.swift */; };
+		EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC04626D1BA9C0D9001CB724 /* Main.storyboard */; };
+		EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0462701BA9C0D9001CB724 /* Assets.xcassets */; };
+		EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */; };
+		EC04627F1BA9C0D9001CB724 /* heli_TrumpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04627E1BA9C0D9001CB724 /* heli_TrumpTests.swift */; };
+		EC04628A1BA9C0D9001CB724 /* heli_TrumpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462891BA9C0D9001CB724 /* heli_TrumpUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC04627B1BA9C0D9001CB724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC04625E1BA9C0D9001CB724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC0462651BA9C0D9001CB724;
+			remoteInfo = "heli-Trump";
+		};
+		EC0462861BA9C0D9001CB724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC04625E1BA9C0D9001CB724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC0462651BA9C0D9001CB724;
+			remoteInfo = "heli-Trump";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC0462661BA9C0D9001CB724 /* heli-Trump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heli-Trump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0462691BA9C0D9001CB724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC04626B1BA9C0D9001CB724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC04626E1BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC0462701BA9C0D9001CB724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC0462731BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC0462751BA9C0D9001CB724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC04627A1BA9C0D9001CB724 /* heli-TrumpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "heli-TrumpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC04627E1BA9C0D9001CB724 /* heli_TrumpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heli_TrumpTests.swift; sourceTree = "<group>"; };
+		EC0462801BA9C0D9001CB724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC0462851BA9C0D9001CB724 /* heli-TrumpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "heli-TrumpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0462891BA9C0D9001CB724 /* heli_TrumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heli_TrumpUITests.swift; sourceTree = "<group>"; };
+		EC04628B1BA9C0D9001CB724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC0462631BA9C0D9001CB724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462771BA9C0D9001CB724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462821BA9C0D9001CB724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC04625D1BA9C0D9001CB724 = {
+			isa = PBXGroup;
+			children = (
+				EC0462681BA9C0D9001CB724 /* heli-Trump */,
+				EC04627D1BA9C0D9001CB724 /* heli-TrumpTests */,
+				EC0462881BA9C0D9001CB724 /* heli-TrumpUITests */,
+				EC0462671BA9C0D9001CB724 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC0462671BA9C0D9001CB724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC0462661BA9C0D9001CB724 /* heli-Trump.app */,
+				EC04627A1BA9C0D9001CB724 /* heli-TrumpTests.xctest */,
+				EC0462851BA9C0D9001CB724 /* heli-TrumpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC0462681BA9C0D9001CB724 /* heli-Trump */ = {
+			isa = PBXGroup;
+			children = (
+				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
+				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
+				EC04626D1BA9C0D9001CB724 /* Main.storyboard */,
+				EC0462701BA9C0D9001CB724 /* Assets.xcassets */,
+				EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */,
+				EC0462751BA9C0D9001CB724 /* Info.plist */,
+			);
+			path = "heli-Trump";
+			sourceTree = "<group>";
+		};
+		EC04627D1BA9C0D9001CB724 /* heli-TrumpTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC04627E1BA9C0D9001CB724 /* heli_TrumpTests.swift */,
+				EC0462801BA9C0D9001CB724 /* Info.plist */,
+			);
+			path = "heli-TrumpTests";
+			sourceTree = "<group>";
+		};
+		EC0462881BA9C0D9001CB724 /* heli-TrumpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC0462891BA9C0D9001CB724 /* heli_TrumpUITests.swift */,
+				EC04628B1BA9C0D9001CB724 /* Info.plist */,
+			);
+			path = "heli-TrumpUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC0462651BA9C0D9001CB724 /* heli-Trump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC04628E1BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-Trump" */;
+			buildPhases = (
+				EC0462621BA9C0D9001CB724 /* Sources */,
+				EC0462631BA9C0D9001CB724 /* Frameworks */,
+				EC0462641BA9C0D9001CB724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "heli-Trump";
+			productName = "heli-Trump";
+			productReference = EC0462661BA9C0D9001CB724 /* heli-Trump.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC0462791BA9C0D9001CB724 /* heli-TrumpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC0462911BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-TrumpTests" */;
+			buildPhases = (
+				EC0462761BA9C0D9001CB724 /* Sources */,
+				EC0462771BA9C0D9001CB724 /* Frameworks */,
+				EC0462781BA9C0D9001CB724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC04627C1BA9C0D9001CB724 /* PBXTargetDependency */,
+			);
+			name = "heli-TrumpTests";
+			productName = "heli-TrumpTests";
+			productReference = EC04627A1BA9C0D9001CB724 /* heli-TrumpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC0462841BA9C0D9001CB724 /* heli-TrumpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC0462941BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-TrumpUITests" */;
+			buildPhases = (
+				EC0462811BA9C0D9001CB724 /* Sources */,
+				EC0462821BA9C0D9001CB724 /* Frameworks */,
+				EC0462831BA9C0D9001CB724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC0462871BA9C0D9001CB724 /* PBXTargetDependency */,
+			);
+			name = "heli-TrumpUITests";
+			productName = "heli-TrumpUITests";
+			productReference = EC0462851BA9C0D9001CB724 /* heli-TrumpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC04625E1BA9C0D9001CB724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = chtmorris;
+				TargetAttributes = {
+					EC0462651BA9C0D9001CB724 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					EC0462791BA9C0D9001CB724 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = EC0462651BA9C0D9001CB724;
+					};
+					EC0462841BA9C0D9001CB724 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = EC0462651BA9C0D9001CB724;
+					};
+				};
+			};
+			buildConfigurationList = EC0462611BA9C0D9001CB724 /* Build configuration list for PBXProject "heli-Trump" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC04625D1BA9C0D9001CB724;
+			productRefGroup = EC0462671BA9C0D9001CB724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC0462651BA9C0D9001CB724 /* heli-Trump */,
+				EC0462791BA9C0D9001CB724 /* heli-TrumpTests */,
+				EC0462841BA9C0D9001CB724 /* heli-TrumpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC0462641BA9C0D9001CB724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */,
+				EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */,
+				EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462781BA9C0D9001CB724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462831BA9C0D9001CB724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC0462621BA9C0D9001CB724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
+				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462761BA9C0D9001CB724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC04627F1BA9C0D9001CB724 /* heli_TrumpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC0462811BA9C0D9001CB724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC04628A1BA9C0D9001CB724 /* heli_TrumpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC04627C1BA9C0D9001CB724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC0462651BA9C0D9001CB724 /* heli-Trump */;
+			targetProxy = EC04627B1BA9C0D9001CB724 /* PBXContainerItemProxy */;
+		};
+		EC0462871BA9C0D9001CB724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC0462651BA9C0D9001CB724 /* heli-Trump */;
+			targetProxy = EC0462861BA9C0D9001CB724 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC04626D1BA9C0D9001CB724 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC04626E1BA9C0D9001CB724 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC0462731BA9C0D9001CB724 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC04628C1BA9C0D9001CB724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC04628D1BA9C0D9001CB724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC04628F1BA9C0D9001CB724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "heli-Trump/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-Trump";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC0462901BA9C0D9001CB724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "heli-Trump/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-Trump";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EC0462921BA9C0D9001CB724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "heli-TrumpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-TrumpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/heli-Trump.app/heli-Trump";
+			};
+			name = Debug;
+		};
+		EC0462931BA9C0D9001CB724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "heli-TrumpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-TrumpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/heli-Trump.app/heli-Trump";
+			};
+			name = Release;
+		};
+		EC0462951BA9C0D9001CB724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "heli-TrumpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-TrumpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "heli-Trump";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EC0462961BA9C0D9001CB724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "heli-TrumpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-TrumpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "heli-Trump";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC0462611BA9C0D9001CB724 /* Build configuration list for PBXProject "heli-Trump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC04628C1BA9C0D9001CB724 /* Debug */,
+				EC04628D1BA9C0D9001CB724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC04628E1BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-Trump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC04628F1BA9C0D9001CB724 /* Debug */,
+				EC0462901BA9C0D9001CB724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC0462911BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-TrumpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC0462921BA9C0D9001CB724 /* Debug */,
+				EC0462931BA9C0D9001CB724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC0462941BA9C0D9001CB724 /* Build configuration list for PBXNativeTarget "heli-TrumpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC0462951BA9C0D9001CB724 /* Debug */,
+				EC0462961BA9C0D9001CB724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC04625E1BA9C0D9001CB724 /* Project object */;
+}
