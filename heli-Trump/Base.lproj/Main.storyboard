@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -129,6 +130,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-Vz-NQv" customClass="TrumpCartoonView" customModule="heli_Trump" customModuleProvider="target">
+                                <rect key="frame" x="71" y="204" width="47" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="YPH-zq-ZEh"/>
+                                    <constraint firstAttribute="height" constant="46" id="i8W-fe-ANh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,6 +145,7 @@
                             <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-2" id="FH4-Ui-hBa"/>
                             <constraint firstItem="PSp-DO-L6Z" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="49.5" id="Uqn-om-zqJ"/>
                             <constraint firstItem="DkD-td-mjt" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="17.5" id="VKe-NY-c3k"/>
+                            <constraint firstItem="Yea-Vz-NQv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Vuk-7M-VWG"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XQh-aG-dqE"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bny-Bh-hKi"/>
                             <constraint firstItem="vAZ-Dg-w2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1.25" id="iAv-rF-wzh"/>
@@ -171,6 +181,7 @@
                         <outlet property="top7" destination="dpP-pN-EiT" id="gf3-XB-Ydb"/>
                         <outlet property="top8" destination="XJB-Lp-hGm" id="aeU-cr-xGo"/>
                         <outlet property="top9" destination="yuc-pA-AYo" id="vh9-KH-zgc"/>
+                        <outlet property="trumpImage" destination="Yea-Vz-NQv" id="Jka-sj-hzz"/>
                         <outlet property="trumpUpImage" destination="Sbj-yE-dDq" id="YnM-Em-nub"/>
                     </connections>
                 </viewController>

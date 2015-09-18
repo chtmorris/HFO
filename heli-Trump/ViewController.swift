@@ -10,11 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     // =======================
     // Variables and constants
     // =======================
-    
-    // testing 123
     
     var screenSize: CGRect = UIScreen.mainScreen().bounds
     
@@ -32,6 +31,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var trumpUpImage: UIImageView!
     @IBOutlet weak var tapToStartLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var trumpImage: TrumpCartoonView!
+    
     
     // =========
     // Obstacles
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var top8: UIImageView!
     @IBOutlet weak var top9: UIImageView!
     @IBOutlet weak var top10: UIImageView!
+    
     
     // =======
     // Loading
@@ -325,8 +327,8 @@ class ViewController: UIViewController {
         trumpUpImage.hidden = true
         timer .invalidate()
         scorer .invalidate()
-        scoreLabel.text = "Score: \(scoreNumber)"
-        scoreLabel.hidden = false
+//        scoreLabel.text = "Score: \(scoreNumber)"
+//        scoreLabel.hidden = false
         
         if scoreNumber > highScore {
             highScore = scoreNumber
