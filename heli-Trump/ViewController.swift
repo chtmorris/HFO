@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     // =======================
     // Variables and constants
     // =======================
-    
     
     var screenSize: CGRect = UIScreen.mainScreen().bounds
     
@@ -28,9 +28,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
-    @IBOutlet weak var trumpUpImage: UIImageView!
     @IBOutlet weak var tapToStartLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var trumpImage: TrumpCartoonView!
+    
     
     // =========
     // Obstacles
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var top9: UIImageView!
     @IBOutlet weak var top10: UIImageView!
     
+    
     // =======
     // Loading
     // =======
@@ -71,6 +73,7 @@ class ViewController: UIViewController {
 
         hideObjects(true)
         scoreLabel.hidden = true
+        trumpImage.addIntroAnimation()
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
@@ -164,13 +167,15 @@ class ViewController: UIViewController {
         }
         
         Y = -7
-        trumpUpImage.image = UIImage(named: "TrumpUp")
+        trumpImage.removeAllAnimations()
+        trumpImage.addFlyingAnimation()
         
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         Y = 7
-//        trumpUpImage.image = UIImage(named: "TrumpDown")
+        trumpImage.removeAllAnimations()
+        trumpImage.addFallingAnimation()
     }
 
     
@@ -180,7 +185,8 @@ class ViewController: UIViewController {
     
     func heliMove(){
         collision()
-        trumpUpImage.center = CGPointMake(trumpUpImage.center.x, trumpUpImage.center.y + Y)
+        
+        trumpImage.center = CGPointMake(trumpImage.center.x, trumpImage.center.y + Y)
         
         obstacle1.center = CGPointMake(obstacle1.center.x - 10, obstacle1.center.y)
         obstacle2.center = CGPointMake(obstacle2.center.x - 10, obstacle2.center.y)
@@ -297,23 +303,23 @@ class ViewController: UIViewController {
     
     func collision(){
         
-        if CGRectIntersectsRect(trumpUpImage.frame, obstacle1.frame) || CGRectIntersectsRect(trumpUpImage.frame, obstacle2.frame){
+        if CGRectIntersectsRect(trumpImage.frame, obstacle1.frame) || CGRectIntersectsRect(trumpImage.frame, obstacle2.frame){
             endGame()
         }
         
-        if CGRectIntersectsRect(trumpUpImage.frame, bottom1.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom2.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom3.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom4.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom5.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom6.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom7.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom8.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom9.frame) || CGRectIntersectsRect(trumpUpImage.frame, bottom10.frame){
+        if CGRectIntersectsRect(trumpImage.frame, bottom1.frame) || CGRectIntersectsRect(trumpImage.frame, bottom2.frame) || CGRectIntersectsRect(trumpImage.frame, bottom3.frame) || CGRectIntersectsRect(trumpImage.frame, bottom4.frame) || CGRectIntersectsRect(trumpImage.frame, bottom5.frame) || CGRectIntersectsRect(trumpImage.frame, bottom6.frame) || CGRectIntersectsRect(trumpImage.frame, bottom7.frame) || CGRectIntersectsRect(trumpImage.frame, bottom8.frame) || CGRectIntersectsRect(trumpImage.frame, bottom9.frame) || CGRectIntersectsRect(trumpImage.frame, bottom10.frame){
             endGame()
         }
         
-        if CGRectIntersectsRect(trumpUpImage.frame, top1.frame) || CGRectIntersectsRect(trumpUpImage.frame, top2.frame) || CGRectIntersectsRect(trumpUpImage.frame, top3.frame) || CGRectIntersectsRect(trumpUpImage.frame, top4.frame) || CGRectIntersectsRect(trumpUpImage.frame, top5.frame) || CGRectIntersectsRect(trumpUpImage.frame, top6.frame) || CGRectIntersectsRect(trumpUpImage.frame, top7.frame) || CGRectIntersectsRect(trumpUpImage.frame, top8.frame) || CGRectIntersectsRect(trumpUpImage.frame, top9.frame) || CGRectIntersectsRect(trumpUpImage.frame, top10.frame){
+        if CGRectIntersectsRect(trumpImage.frame, top1.frame) || CGRectIntersectsRect(trumpImage.frame, top2.frame) || CGRectIntersectsRect(trumpImage.frame, top3.frame) || CGRectIntersectsRect(trumpImage.frame, top4.frame) || CGRectIntersectsRect(trumpImage.frame, top5.frame) || CGRectIntersectsRect(trumpImage.frame, top6.frame) || CGRectIntersectsRect(trumpImage.frame, top7.frame) || CGRectIntersectsRect(trumpImage.frame, top8.frame) || CGRectIntersectsRect(trumpImage.frame, top9.frame) || CGRectIntersectsRect(trumpImage.frame, top10.frame){
             endGame()
         }
         
-        if trumpUpImage.center.y > screenSize.height {
+        if trumpImage.center.y > screenSize.height {
             endGame()
         }
 
-        if trumpUpImage.center.y < -screenSize.height {
+        if trumpImage.center.y < -screenSize.height {
             endGame()
         }
         
@@ -321,11 +327,11 @@ class ViewController: UIViewController {
     }
     
     func endGame(){
-        trumpUpImage.hidden = true
+        trumpImage.hidden = true
         timer .invalidate()
         scorer .invalidate()
-        scoreLabel.text = "Score: \(scoreNumber)"
-        scoreLabel.hidden = false
+//        scoreLabel.text = "Score: \(scoreNumber)"
+//        scoreLabel.hidden = false
         
         if scoreNumber > highScore {
             highScore = scoreNumber
@@ -334,7 +340,7 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        self.performSelector("newGame", withObject: nil, afterDelay: 5)
+        self.performSelector("newGame", withObject: nil, afterDelay: 3)
     }
     
     func newGame(){
@@ -342,8 +348,10 @@ class ViewController: UIViewController {
         hideIntroObjects(false)
         scoreLabel.hidden = true
         
-        trumpUpImage.hidden = false
-        trumpUpImage.center = CGPointMake(58, 149)
+        trumpImage.removeAllAnimations()
+        trumpImage.addIntroAnimation()
+        trumpImage.hidden = false
+        trumpImage.center = CGPointMake(58, 149)
         
         start = true
         
