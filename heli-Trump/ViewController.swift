@@ -106,11 +106,11 @@ class ViewController: UIViewController {
             
             hideObjects(false)
             
-            randomPosition = Int(arc4random_uniform(75))
+            randomPosition = Int(arc4random_uniform(UInt32(screenWidth/2)))
             randomPosition = randomPosition + 110
             obstacle1.center = CGPoint(x: 570, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(75))
+            randomPosition = Int(arc4random_uniform(UInt32(screenWidth/2)))
             randomPosition = randomPosition + 110
             obstacle2.center = CGPoint(x: 855, y: randomPosition)
             
@@ -216,17 +216,12 @@ class ViewController: UIViewController {
         
         let screenWidth = Int(screenSize.height - 50.0)
         
-        
         if obstacle1.center.x < -10 {
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle1.center = CGPoint(x: 760, y: randomPosition)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle1: obstacle1)
         }
         
         if obstacle2.center.x < -10 {
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle2.center = CGPoint(x: 760, y: randomPosition)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle1: obstacle2)
         }
         
         if top1.center.x < -70 {
@@ -330,8 +325,6 @@ class ViewController: UIViewController {
         trumpImage.hidden = true
         timer .invalidate()
         scorer .invalidate()
-//        scoreLabel.text = "Score: \(scoreNumber)"
-//        scoreLabel.hidden = false
         
         if scoreNumber > highScore {
             highScore = scoreNumber
@@ -340,11 +333,18 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        self.performSelector("newGame", withObject: nil, afterDelay: 3)
+        self.performSelector("showScore", withObject: nil, afterDelay: 1)
+    }
+    
+    func showScore(){
+        scoreLabel.text = "Score: \(scoreNumber)"
+        scoreLabel.hidden = false
+        hideObjects(true)
+        
+        self.performSelector("newGame", withObject: nil, afterDelay: 2)
     }
     
     func newGame(){
-        hideObjects(true)
         hideIntroObjects(false)
         scoreLabel.hidden = true
         
@@ -402,6 +402,13 @@ class ViewController: UIViewController {
         tapToStartLabel.hidden = hiddenOrNot
         highScoreLabel.hidden = hiddenOrNot
         titleLabel.hidden = hiddenOrNot
+    }
+    
+    func positionObstacle(var randomPosition:Int, screenWidth:Int, obstacle1:UIImageView) -> CGPoint {
+        randomPosition = Int(arc4random_uniform(UInt32(screenWidth/2)))
+        randomPosition = randomPosition + 110
+        obstacle1.center = CGPoint(x: 760, y: randomPosition)
+        return obstacle1.center
     }
     
 
