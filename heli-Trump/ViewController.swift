@@ -78,6 +78,8 @@ class ViewController: UIViewController {
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
         
+//        print(obstacle1.frame.height)
+//        self.obstacle1.frame.height = 200
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,13 +108,11 @@ class ViewController: UIViewController {
             
             hideObjects(false)
             
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle1.center = CGPoint(x: 570, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle2.center = CGPoint(x: 855, y: randomPosition)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle1, x: 570)
+            obstacle1.frame = CGRect(x: 570, y: randomPosition, width: 24, height: screenWidth/3)
+
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 855)
+            obstacle2.frame = CGRect(x: 855, y: randomPosition, width: 24, height: screenWidth/3)
             
             randomPosition = Int(arc4random_uniform(55))
             top1.center = CGPoint(x: 560, y: randomPosition)
@@ -216,17 +216,12 @@ class ViewController: UIViewController {
         
         let screenWidth = Int(screenSize.height - 50.0)
         
-        
         if obstacle1.center.x < -10 {
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle1.center = CGPoint(x: 760, y: randomPosition)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle1, x: 760)
         }
         
         if obstacle2.center.x < -10 {
-            randomPosition = Int(arc4random_uniform(75))
-            randomPosition = randomPosition + 110
-            obstacle2.center = CGPoint(x: 760, y: randomPosition)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 760)
         }
         
         if top1.center.x < -70 {
@@ -330,8 +325,6 @@ class ViewController: UIViewController {
         trumpImage.hidden = true
         timer .invalidate()
         scorer .invalidate()
-//        scoreLabel.text = "Score: \(scoreNumber)"
-//        scoreLabel.hidden = false
         
         if scoreNumber > highScore {
             highScore = scoreNumber
@@ -340,11 +333,18 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        self.performSelector("newGame", withObject: nil, afterDelay: 3)
+        self.performSelector("showScore", withObject: nil, afterDelay: 1)
+    }
+    
+    func showScore(){
+        scoreLabel.text = "Score: \(scoreNumber)"
+        scoreLabel.hidden = false
+        hideObjects(true)
+        
+        self.performSelector("newGame", withObject: nil, afterDelay: 2)
     }
     
     func newGame(){
-        hideObjects(true)
         hideIntroObjects(false)
         scoreLabel.hidden = true
         
@@ -404,6 +404,28 @@ class ViewController: UIViewController {
         titleLabel.hidden = hiddenOrNot
     }
     
+    func positionObstacle(var randomPosition:Int, screenWidth:Int, obstacle:UIImageView, x:Int) -> CGPoint {
+        randomPosition = Int(arc4random_uniform(UInt32(screenWidth/2)))
+        randomPosition = randomPosition + 110
+        obstacle.center = CGPoint(x: x, y: randomPosition)
+        return obstacle.center
+    }
+    
+//    func positionTopAndBottomBlocks(var randomPosition:Int, screenWidth:Int, top:UIImageView, bottom:UIImageView) -> CGPoint; CGPoint {
+//        randomPosition = Int(arc4random_uniform(55))
+//        top.center = CGPoint(x: 800, y: randomPosition)
+////        positionBottomBlock(randomPosition, screenWidth: screenWidth, bottom: bottom)
+//        randomPosition = randomPosition + screenWidth
+//        bottom.center = CGPoint(x: 800, y: randomPosition)
+////        return bottom.center
+//        return top.center; bottom.center
+//    }
+//    
+//    func positionBottomBlock(var randomPosition2:Int, screenWidth:Int, bottom:UIImageView) -> CGPoint {
+//        randomPosition2 = randomPosition2 + screenWidth
+//        bottom.center = CGPoint(x: 800, y: randomPosition)
+//        return bottom.center
+//    }
 
 }
 

@@ -118,7 +118,7 @@
                                 <rect key="frame" x="464" y="48" width="142" height="49"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-DO-L6Z">
-                                <rect key="frame" x="262" y="269" width="208" height="41"/>
+                                <rect key="frame" x="264" y="186.5" width="208" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="Yv8-Ii-Oha"/>
                                     <constraint firstAttribute="width" constant="208" id="x2w-Vs-JUl"/>
@@ -139,9 +139,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="top" secondItem="vAZ-Dg-w2R" secondAttribute="bottom" constant="19.5" id="0zg-9q-9hn"/>
-                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-2" id="FH4-Ui-hBa"/>
+                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FH4-Ui-hBa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TLZ-mV-XqU" secondAttribute="trailing" constant="-20" id="G47-je-tVq"/>
-                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="49.5" id="Uqn-om-zqJ"/>
+                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q8e-Cy-bjH"/>
                             <constraint firstItem="DkD-td-mjt" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="17.5" id="VKe-NY-c3k"/>
                             <constraint firstItem="Yea-Vz-NQv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Vuk-7M-VWG"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XQh-aG-dqE"/>
