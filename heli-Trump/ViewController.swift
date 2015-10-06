@@ -78,8 +78,6 @@ class ViewController: UIViewController {
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
         
-//        print(obstacle1.frame.height)
-//        self.obstacle1.frame.height = 200
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,57 +107,57 @@ class ViewController: UIViewController {
             hideObjects(false)
             
             positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle1, x: 570)
-            obstacle1.frame = CGRect(x: 570, y: randomPosition, width: 24, height: screenWidth/3)
+            obstacle1.frame = CGRect(x: 570, y: randomPosition, width: 24, height: screenWidth/2 - 60)
 
-            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 855)
-            obstacle2.frame = CGRect(x: 855, y: randomPosition, width: 24, height: screenWidth/3)
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 820)
+            obstacle2.frame = CGRect(x: 820, y: randomPosition, width: 24, height: screenWidth/2 - 60)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
             top1.center = CGPoint(x: 560, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom1.center = CGPoint(x: 560, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top2.center = CGPoint(x: 650, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom2.center = CGPoint(x: 650, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top3.center = CGPoint(x: 740, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom3.center = CGPoint(x: 740, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top4.center = CGPoint(x: 830, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom4.center = CGPoint(x: 830, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top5.center = CGPoint(x: 920, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom5.center = CGPoint(x: 920, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top6.center = CGPoint(x: 1010, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom6.center = CGPoint(x: 1010, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top7.center = CGPoint(x: 1100, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom7.center = CGPoint(x: 1100, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top8.center = CGPoint(x: 1190, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom8.center = CGPoint(x: 1190, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top9.center = CGPoint(x: 1280, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom9.center = CGPoint(x: 1280, y: randomPosition)
             
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top10.center = CGPoint(x: 1370, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom10.center = CGPoint(x: 1370, y: randomPosition)
@@ -225,70 +223,70 @@ class ViewController: UIViewController {
         }
         
         if top1.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top1.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom1.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top2.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top2.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom2.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top3.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top3.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom3.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top4.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top4.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom4.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top5.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top5.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom5.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top6.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top6.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom6.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top7.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top7.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom7.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top8.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top8.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom8.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top9.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top9.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom9.center = CGPoint(x: 800, y: randomPosition)
         }
         
         if top10.center.x < -70 {
-            randomPosition = Int(arc4random_uniform(55))
+            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
             top10.center = CGPoint(x: 800, y: randomPosition)
             randomPosition = randomPosition + screenWidth
             bottom10.center = CGPoint(x: 800, y: randomPosition)
@@ -412,7 +410,7 @@ class ViewController: UIViewController {
     }
     
 //    func positionTopAndBottomBlocks(var randomPosition:Int, screenWidth:Int, top:UIImageView, bottom:UIImageView) -> CGPoint; CGPoint {
-//        randomPosition = Int(arc4random_uniform(55))
+//        randomPosition = Int(arc4random_uniform(20))
 //        top.center = CGPoint(x: 800, y: randomPosition)
 ////        positionBottomBlock(randomPosition, screenWidth: screenWidth, bottom: bottom)
 //        randomPosition = randomPosition + screenWidth
