@@ -31,7 +31,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tapToStartLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var trumpImage: TrumpCartoonView!
-    
+    @IBOutlet weak var hillaryImage: HeliHillyView!
+    @IBOutlet weak var benImage: BenHeliView!
     
     // =========
     // Obstacles
@@ -166,7 +167,13 @@ class ViewController: UIViewController {
         
         Y = -7
         trumpImage.removeAllAnimations()
+        hillaryImage.removeAllAnimations()
+        benImage.removeAllAnimations()
+        
         trumpImage.addFlyingAnimation()
+        hillaryImage.addHillFlyingAnimation()
+        benImage.addBenFlyingAnimation()
+        
         
     }
     
@@ -174,6 +181,10 @@ class ViewController: UIViewController {
         Y = 7
         trumpImage.removeAllAnimations()
         trumpImage.addFallingAnimation()
+        hillaryImage.removeAllAnimations()
+        hillaryImage.addHillFallingAnimation()
+        benImage.removeAllAnimations()
+        benImage.addBenFallingAnimation()
     }
 
     

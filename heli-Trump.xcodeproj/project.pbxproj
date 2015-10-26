@@ -29,6 +29,18 @@
 		EC0462B51BAC24FA001CB724 /* top leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A51BAC24FA001CB724 /* top leg.png */; settings = {ASSET_TAGS = (); }; };
 		EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A61BAC24FA001CB724 /* top leg@2x.png */; settings = {ASSET_TAGS = (); }; };
 		EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462A81BAC24FA001CB724 /* TrumpCartoonView.swift */; settings = {ASSET_TAGS = (); }; };
+		EC12B8481BDE6E9500873A27 /* BenHeliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC12B8411BDE6E9500873A27 /* BenHeliView.swift */; settings = {ASSET_TAGS = (); }; };
+		EC12B8491BDE6E9500873A27 /* benArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8431BDE6E9500873A27 /* benArm.png */; settings = {ASSET_TAGS = (); }; };
+		EC12B84A1BDE6E9500873A27 /* benHeadAndBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */; settings = {ASSET_TAGS = (); }; };
+		EC12B84B1BDE6E9500873A27 /* benLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8451BDE6E9500873A27 /* benLeg.png */; settings = {ASSET_TAGS = (); }; };
+		EC12B84C1BDE6E9500873A27 /* endoscope.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8461BDE6E9500873A27 /* endoscope.png */; settings = {ASSET_TAGS = (); }; };
+		EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8471BDE6E9500873A27 /* endoscopeFly.png */; settings = {ASSET_TAGS = (); }; };
+		EC543C431BDA28EF00D5BE6D /* HeliHillyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC543C3C1BDA28EF00D5BE6D /* HeliHillyView.swift */; settings = {ASSET_TAGS = (); }; };
+		EC543C441BDA28EF00D5BE6D /* arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3E1BDA28EF00D5BE6D /* arm.png */; settings = {ASSET_TAGS = (); }; };
+		EC543C451BDA28EF00D5BE6D /* headAndBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */; settings = {ASSET_TAGS = (); }; };
+		EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C401BDA28EF00D5BE6D /* hillHair.png */; settings = {ASSET_TAGS = (); }; };
+		EC543C471BDA28EF00D5BE6D /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C411BDA28EF00D5BE6D /* leg.png */; settings = {ASSET_TAGS = (); }; };
+		EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C421BDA28EF00D5BE6D /* leg2.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,18 @@
 		EC0462A51BAC24FA001CB724 /* top leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top leg.png"; sourceTree = "<group>"; };
 		EC0462A61BAC24FA001CB724 /* top leg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top leg@2x.png"; sourceTree = "<group>"; };
 		EC0462A81BAC24FA001CB724 /* TrumpCartoonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrumpCartoonView.swift; sourceTree = "<group>"; };
+		EC12B8411BDE6E9500873A27 /* BenHeliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenHeliView.swift; sourceTree = "<group>"; };
+		EC12B8431BDE6E9500873A27 /* benArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benArm.png; sourceTree = "<group>"; };
+		EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benHeadAndBody.png; sourceTree = "<group>"; };
+		EC12B8451BDE6E9500873A27 /* benLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benLeg.png; sourceTree = "<group>"; };
+		EC12B8461BDE6E9500873A27 /* endoscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endoscope.png; sourceTree = "<group>"; };
+		EC12B8471BDE6E9500873A27 /* endoscopeFly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endoscopeFly.png; sourceTree = "<group>"; };
+		EC543C3C1BDA28EF00D5BE6D /* HeliHillyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeliHillyView.swift; sourceTree = "<group>"; };
+		EC543C3E1BDA28EF00D5BE6D /* arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arm.png; sourceTree = "<group>"; };
+		EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headAndBody.png; sourceTree = "<group>"; };
+		EC543C401BDA28EF00D5BE6D /* hillHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hillHair.png; sourceTree = "<group>"; };
+		EC543C411BDA28EF00D5BE6D /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
+		EC543C421BDA28EF00D5BE6D /* leg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +151,8 @@
 		EC0462681BA9C0D9001CB724 /* heli-Trump */ = {
 			isa = PBXGroup;
 			children = (
+				EC12B8401BDE6E9500873A27 /* coreBen */,
+				EC543C3B1BDA28EF00D5BE6D /* coreHill */,
 				EC0462971BAC24FA001CB724 /* coreHelitrump */,
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
@@ -182,6 +208,48 @@
 				EC0462A41BAC24FA001CB724 /* top arm@2x.png */,
 				EC0462A51BAC24FA001CB724 /* top leg.png */,
 				EC0462A61BAC24FA001CB724 /* top leg@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EC12B8401BDE6E9500873A27 /* coreBen */ = {
+			isa = PBXGroup;
+			children = (
+				EC12B8411BDE6E9500873A27 /* BenHeliView.swift */,
+				EC12B8421BDE6E9500873A27 /* images */,
+			);
+			path = coreBen;
+			sourceTree = "<group>";
+		};
+		EC12B8421BDE6E9500873A27 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC12B8431BDE6E9500873A27 /* benArm.png */,
+				EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */,
+				EC12B8451BDE6E9500873A27 /* benLeg.png */,
+				EC12B8461BDE6E9500873A27 /* endoscope.png */,
+				EC12B8471BDE6E9500873A27 /* endoscopeFly.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EC543C3B1BDA28EF00D5BE6D /* coreHill */ = {
+			isa = PBXGroup;
+			children = (
+				EC543C3C1BDA28EF00D5BE6D /* HeliHillyView.swift */,
+				EC543C3D1BDA28EF00D5BE6D /* images */,
+			);
+			path = coreHill;
+			sourceTree = "<group>";
+		};
+		EC543C3D1BDA28EF00D5BE6D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC543C3E1BDA28EF00D5BE6D /* arm.png */,
+				EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */,
+				EC543C401BDA28EF00D5BE6D /* hillHair.png */,
+				EC543C411BDA28EF00D5BE6D /* leg.png */,
+				EC543C421BDA28EF00D5BE6D /* leg2.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -292,7 +360,10 @@
 				EC0462AC1BAC24FA001CB724 /* bottom arm@2x.png in Resources */,
 				EC0462AF1BAC24FA001CB724 /* head.png in Resources */,
 				EC0462AE1BAC24FA001CB724 /* bottom leg@2x.png in Resources */,
+				EC543C451BDA28EF00D5BE6D /* headAndBody.png in Resources */,
+				EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */,
 				EC0462AB1BAC24FA001CB724 /* bottom arm.png in Resources */,
+				EC12B84C1BDE6E9500873A27 /* endoscope.png in Resources */,
 				EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */,
 				EC0462B01BAC24FA001CB724 /* head@2x.png in Resources */,
 				EC0462B41BAC24FA001CB724 /* top arm@2x.png in Resources */,
@@ -300,10 +371,17 @@
 				EC0462B31BAC24FA001CB724 /* top arm.png in Resources */,
 				EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */,
 				EC0462B51BAC24FA001CB724 /* top leg.png in Resources */,
+				EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */,
+				EC12B84B1BDE6E9500873A27 /* benLeg.png in Resources */,
 				EC0462AA1BAC24FA001CB724 /* body@2x.png in Resources */,
+				EC543C441BDA28EF00D5BE6D /* arm.png in Resources */,
 				EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */,
 				EC0462B21BAC24FA001CB724 /* heliHair@2x.png in Resources */,
+				EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */,
+				EC12B8491BDE6E9500873A27 /* benArm.png in Resources */,
 				EC0462B11BAC24FA001CB724 /* heliHair.png in Resources */,
+				EC543C471BDA28EF00D5BE6D /* leg.png in Resources */,
+				EC12B84A1BDE6E9500873A27 /* benHeadAndBody.png in Resources */,
 				EC0462AD1BAC24FA001CB724 /* bottom leg.png in Resources */,
 				EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */,
 			);
@@ -331,6 +409,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
+				EC12B8481BDE6E9500873A27 /* BenHeliView.swift in Sources */,
+				EC543C431BDA28EF00D5BE6D /* HeliHillyView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
 				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,
 			);
