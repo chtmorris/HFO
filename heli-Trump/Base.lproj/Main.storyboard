@@ -168,10 +168,14 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-yN-pbB" customClass="BenHeliView" customModule="heli_Trump" customModuleProvider="target">
-                                <rect key="frame" x="173" y="204" width="29" height="51"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-yN-pbB" customClass="BenHeliView" customModule="heli_Trump" customModuleProvider="target">
+                                <rect key="frame" x="80" y="145" width="29" height="51"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="HxX-g9-6Nf"/>
+                                    <constraint firstAttribute="width" constant="29" id="lAG-2d-Csl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <animations/>

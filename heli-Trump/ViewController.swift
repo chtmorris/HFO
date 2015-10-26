@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var hillaryImage: HeliHillyView!
     @IBOutlet weak var benImage: BenHeliView!
     
+    var politician: UIView!
+    
     // =========
     // Obstacles
     // =========
@@ -71,10 +73,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
+        choosePolitician()
+        hideOtherPoliticians()
+        
         hideObjects(true)
         scoreLabel.hidden = true
         trumpImage.addIntroAnimation()
+        benImage.addBenIntroAnimation()
+        hillaryImage.addHillIntroAnimation()
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
@@ -192,10 +199,28 @@ class ViewController: UIViewController {
     // Core functions
     // ==============
     
+    func choosePolitician() {
+        politician = hillaryImage
+    }
+    
+    func hideOtherPoliticians() {
+        if politician != benImage {
+            benImage.hidden = true
+        }
+        
+        if politician != trumpImage {
+            trumpImage.hidden = true
+        }
+        
+        if politician != hillaryImage {
+            hillaryImage.hidden = true
+        }
+    }
+    
     func heliMove(){
         collision()
         
-        trumpImage.center = CGPointMake(trumpImage.center.x, trumpImage.center.y + Y)
+        politician.center = CGPointMake(politician.center.x, politician.center.y + Y)
         
         obstacle1.center = CGPointMake(obstacle1.center.x - 10, obstacle1.center.y)
         obstacle2.center = CGPointMake(obstacle2.center.x - 10, obstacle2.center.y)
@@ -307,23 +332,23 @@ class ViewController: UIViewController {
     
     func collision(){
         
-        if CGRectIntersectsRect(trumpImage.frame, obstacle1.frame) || CGRectIntersectsRect(trumpImage.frame, obstacle2.frame){
+        if CGRectIntersectsRect(politician.frame, obstacle1.frame) || CGRectIntersectsRect(politician.frame, obstacle2.frame){
             endGame()
         }
         
-        if CGRectIntersectsRect(trumpImage.frame, bottom1.frame) || CGRectIntersectsRect(trumpImage.frame, bottom2.frame) || CGRectIntersectsRect(trumpImage.frame, bottom3.frame) || CGRectIntersectsRect(trumpImage.frame, bottom4.frame) || CGRectIntersectsRect(trumpImage.frame, bottom5.frame) || CGRectIntersectsRect(trumpImage.frame, bottom6.frame) || CGRectIntersectsRect(trumpImage.frame, bottom7.frame) || CGRectIntersectsRect(trumpImage.frame, bottom8.frame) || CGRectIntersectsRect(trumpImage.frame, bottom9.frame) || CGRectIntersectsRect(trumpImage.frame, bottom10.frame){
+        if CGRectIntersectsRect(politician.frame, bottom1.frame) || CGRectIntersectsRect(politician.frame, bottom2.frame) || CGRectIntersectsRect(politician.frame, bottom3.frame) || CGRectIntersectsRect(politician.frame, bottom4.frame) || CGRectIntersectsRect(politician.frame, bottom5.frame) || CGRectIntersectsRect(politician.frame, bottom6.frame) || CGRectIntersectsRect(politician.frame, bottom7.frame) || CGRectIntersectsRect(politician.frame, bottom8.frame) || CGRectIntersectsRect(politician.frame, bottom9.frame) || CGRectIntersectsRect(politician.frame, bottom10.frame){
             endGame()
         }
         
-        if CGRectIntersectsRect(trumpImage.frame, top1.frame) || CGRectIntersectsRect(trumpImage.frame, top2.frame) || CGRectIntersectsRect(trumpImage.frame, top3.frame) || CGRectIntersectsRect(trumpImage.frame, top4.frame) || CGRectIntersectsRect(trumpImage.frame, top5.frame) || CGRectIntersectsRect(trumpImage.frame, top6.frame) || CGRectIntersectsRect(trumpImage.frame, top7.frame) || CGRectIntersectsRect(trumpImage.frame, top8.frame) || CGRectIntersectsRect(trumpImage.frame, top9.frame) || CGRectIntersectsRect(trumpImage.frame, top10.frame){
+        if CGRectIntersectsRect(politician.frame, top1.frame) || CGRectIntersectsRect(politician.frame, top2.frame) || CGRectIntersectsRect(politician.frame, top3.frame) || CGRectIntersectsRect(politician.frame, top4.frame) || CGRectIntersectsRect(politician.frame, top5.frame) || CGRectIntersectsRect(politician.frame, top6.frame) || CGRectIntersectsRect(politician.frame, top7.frame) || CGRectIntersectsRect(politician.frame, top8.frame) || CGRectIntersectsRect(politician.frame, top9.frame) || CGRectIntersectsRect(politician.frame, top10.frame){
             endGame()
         }
         
-        if trumpImage.center.y > screenSize.height {
+        if politician.center.y > screenSize.height {
             endGame()
         }
 
-        if trumpImage.center.y < -screenSize.height {
+        if politician.center.y < -screenSize.height {
             endGame()
         }
         
@@ -331,7 +356,7 @@ class ViewController: UIViewController {
     }
     
     func endGame(){
-        trumpImage.hidden = true
+        politician.hidden = true
         timer .invalidate()
         scorer .invalidate()
         
@@ -357,10 +382,19 @@ class ViewController: UIViewController {
         hideIntroObjects(false)
         scoreLabel.hidden = true
         
+        politician.hidden = false
+        politician.center = CGPointMake(58, 149)
+        
         trumpImage.removeAllAnimations()
+        benImage.removeAllAnimations()
+        hillaryImage.removeAllAnimations()
+        
         trumpImage.addIntroAnimation()
-        trumpImage.hidden = false
-        trumpImage.center = CGPointMake(58, 149)
+        benImage.addBenIntroAnimation()
+        hillaryImage.addHillIntroAnimation()
+        
+//        trumpImage.hidden = false
+//        trumpImage.center = CGPointMake(58, 149)
         
         start = true
         

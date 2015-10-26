@@ -178,8 +178,8 @@ class BenHeliView : UIView {
 	}
 
 	func addBenFallingAnimationWithBeginTime(beginTime: CFTimeInterval, fillMode: String, removedOnCompletion: Bool, completion: ((Bool) -> Void)?) {
-		let linearTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
 		let easeInOutTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+		let linearTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
 		if let complete = completion {
 			let representativeAnimation = CABasicAnimation(keyPath: "not.a.real.key")
 			representativeAnimation.duration = 0.250
@@ -187,48 +187,6 @@ class BenHeliView : UIView {
 			self.layer.addAnimation(representativeAnimation, forKey: "BenFalling")
 			self.animationCompletions[layer.animationForKey("BenFalling")!] = complete
 		}
-
-		let endoscopeFlyOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-		endoscopeFlyOpacityAnimation.duration = 0.250
-		endoscopeFlyOpacityAnimation.values = [0.000 as Float, 0.000 as Float]
-		endoscopeFlyOpacityAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		endoscopeFlyOpacityAnimation.timingFunctions = [linearTiming]
-		endoscopeFlyOpacityAnimation.beginTime = beginTime
-		endoscopeFlyOpacityAnimation.fillMode = fillMode
-		endoscopeFlyOpacityAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyOpacityAnimation, forKey:"benFalling_Opacity")
-
-		let benLeg2RotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		benLeg2RotationAnimation.duration = 0.250
-		benLeg2RotationAnimation.values = [6.013 as Float, 6.606 as Float, 6.013 as Float]
-		benLeg2RotationAnimation.keyTimes = [0.000 as Float, 0.480 as Float, 1.000 as Float]
-		benLeg2RotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
-		benLeg2RotationAnimation.repeatCount = HUGE
-		benLeg2RotationAnimation.beginTime = beginTime
-		benLeg2RotationAnimation.fillMode = fillMode
-		benLeg2RotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["benLeg 2"]?.layer.addAnimation(benLeg2RotationAnimation, forKey:"benFalling_Rotation")
-
-		let benBodyRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		benBodyRotationAnimation.duration = 0.250
-		benBodyRotationAnimation.values = [-0.220 as Float, -0.220 as Float]
-		benBodyRotationAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		benBodyRotationAnimation.timingFunctions = [linearTiming]
-		benBodyRotationAnimation.beginTime = beginTime
-		benBodyRotationAnimation.fillMode = fillMode
-		benBodyRotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["benBody"]?.layer.addAnimation(benBodyRotationAnimation, forKey:"benFalling_Rotation")
-
-		let benLegRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		benLegRotationAnimation.duration = 0.250
-		benLegRotationAnimation.values = [0.296 as Float, -0.349 as Float, 0.296 as Float]
-		benLegRotationAnimation.keyTimes = [0.000 as Float, 0.480 as Float, 1.000 as Float]
-		benLegRotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
-		benLegRotationAnimation.repeatCount = HUGE
-		benLegRotationAnimation.beginTime = beginTime
-		benLegRotationAnimation.fillMode = fillMode
-		benLegRotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["benLeg"]?.layer.addAnimation(benLegRotationAnimation, forKey:"benFalling_Rotation")
 
 		let endoscopeRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
 		endoscopeRotationAnimation.duration = 0.250
@@ -241,6 +199,27 @@ class BenHeliView : UIView {
 		endoscopeRotationAnimation.removedOnCompletion = removedOnCompletion
 		self.viewsByName["endoscope"]?.layer.addAnimation(endoscopeRotationAnimation, forKey:"benFalling_Rotation")
 
+		let benBodyRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		benBodyRotationAnimation.duration = 0.250
+		benBodyRotationAnimation.values = [-0.220 as Float, -0.220 as Float]
+		benBodyRotationAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		benBodyRotationAnimation.timingFunctions = [linearTiming]
+		benBodyRotationAnimation.beginTime = beginTime
+		benBodyRotationAnimation.fillMode = fillMode
+		benBodyRotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["benBody"]?.layer.addAnimation(benBodyRotationAnimation, forKey:"benFalling_Rotation")
+
+		let benLeg2RotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		benLeg2RotationAnimation.duration = 0.250
+		benLeg2RotationAnimation.values = [6.013 as Float, 6.606 as Float, 6.013 as Float]
+		benLeg2RotationAnimation.keyTimes = [0.000 as Float, 0.480 as Float, 1.000 as Float]
+		benLeg2RotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
+		benLeg2RotationAnimation.repeatCount = HUGE
+		benLeg2RotationAnimation.beginTime = beginTime
+		benLeg2RotationAnimation.fillMode = fillMode
+		benLeg2RotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["benLeg 2"]?.layer.addAnimation(benLeg2RotationAnimation, forKey:"benFalling_Rotation")
+
 		let armEndoRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
 		armEndoRotationAnimation.duration = 0.250
 		armEndoRotationAnimation.values = [0.000 as Float, -0.273 as Float, 0.000 as Float]
@@ -251,16 +230,37 @@ class BenHeliView : UIView {
 		armEndoRotationAnimation.fillMode = fillMode
 		armEndoRotationAnimation.removedOnCompletion = removedOnCompletion
 		self.viewsByName["armEndo"]?.layer.addAnimation(armEndoRotationAnimation, forKey:"benFalling_Rotation")
+
+		let benLegRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		benLegRotationAnimation.duration = 0.250
+		benLegRotationAnimation.values = [0.296 as Float, -0.349 as Float, 0.296 as Float]
+		benLegRotationAnimation.keyTimes = [0.000 as Float, 0.480 as Float, 1.000 as Float]
+		benLegRotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
+		benLegRotationAnimation.repeatCount = HUGE
+		benLegRotationAnimation.beginTime = beginTime
+		benLegRotationAnimation.fillMode = fillMode
+		benLegRotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["benLeg"]?.layer.addAnimation(benLegRotationAnimation, forKey:"benFalling_Rotation")
+
+		let endoscopeFlyOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+		endoscopeFlyOpacityAnimation.duration = 0.250
+		endoscopeFlyOpacityAnimation.values = [0.000 as Float, 0.000 as Float]
+		endoscopeFlyOpacityAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		endoscopeFlyOpacityAnimation.timingFunctions = [linearTiming]
+		endoscopeFlyOpacityAnimation.beginTime = beginTime
+		endoscopeFlyOpacityAnimation.fillMode = fillMode
+		endoscopeFlyOpacityAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyOpacityAnimation, forKey:"benFalling_Opacity")
 	}
 
 	func removeBenFallingAnimation() {
 		self.layer.removeAnimationForKey("BenFalling")
-		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFalling_Opacity")
-		self.viewsByName["benLeg 2"]?.layer.removeAnimationForKey("benFalling_Rotation")
-		self.viewsByName["benBody"]?.layer.removeAnimationForKey("benFalling_Rotation")
-		self.viewsByName["benLeg"]?.layer.removeAnimationForKey("benFalling_Rotation")
 		self.viewsByName["endoscope"]?.layer.removeAnimationForKey("benFalling_Rotation")
+		self.viewsByName["benBody"]?.layer.removeAnimationForKey("benFalling_Rotation")
+		self.viewsByName["benLeg 2"]?.layer.removeAnimationForKey("benFalling_Rotation")
 		self.viewsByName["armEndo"]?.layer.removeAnimationForKey("benFalling_Rotation")
+		self.viewsByName["benLeg"]?.layer.removeAnimationForKey("benFalling_Rotation")
+		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFalling_Opacity")
 	}
 
 	// - MARK: benFlying
@@ -282,8 +282,8 @@ class BenHeliView : UIView {
 	}
 
 	func addBenFlyingAnimationWithBeginTime(beginTime: CFTimeInterval, fillMode: String, removedOnCompletion: Bool, completion: ((Bool) -> Void)?) {
-		let easeInOutTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 		let linearTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+		let easeInOutTiming = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 		if let complete = completion {
 			let representativeAnimation = CABasicAnimation(keyPath: "not.a.real.key")
 			representativeAnimation.duration = 0.500
@@ -292,47 +292,15 @@ class BenHeliView : UIView {
 			self.animationCompletions[layer.animationForKey("BenFlying")!] = complete
 		}
 
-		let endoscopeFlyRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		endoscopeFlyRotationAnimation.duration = 0.150
-		endoscopeFlyRotationAnimation.values = [0.000 as Float, 6.281 as Float]
-		endoscopeFlyRotationAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		endoscopeFlyRotationAnimation.timingFunctions = [easeInOutTiming]
-		endoscopeFlyRotationAnimation.repeatCount = HUGE
-		endoscopeFlyRotationAnimation.beginTime = beginTime
-		endoscopeFlyRotationAnimation.fillMode = fillMode
-		endoscopeFlyRotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyRotationAnimation, forKey:"benFlying_Rotation")
-
-		let endoscopeFlyTranslationXAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-		endoscopeFlyTranslationXAnimation.duration = 0.500
-		endoscopeFlyTranslationXAnimation.values = [0.558 as Float, 0.558 as Float]
-		endoscopeFlyTranslationXAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		endoscopeFlyTranslationXAnimation.timingFunctions = [linearTiming]
-		endoscopeFlyTranslationXAnimation.beginTime = beginTime
-		endoscopeFlyTranslationXAnimation.fillMode = fillMode
-		endoscopeFlyTranslationXAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyTranslationXAnimation, forKey:"benFlying_TranslationX")
-
-		let endoscopeFlyTranslationYAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
-		endoscopeFlyTranslationYAnimation.duration = 0.500
-		endoscopeFlyTranslationYAnimation.values = [10.402 as Float, 10.402 as Float]
-		endoscopeFlyTranslationYAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		endoscopeFlyTranslationYAnimation.timingFunctions = [linearTiming]
-		endoscopeFlyTranslationYAnimation.beginTime = beginTime
-		endoscopeFlyTranslationYAnimation.fillMode = fillMode
-		endoscopeFlyTranslationYAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyTranslationYAnimation, forKey:"benFlying_TranslationY")
-
-		let benLeg2RotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		benLeg2RotationAnimation.duration = 0.500
-		benLeg2RotationAnimation.values = [6.013 as Float, 6.621 as Float, 6.013 as Float]
-		benLeg2RotationAnimation.keyTimes = [0.000 as Float, 0.500 as Float, 1.000 as Float]
-		benLeg2RotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
-		benLeg2RotationAnimation.repeatCount = HUGE
-		benLeg2RotationAnimation.beginTime = beginTime
-		benLeg2RotationAnimation.fillMode = fillMode
-		benLeg2RotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["benLeg 2"]?.layer.addAnimation(benLeg2RotationAnimation, forKey:"benFlying_Rotation")
+		let endoscopeOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+		endoscopeOpacityAnimation.duration = 0.500
+		endoscopeOpacityAnimation.values = [0.000 as Float, 0.000 as Float]
+		endoscopeOpacityAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		endoscopeOpacityAnimation.timingFunctions = [linearTiming]
+		endoscopeOpacityAnimation.beginTime = beginTime
+		endoscopeOpacityAnimation.fillMode = fillMode
+		endoscopeOpacityAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscope"]?.layer.addAnimation(endoscopeOpacityAnimation, forKey:"benFlying_Opacity")
 
 		let benBodyRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
 		benBodyRotationAnimation.duration = 0.500
@@ -344,16 +312,16 @@ class BenHeliView : UIView {
 		benBodyRotationAnimation.removedOnCompletion = removedOnCompletion
 		self.viewsByName["benBody"]?.layer.addAnimation(benBodyRotationAnimation, forKey:"benFlying_Rotation")
 
-		let benLegRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-		benLegRotationAnimation.duration = 0.500
-		benLegRotationAnimation.values = [0.296 as Float, -0.274 as Float, 0.296 as Float]
-		benLegRotationAnimation.keyTimes = [0.000 as Float, 0.500 as Float, 1.000 as Float]
-		benLegRotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
-		benLegRotationAnimation.repeatCount = HUGE
-		benLegRotationAnimation.beginTime = beginTime
-		benLegRotationAnimation.fillMode = fillMode
-		benLegRotationAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["benLeg"]?.layer.addAnimation(benLegRotationAnimation, forKey:"benFlying_Rotation")
+		let benLeg2RotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		benLeg2RotationAnimation.duration = 0.500
+		benLeg2RotationAnimation.values = [6.013 as Float, 6.621 as Float, 6.013 as Float]
+		benLeg2RotationAnimation.keyTimes = [0.000 as Float, 0.500 as Float, 1.000 as Float]
+		benLeg2RotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
+		benLeg2RotationAnimation.repeatCount = HUGE
+		benLeg2RotationAnimation.beginTime = beginTime
+		benLeg2RotationAnimation.fillMode = fillMode
+		benLeg2RotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["benLeg 2"]?.layer.addAnimation(benLeg2RotationAnimation, forKey:"benFlying_Rotation")
 
 		let benArmRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
 		benArmRotationAnimation.duration = 0.500
@@ -386,29 +354,103 @@ class BenHeliView : UIView {
 		benArmTranslationYAnimation.removedOnCompletion = removedOnCompletion
 		self.viewsByName["benArm"]?.layer.addAnimation(benArmTranslationYAnimation, forKey:"benFlying_TranslationY")
 
-		let endoscopeOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-		endoscopeOpacityAnimation.duration = 0.500
-		endoscopeOpacityAnimation.values = [0.000 as Float, 0.000 as Float]
-		endoscopeOpacityAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
-		endoscopeOpacityAnimation.timingFunctions = [linearTiming]
-		endoscopeOpacityAnimation.beginTime = beginTime
-		endoscopeOpacityAnimation.fillMode = fillMode
-		endoscopeOpacityAnimation.removedOnCompletion = removedOnCompletion
-		self.viewsByName["endoscope"]?.layer.addAnimation(endoscopeOpacityAnimation, forKey:"benFlying_Opacity")
+		let benLegRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		benLegRotationAnimation.duration = 0.500
+		benLegRotationAnimation.values = [0.296 as Float, -0.274 as Float, 0.296 as Float]
+		benLegRotationAnimation.keyTimes = [0.000 as Float, 0.500 as Float, 1.000 as Float]
+		benLegRotationAnimation.timingFunctions = [easeInOutTiming, easeInOutTiming]
+		benLegRotationAnimation.repeatCount = HUGE
+		benLegRotationAnimation.beginTime = beginTime
+		benLegRotationAnimation.fillMode = fillMode
+		benLegRotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["benLeg"]?.layer.addAnimation(benLegRotationAnimation, forKey:"benFlying_Rotation")
+
+		let endoscopeFlyRotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+		endoscopeFlyRotationAnimation.duration = 0.150
+		endoscopeFlyRotationAnimation.values = [0.000 as Float, 6.281 as Float]
+		endoscopeFlyRotationAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		endoscopeFlyRotationAnimation.timingFunctions = [easeInOutTiming]
+		endoscopeFlyRotationAnimation.repeatCount = HUGE
+		endoscopeFlyRotationAnimation.beginTime = beginTime
+		endoscopeFlyRotationAnimation.fillMode = fillMode
+		endoscopeFlyRotationAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyRotationAnimation, forKey:"benFlying_Rotation")
+
+		let endoscopeFlyTranslationXAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+		endoscopeFlyTranslationXAnimation.duration = 0.500
+		endoscopeFlyTranslationXAnimation.values = [0.558 as Float, 0.558 as Float]
+		endoscopeFlyTranslationXAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		endoscopeFlyTranslationXAnimation.timingFunctions = [linearTiming]
+		endoscopeFlyTranslationXAnimation.beginTime = beginTime
+		endoscopeFlyTranslationXAnimation.fillMode = fillMode
+		endoscopeFlyTranslationXAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyTranslationXAnimation, forKey:"benFlying_TranslationX")
+
+		let endoscopeFlyTranslationYAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
+		endoscopeFlyTranslationYAnimation.duration = 0.500
+		endoscopeFlyTranslationYAnimation.values = [10.402 as Float, 10.402 as Float]
+		endoscopeFlyTranslationYAnimation.keyTimes = [0.000 as Float, 1.000 as Float]
+		endoscopeFlyTranslationYAnimation.timingFunctions = [linearTiming]
+		endoscopeFlyTranslationYAnimation.beginTime = beginTime
+		endoscopeFlyTranslationYAnimation.fillMode = fillMode
+		endoscopeFlyTranslationYAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyTranslationYAnimation, forKey:"benFlying_TranslationY")
 	}
 
 	func removeBenFlyingAnimation() {
 		self.layer.removeAnimationForKey("BenFlying")
-		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_Rotation")
-		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_TranslationX")
-		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_TranslationY")
-		self.viewsByName["benLeg 2"]?.layer.removeAnimationForKey("benFlying_Rotation")
+		self.viewsByName["endoscope"]?.layer.removeAnimationForKey("benFlying_Opacity")
 		self.viewsByName["benBody"]?.layer.removeAnimationForKey("benFlying_Rotation")
-		self.viewsByName["benLeg"]?.layer.removeAnimationForKey("benFlying_Rotation")
+		self.viewsByName["benLeg 2"]?.layer.removeAnimationForKey("benFlying_Rotation")
 		self.viewsByName["benArm"]?.layer.removeAnimationForKey("benFlying_Rotation")
 		self.viewsByName["benArm"]?.layer.removeAnimationForKey("benFlying_TranslationX")
 		self.viewsByName["benArm"]?.layer.removeAnimationForKey("benFlying_TranslationY")
-		self.viewsByName["endoscope"]?.layer.removeAnimationForKey("benFlying_Opacity")
+		self.viewsByName["benLeg"]?.layer.removeAnimationForKey("benFlying_Rotation")
+		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_Rotation")
+		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_TranslationX")
+		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benFlying_TranslationY")
+	}
+
+	// - MARK: benIntro
+
+	func addBenIntroAnimation() {
+		addBenIntroAnimationWithBeginTime(0, fillMode: kCAFillModeBoth, removedOnCompletion: false, completion: nil)
+	}
+
+	func addBenIntroAnimation(completion: ((Bool) -> Void)?) {
+		addBenIntroAnimationWithBeginTime(0, fillMode: kCAFillModeBoth, removedOnCompletion: false, completion: completion)
+	}
+
+	func addBenIntroAnimation(removedOnCompletion removedOnCompletion: Bool) {
+		addBenIntroAnimationWithBeginTime(0, fillMode: removedOnCompletion ? kCAFillModeRemoved : kCAFillModeBoth, removedOnCompletion: removedOnCompletion, completion: nil)
+	}
+
+	func addBenIntroAnimation(removedOnCompletion removedOnCompletion: Bool, completion: ((Bool) -> Void)?) {
+		addBenIntroAnimationWithBeginTime(0, fillMode: removedOnCompletion ? kCAFillModeRemoved : kCAFillModeBoth, removedOnCompletion: removedOnCompletion, completion: completion)
+	}
+
+	func addBenIntroAnimationWithBeginTime(beginTime: CFTimeInterval, fillMode: String, removedOnCompletion: Bool, completion: ((Bool) -> Void)?) {
+		if let complete = completion {
+			let representativeAnimation = CABasicAnimation(keyPath: "not.a.real.key")
+			representativeAnimation.duration = 0.000
+			representativeAnimation.delegate = self
+			self.layer.addAnimation(representativeAnimation, forKey: "BenIntro")
+			self.animationCompletions[layer.animationForKey("BenIntro")!] = complete
+		}
+
+		let endoscopeFlyOpacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+		endoscopeFlyOpacityAnimation.duration = 0.000
+		endoscopeFlyOpacityAnimation.values = [0.000 as Float]
+		endoscopeFlyOpacityAnimation.keyTimes = [0.000 as Float]
+		endoscopeFlyOpacityAnimation.beginTime = beginTime
+		endoscopeFlyOpacityAnimation.fillMode = fillMode
+		endoscopeFlyOpacityAnimation.removedOnCompletion = removedOnCompletion
+		self.viewsByName["endoscopeFly"]?.layer.addAnimation(endoscopeFlyOpacityAnimation, forKey:"benIntro_Opacity")
+	}
+
+	func removeBenIntroAnimation() {
+		self.layer.removeAnimationForKey("BenIntro")
+		self.viewsByName["endoscopeFly"]?.layer.removeAnimationForKey("benIntro_Opacity")
 	}
 
 	override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
@@ -424,5 +466,6 @@ class BenHeliView : UIView {
 		}
 		self.layer.removeAnimationForKey("BenFalling")
 		self.layer.removeAnimationForKey("BenFlying")
+		self.layer.removeAnimationForKey("BenIntro")
 	}
 }
