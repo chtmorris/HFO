@@ -41,6 +41,7 @@
 		EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C401BDA28EF00D5BE6D /* hillHair.png */; settings = {ASSET_TAGS = (); }; };
 		EC543C471BDA28EF00D5BE6D /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C411BDA28EF00D5BE6D /* leg.png */; settings = {ASSET_TAGS = (); }; };
 		EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C421BDA28EF00D5BE6D /* leg2.png */; settings = {ASSET_TAGS = (); }; };
+		ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		EC543C401BDA28EF00D5BE6D /* hillHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hillHair.png; sourceTree = "<group>"; };
 		EC543C411BDA28EF00D5BE6D /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
 		EC543C421BDA28EF00D5BE6D /* leg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg2.png; sourceTree = "<group>"; };
+		ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
 				EC04626D1BA9C0D9001CB724 /* Main.storyboard */,
+				ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */,
 				EC0462701BA9C0D9001CB724 /* Assets.xcassets */,
 				EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */,
 				EC0462751BA9C0D9001CB724 /* Info.plist */,
@@ -411,6 +414,7 @@
 				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
+				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,
 				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,
 				EC12B8511BDE857900873A27 /* HeliHillyView.swift in Sources */,
 			);

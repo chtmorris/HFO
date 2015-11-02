@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var benImage: BenHeliView!
     
     var politician: UIView!
+    var toPass:String!
     
     // =========
     // Obstacles
@@ -72,7 +73,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.navigationBarHidden = true
         
         choosePolitician()
         hideOtherPoliticians()
@@ -200,7 +201,13 @@ class ViewController: UIViewController {
     // ==============
     
     func choosePolitician() {
-        politician = hillaryImage
+        if (toPass == "Hillary") {
+            politician = hillaryImage
+        } else if (toPass == "Ben") {
+            politician = benImage
+        } else {
+            politician = trumpImage
+        }
     }
     
     func hideOtherPoliticians() {
