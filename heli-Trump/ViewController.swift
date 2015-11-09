@@ -86,6 +86,7 @@ class ViewController: UIViewController {
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
+        start = true
         
     }
 
@@ -205,8 +206,10 @@ class ViewController: UIViewController {
             politician = hillaryImage
         } else if (toPass == "Ben") {
             politician = benImage
-        } else {
+        } else if (toPass == "Trump") {
             politician = trumpImage
+        } else {
+            print("Strange error")
         }
     }
     
@@ -460,22 +463,6 @@ class ViewController: UIViewController {
         obstacle.center = CGPoint(x: x, y: randomPosition)
         return obstacle.center
     }
-    
-//    func positionTopAndBottomBlocks(var randomPosition:Int, screenWidth:Int, top:UIImageView, bottom:UIImageView) -> CGPoint; CGPoint {
-//        randomPosition = Int(arc4random_uniform(20))
-//        top.center = CGPoint(x: 800, y: randomPosition)
-////        positionBottomBlock(randomPosition, screenWidth: screenWidth, bottom: bottom)
-//        randomPosition = randomPosition + screenWidth
-//        bottom.center = CGPoint(x: 800, y: randomPosition)
-////        return bottom.center
-//        return top.center; bottom.center
-//    }
-//    
-//    func positionBottomBlock(var randomPosition2:Int, screenWidth:Int, bottom:UIImageView) -> CGPoint {
-//        randomPosition2 = randomPosition2 + screenWidth
-//        bottom.center = CGPoint(x: 800, y: randomPosition)
-//        return bottom.center
-//    }
 
 }
 
