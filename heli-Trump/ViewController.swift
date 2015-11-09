@@ -385,7 +385,11 @@ class ViewController: UIViewController {
         scoreLabel.hidden = false
         hideObjects(true)
         
-        self.performSelector("newGame", withObject: nil, afterDelay: 2)
+        self.performSelector("backToHomeScreen", withObject: nil, afterDelay: 2)
+    }
+    
+    func backToHomeScreen(){
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     func newGame(){
