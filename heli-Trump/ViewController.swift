@@ -66,6 +66,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var top9: UIImageView!
     @IBOutlet weak var top10: UIImageView!
     
+    var obstacles = [UIImageView]()
+    var topObjects = [UIImageView]()
+    var bottomObjects = [UIImageView]()
     
     // =======
     // Loading
@@ -74,6 +77,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
+        
+//        Create array and assign all obstacles to obstacles array
+        obstacles = [obstacle1, obstacle2]
+        topObjects = [top1, top2, top3, top4, top5, top6, top7, top8, top9, top10]
+        bottomObjects = [bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, bottom9, bottom10]
         
         choosePolitician()
         hideOtherPoliticians()
@@ -116,62 +124,26 @@ class ViewController: UIViewController {
             
             hideObjects(false)
             
-            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle1, x: 570)
-            obstacle1.frame = CGRect(x: 570, y: randomPosition, width: 24, height: screenWidth/2 - 60)
-
-            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 820)
-            obstacle2.frame = CGRect(x: 820, y: randomPosition, width: 24, height: screenWidth/2 - 60)
+            for item in obstacles {
+                let itemPosition = 570 + Int(obstacles.indexOf(item)!)*250
+                positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: item, x: itemPosition)
+                item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
+            }
             
-            randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
-            top1.center = CGPoint(x: 560, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom1.center = CGPoint(x: 560, y: randomPosition)
+            for item in topObjects {
+                let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
+                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
+                item.center = CGPoint(x: itemPosition, y: randomPosition)
+                print(itemPosition)
+            }
             
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top2.center = CGPoint(x: 650, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom2.center = CGPoint(x: 650, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top3.center = CGPoint(x: 740, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom3.center = CGPoint(x: 740, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top4.center = CGPoint(x: 830, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom4.center = CGPoint(x: 830, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top5.center = CGPoint(x: 920, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom5.center = CGPoint(x: 920, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top6.center = CGPoint(x: 1010, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom6.center = CGPoint(x: 1010, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top7.center = CGPoint(x: 1100, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom7.center = CGPoint(x: 1100, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top8.center = CGPoint(x: 1190, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom8.center = CGPoint(x: 1190, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top9.center = CGPoint(x: 1280, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom9.center = CGPoint(x: 1280, y: randomPosition)
-            
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top10.center = CGPoint(x: 1370, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom10.center = CGPoint(x: 1370, y: randomPosition)
-            
+            for item in bottomObjects {
+                let itemPosition = 560 + Int(bottomObjects.indexOf(item)!)*90
+                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
+                randomPosition = randomPosition + screenWidth
+                item.center = CGPoint(x: itemPosition, y: randomPosition)
+            }
+                        
         }
         
         Y = -7
