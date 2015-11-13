@@ -130,20 +130,16 @@ class ViewController: UIViewController {
                 item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
             }
             
-            for item in topObjects {
-                let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
-                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
-                item.center = CGPoint(x: itemPosition, y: randomPosition)
-                print(itemPosition)
-            }
-            
-            for item in bottomObjects {
-                let itemPosition = 560 + Int(bottomObjects.indexOf(item)!)*90
-                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
-                randomPosition = randomPosition + screenWidth
-                item.center = CGPoint(x: itemPosition, y: randomPosition)
-            }
-                        
+            func placeObstacles(objects: Array<UIImageView>, addedScreenWidth: Int){
+                for item in objects {
+                    let itemPosition = 560 + Int(objects.indexOf(item)!)*90
+                    randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6))) + addedScreenWidth
+                    item.center = CGPoint(x: itemPosition, y: randomPosition)
+                }
+            }            
+            placeObstacles(topObjects, addedScreenWidth: 0)
+            placeObstacles(bottomObjects, addedScreenWidth: screenWidth)
+        
         }
         
         Y = -7
