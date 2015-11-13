@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var scorer = NSTimer()
     
     var start = true
-    var Y: CGFloat = 1
+    var politicianDirectionOfTravel: CGFloat = 1
     var randomPosition: Int = 0
     var scoreNumber: Int = 0
     var highScore: Int = 0
@@ -69,6 +69,8 @@ class ViewController: UIViewController {
     var obstacles = [UIImageView]()
     var topObjects = [UIImageView]()
     var bottomObjects = [UIImageView]()
+    var topAndBottomObjects = [UIImageView]()
+    var allObjects = [UIImageView]()
     
     // =======
     // Loading
@@ -78,16 +80,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         
-//        Create array and assign all obstacles to obstacles array
         obstacles = [obstacle1, obstacle2]
         topObjects = [top1, top2, top3, top4, top5, top6, top7, top8, top9, top10]
         bottomObjects = [bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, bottom9, bottom10]
+        topAndBottomObjects = topObjects + bottomObjects
+        allObjects = topAndBottomObjects + obstacles
+        
         
         choosePolitician()
         hideOtherPoliticians()
         
         hideObjects(true)
         scoreLabel.hidden = true
+        
         trumpImage.addIntroAnimation()
         benImage.addBenIntroAnimation()
         hillaryImage.addHillIntroAnimation()
@@ -136,13 +141,14 @@ class ViewController: UIViewController {
                     randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6))) + addedScreenWidth
                     item.center = CGPoint(x: itemPosition, y: randomPosition)
                 }
-            }            
+            }
             placeObstacles(topObjects, addedScreenWidth: 0)
             placeObstacles(bottomObjects, addedScreenWidth: screenWidth)
         
         }
         
-        Y = -7
+        politicianDirectionOfTravel = -7
+        
         trumpImage.removeAllAnimations()
         hillaryImage.removeAllAnimations()
         benImage.removeAllAnimations()
@@ -151,15 +157,17 @@ class ViewController: UIViewController {
         hillaryImage.addHillFlyingAnimation()
         benImage.addBenFlyingAnimation()
         
-        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        Y = 7
+        politicianDirectionOfTravel = 7
+        
         trumpImage.removeAllAnimations()
         trumpImage.addFallingAnimation()
+        
         hillaryImage.removeAllAnimations()
         hillaryImage.addHillFallingAnimation()
+        
         benImage.removeAllAnimations()
         benImage.addBenFallingAnimation()
     }
@@ -177,7 +185,7 @@ class ViewController: UIViewController {
         } else if (toPass == "Trump") {
             politician = trumpImage
         } else {
-            print("Strange error")
+            print("None of the politicians selected")
         }
     }
     
@@ -197,140 +205,43 @@ class ViewController: UIViewController {
     
     func heliMove(){
         collision()
-        
-        politician.center = CGPointMake(politician.center.x, politician.center.y + Y)
-        
-        obstacle1.center = CGPointMake(obstacle1.center.x - 10, obstacle1.center.y)
-        obstacle2.center = CGPointMake(obstacle2.center.x - 10, obstacle2.center.y)
-        
-        bottom1.center = CGPointMake(bottom1.center.x - 10, bottom1.center.y)
-        bottom2.center = CGPointMake(bottom2.center.x - 10, bottom2.center.y)
-        bottom3.center = CGPointMake(bottom3.center.x - 10, bottom3.center.y)
-        bottom4.center = CGPointMake(bottom4.center.x - 10, bottom4.center.y)
-        bottom5.center = CGPointMake(bottom5.center.x - 10, bottom5.center.y)
-        bottom6.center = CGPointMake(bottom6.center.x - 10, bottom6.center.y)
-        bottom7.center = CGPointMake(bottom7.center.x - 10, bottom7.center.y)
-        bottom8.center = CGPointMake(bottom8.center.x - 10, bottom8.center.y)
-        bottom9.center = CGPointMake(bottom9.center.x - 10, bottom9.center.y)
-        bottom10.center = CGPointMake(bottom10.center.x - 10, bottom10.center.y)
-
-        top1.center = CGPointMake(top1.center.x - 10, top1.center.y)
-        top2.center = CGPointMake(top2.center.x - 10, top2.center.y)
-        top3.center = CGPointMake(top3.center.x - 10, top3.center.y)
-        top4.center = CGPointMake(top4.center.x - 10, top4.center.y)
-        top5.center = CGPointMake(top5.center.x - 10, top5.center.y)
-        top6.center = CGPointMake(top6.center.x - 10, top6.center.y)
-        top7.center = CGPointMake(top7.center.x - 10, top7.center.y)
-        top8.center = CGPointMake(top8.center.x - 10, top8.center.y)
-        top9.center = CGPointMake(top9.center.x - 10, top9.center.y)
-        top10.center = CGPointMake(top10.center.x - 10, top10.center.y)
-        
-        
         let screenWidth = Int(screenSize.height - 50.0)
         
-        if obstacle1.center.x < -10 {
-            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle1, x: 760)
+        politician.center = CGPointMake(politician.center.x, politician.center.y + politicianDirectionOfTravel)
+        
+        for item in allObjects {
+            item.center = CGPointMake(item.center.x - 10, item.center.y)
         }
         
-        if obstacle2.center.x < -10 {
-            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: obstacle2, x: 760)
+        for item in obstacles {
+            if item.center.x < -10 {
+                positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: item, x: 760)
+            }
         }
         
-        if top1.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top1.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom1.center = CGPoint(x: 800, y: randomPosition)
+        func recycleObjects(objects: Array<UIImageView>, addedScreenWidth: Int){
+            for item in objects {
+                if item.center.x < -70 {
+                    randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6)))) + addedScreenWidth
+                    item.center = CGPoint(x: 800, y: randomPosition)
+                }
+            }
         }
-        
-        if top2.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top2.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom2.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top3.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top3.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom3.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top4.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top4.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom4.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top5.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top5.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom5.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top6.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top6.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom6.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top7.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top7.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom7.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top8.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top8.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom8.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top9.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top9.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom9.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
-        if top10.center.x < -70 {
-            randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6))))
-            top10.center = CGPoint(x: 800, y: randomPosition)
-            randomPosition = randomPosition + screenWidth
-            bottom10.center = CGPoint(x: 800, y: randomPosition)
-        }
-        
+        recycleObjects(topObjects, addedScreenWidth: 0)
+        recycleObjects(bottomObjects, addedScreenWidth: screenWidth)
     }
     
     func collision(){
         
-        if CGRectIntersectsRect(politician.frame, obstacle1.frame) || CGRectIntersectsRect(politician.frame, obstacle2.frame){
-            endGame()
+        for item in allObjects{
+            if CGRectIntersectsRect(politician.frame, item.frame){
+                endGame()
+            }
         }
         
-        if CGRectIntersectsRect(politician.frame, bottom1.frame) || CGRectIntersectsRect(politician.frame, bottom2.frame) || CGRectIntersectsRect(politician.frame, bottom3.frame) || CGRectIntersectsRect(politician.frame, bottom4.frame) || CGRectIntersectsRect(politician.frame, bottom5.frame) || CGRectIntersectsRect(politician.frame, bottom6.frame) || CGRectIntersectsRect(politician.frame, bottom7.frame) || CGRectIntersectsRect(politician.frame, bottom8.frame) || CGRectIntersectsRect(politician.frame, bottom9.frame) || CGRectIntersectsRect(politician.frame, bottom10.frame){
+        if politician.center.y > screenSize.height || politician.center.y < -screenSize.height {
             endGame()
         }
-        
-        if CGRectIntersectsRect(politician.frame, top1.frame) || CGRectIntersectsRect(politician.frame, top2.frame) || CGRectIntersectsRect(politician.frame, top3.frame) || CGRectIntersectsRect(politician.frame, top4.frame) || CGRectIntersectsRect(politician.frame, top5.frame) || CGRectIntersectsRect(politician.frame, top6.frame) || CGRectIntersectsRect(politician.frame, top7.frame) || CGRectIntersectsRect(politician.frame, top8.frame) || CGRectIntersectsRect(politician.frame, top9.frame) || CGRectIntersectsRect(politician.frame, top10.frame){
-            endGame()
-        }
-        
-        if politician.center.y > screenSize.height {
-            endGame()
-        }
-
-        if politician.center.y < -screenSize.height {
-            endGame()
-        }
-        
-        
     }
     
     func endGame(){
@@ -375,9 +286,6 @@ class ViewController: UIViewController {
         benImage.addBenIntroAnimation()
         hillaryImage.addHillIntroAnimation()
         
-//        trumpImage.hidden = false
-//        trumpImage.center = CGPointMake(58, 149)
-        
         start = true
         
         scoreNumber = 0
@@ -397,30 +305,9 @@ class ViewController: UIViewController {
     // =======
 
     func hideObjects(hiddenOrNot: Bool){
-        bottom1.hidden = hiddenOrNot
-        bottom2.hidden = hiddenOrNot
-        bottom3.hidden = hiddenOrNot
-        bottom4.hidden = hiddenOrNot
-        bottom5.hidden = hiddenOrNot
-        bottom6.hidden = hiddenOrNot
-        bottom7.hidden = hiddenOrNot
-        bottom8.hidden = hiddenOrNot
-        bottom9.hidden = hiddenOrNot
-        bottom10.hidden = hiddenOrNot
-        
-        top1.hidden = hiddenOrNot
-        top2.hidden = hiddenOrNot
-        top3.hidden = hiddenOrNot
-        top4.hidden = hiddenOrNot
-        top5.hidden = hiddenOrNot
-        top6.hidden = hiddenOrNot
-        top7.hidden = hiddenOrNot
-        top8.hidden = hiddenOrNot
-        top9.hidden = hiddenOrNot
-        top10.hidden = hiddenOrNot
-        
-        obstacle1.hidden = hiddenOrNot
-        obstacle2.hidden = hiddenOrNot
+        for item in allObjects {
+            item.hidden = hiddenOrNot
+        }
     }
     
     func hideIntroObjects(hiddenOrNot: Bool){
