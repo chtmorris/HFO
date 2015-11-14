@@ -53,7 +53,7 @@ class ChooseCharacterViewController: UIViewController {
     
     func transitionToGamePlayVC() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let gamePlayViewController = storyBoard.instantiateViewControllerWithIdentifier("GamePlayViewController") as! ViewController
+        let gamePlayViewController = storyBoard.instantiateViewControllerWithIdentifier("GamePlayViewController") as! GamePlayViewController
         gamePlayViewController.selectedPolitician = politicianSelected
         self.presentViewController(gamePlayViewController, animated:true, completion:nil)
     }

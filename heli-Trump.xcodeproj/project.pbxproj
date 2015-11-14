@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462691BA9C0D9001CB724 /* AppDelegate.swift */; };
-		EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04626B1BA9C0D9001CB724 /* ViewController.swift */; };
+		EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */; };
 		EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC04626D1BA9C0D9001CB724 /* Main.storyboard */; };
 		EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0462701BA9C0D9001CB724 /* Assets.xcassets */; };
 		EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */; };
@@ -66,7 +66,7 @@
 /* Begin PBXFileReference section */
 		EC0462661BA9C0D9001CB724 /* heli-Trump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heli-Trump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0462691BA9C0D9001CB724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC04626B1BA9C0D9001CB724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EC04626E1BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC0462701BA9C0D9001CB724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC0462731BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				EC543C3B1BDA28EF00D5BE6D /* coreHill */,
 				EC0462971BAC24FA001CB724 /* coreHelitrump */,
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
-				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
+				EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */,
 				ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */,
 				EC04626D1BA9C0D9001CB724 /* Main.storyboard */,
 				ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */,
@@ -417,7 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
+				EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */,
 				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
