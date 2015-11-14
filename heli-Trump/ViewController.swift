@@ -26,8 +26,6 @@ class ViewController: UIViewController {
     var scoreNumber: Int = 0
     var highScore: Int = 0
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var tapToStartLabel: UILabel!
     @IBOutlet weak var trumpImage: TrumpCartoonView!
     @IBOutlet weak var hillaryImage: HeliHillyView!
@@ -96,7 +94,7 @@ class ViewController: UIViewController {
         hillaryImage.addHillIntroAnimation()
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
-        highScoreLabel.text = "High Score: \(highScore)"
+        
         start = true
         
     }
@@ -174,6 +172,7 @@ class ViewController: UIViewController {
     // ==============
     // Core functions
     // ==============
+    
     
     func choosePolitician() {
         if (selectedPolitician == "Hillary") {
@@ -280,7 +279,6 @@ class ViewController: UIViewController {
         start = true
         
         scoreNumber = 0
-        highScoreLabel.text = "High Score: \(highScore)"
     }
     
     func scoring(){
@@ -300,8 +298,6 @@ class ViewController: UIViewController {
     
     func hideIntroObjects(hiddenOrNot: Bool){
         tapToStartLabel.hidden = hiddenOrNot
-        highScoreLabel.hidden = hiddenOrNot
-        titleLabel.hidden = hiddenOrNot
     }
     
     func positionObstacle(var randomPosition:Int, screenWidth:Int, obstacle:UIImageView, x:Int) -> CGPoint {

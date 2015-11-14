@@ -110,17 +110,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heli-Trump" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-Dg-w2R">
-                                <rect key="frame" x="258" y="136" width="218" height="39"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="217.5" id="6ot-tk-TsX"/>
-                                    <constraint firstAttribute="height" constant="38.5" id="os1-IO-Efo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="38"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-Ui-hU3">
                                 <rect key="frame" x="290" y="194" width="155" height="26"/>
                                 <animations/>
@@ -132,23 +121,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High score: 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkD-td-mjt">
-                                <rect key="frame" x="268" y="237" width="200" height="18"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="fo2-t1-ott"/>
-                                    <constraint firstAttribute="height" constant="17.5" id="zp0-pt-2CN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Obstacle" translatesAutoresizingMaskIntoConstraints="NO" id="edn-qD-7wf">
-                                <rect key="frame" x="413" y="121" width="24" height="76"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Obstacle" translatesAutoresizingMaskIntoConstraints="NO" id="2yZ-vl-4gQ">
-                                <rect key="frame" x="458" y="121" width="24" height="76"/>
+                                <rect key="frame" x="626" y="224" width="24" height="76"/>
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="floor" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-d6-iog">
@@ -254,19 +228,19 @@
                                     <constraint firstAttribute="width" constant="29" id="lAG-2d-Csl"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Obstacle" translatesAutoresizingMaskIntoConstraints="NO" id="edn-qD-7wf">
+                                <rect key="frame" x="213" y="104" width="24" height="76"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ULU-Ui-hU3" firstAttribute="top" secondItem="vAZ-Dg-w2R" secondAttribute="bottom" constant="19.5" id="0zg-9q-9hn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TLZ-mV-XqU" secondAttribute="trailing" constant="-20" id="G47-je-tVq"/>
-                            <constraint firstItem="DkD-td-mjt" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="17.5" id="VKe-NY-c3k"/>
                             <constraint firstItem="Yea-Vz-NQv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Vuk-7M-VWG"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XQh-aG-dqE"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bny-Bh-hKi"/>
                             <constraint firstItem="TLZ-mV-XqU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="htm-1m-AKW"/>
-                            <constraint firstItem="vAZ-Dg-w2R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1.25" id="iAv-rF-wzh"/>
-                            <constraint firstItem="DkD-td-mjt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j6N-F3-5HM"/>
                             <constraint firstItem="Bo1-Sk-Lce" firstAttribute="top" secondItem="TLZ-mV-XqU" secondAttribute="bottom" id="w7w-VE-4TB"/>
                             <constraint firstItem="TLZ-mV-XqU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="y5X-30-wAt"/>
                         </constraints>
@@ -286,12 +260,10 @@
                         <outlet property="bottom7" destination="gwU-Xe-a8P" id="cjq-Dc-aC9"/>
                         <outlet property="bottom8" destination="IPi-bq-LT8" id="uKw-Dh-PfL"/>
                         <outlet property="bottom9" destination="omo-0P-aKA" id="TIk-Pd-eN7"/>
-                        <outlet property="highScoreLabel" destination="DkD-td-mjt" id="JN6-jk-MWW"/>
                         <outlet property="hillaryImage" destination="dpS-rR-igg" id="XL0-TF-sGo"/>
                         <outlet property="obstacle1" destination="edn-qD-7wf" id="pM8-mW-pAX"/>
                         <outlet property="obstacle2" destination="2yZ-vl-4gQ" id="ZS0-YZ-FxP"/>
                         <outlet property="tapToStartLabel" destination="ULU-Ui-hU3" id="Vvy-aM-MJ5"/>
-                        <outlet property="titleLabel" destination="vAZ-Dg-w2R" id="66z-SK-pXL"/>
                         <outlet property="top1" destination="aWB-Iy-YDs" id="O0m-f9-fNs"/>
                         <outlet property="top10" destination="lQD-Ag-gkP" id="AxM-vG-wMk"/>
                         <outlet property="top2" destination="vDz-FU-wRA" id="xgB-uR-p5C"/>

@@ -22,12 +22,15 @@ class ChooseCharacterViewController: UIViewController {
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
+        politicianSelected = "NoneYet"
+        print(politicianSelected)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func HillaryButton(sender: UIButton) {
         politicianSelected = "Hillary"
