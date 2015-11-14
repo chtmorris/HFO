@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var screenSize: CGRect = UIScreen.mainScreen().bounds
     
     var timer = CADisplayLink()
-    var scorer = CADisplayLink()
+    var scorer = NSTimer()
     
     var start = true
     var politicianDirectionOfTravel: CGFloat = 1
@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var tapToStartLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var trumpImage: TrumpCartoonView!
     @IBOutlet weak var hillaryImage: HeliHillyView!
     @IBOutlet weak var benImage: BenHeliView!
@@ -91,7 +90,6 @@ class ViewController: UIViewController {
         hideOtherPoliticians()
         
         hideObjects(true)
-        scoreLabel.hidden = true
         
         trumpImage.addIntroAnimation()
         benImage.addBenIntroAnimation()
@@ -117,15 +115,13 @@ class ViewController: UIViewController {
         
         if start == true {
             hideIntroObjects(true)
-            scoreLabel.hidden = true
             
             timer = CADisplayLink(target: self, selector: "heliMove")
             timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
             start = false
             
-            scorer = CADisplayLink(target: self, selector: "scoring")
-            scorer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "scoring", userInfo: nil, repeats: true)
             
             let screenWidth = Int(screenSize.height - 50.0)
             
@@ -259,29 +255,16 @@ class ViewController: UIViewController {
         }
         
         Helper.delay(1.0) {
-            self.showScore()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let gameOverViewController = storyBoard.instantiateViewControllerWithIdentifier("GameOverViewController") as! GameOverViewController
+            gameOverViewController.gameScore = self.scoreNumber
+            self.presentViewController(gameOverViewController, animated:true, completion:nil)
         }
         
-    }
-    
-    func showScore(){
-        scoreLabel.text = "Score: \(scoreNumber)"
-        scoreLabel.hidden = false
-        hideObjects(true)
-        
-        Helper.delay(2) {
-            self.backToHomeScreen()
-        }
-        
-    }
-    
-    func backToHomeScreen(){
-        self.navigationController!.popViewControllerAnimated(true)
     }
     
     func newGame(){
         hideIntroObjects(false)
-        scoreLabel.hidden = true
         
         politician.hidden = false
         politician.center = CGPointMake(58, 149)
@@ -297,14 +280,11 @@ class ViewController: UIViewController {
         start = true
         
         scoreNumber = 0
-        scoreLabel.text = "Score: 0"
         highScoreLabel.text = "High Score: \(highScore)"
     }
     
     func scoring(){
-        scoreNumber = scoreNumber + 1
-//        score.text = "Score: \(scoreNumber)"
-        
+        scoreNumber = scoreNumber + 1        
     }
     
     
