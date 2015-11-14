@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Force One Intro Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-ME-AMf">
-                                <rect key="frame" x="270" y="196" width="197" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Force One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIw-ME-AMf">
+                                <rect key="frame" x="311" y="167" width="115" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W49-1l-Ffi">
-                                <rect key="frame" x="353" y="246" width="30" height="30"/>
+                                <rect key="frame" x="353" y="248" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Ben"/>
                                 <connections>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El6-zb-vZD">
-                                <rect key="frame" x="465" y="246" width="45" height="30"/>
+                                <rect key="frame" x="465" y="248" width="45" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Trump"/>
                                 <connections>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-C2-Vrj">
-                                <rect key="frame" x="234" y="246" width="43" height="30"/>
+                                <rect key="frame" x="234" y="248" width="43" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="Gh9-RG-wFt"/>
@@ -56,23 +56,39 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="AQ6-tV-70e"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High score: 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-ew-IH8">
+                                <rect key="frame" x="307" y="207" width="123" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="Jow-T5-fNs"/>
+                                    <constraint firstAttribute="height" constant="21" id="wmm-vz-90w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="El6-zb-vZD" firstAttribute="leading" secondItem="HIw-ME-AMf" secondAttribute="trailing" constant="-2" id="0Rn-YG-hLB"/>
-                            <constraint firstItem="TU0-C2-Vrj" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="29" id="0jK-jm-SBp"/>
-                            <constraint firstItem="HIw-ME-AMf" firstAttribute="centerY" secondItem="z12-1i-GXm" secondAttribute="centerY" id="2N4-7X-L79"/>
-                            <constraint firstItem="HIw-ME-AMf" firstAttribute="leading" secondItem="TU0-C2-Vrj" secondAttribute="trailing" constant="-7" id="JgH-9K-wze"/>
+                            <constraint firstItem="El6-zb-vZD" firstAttribute="leading" secondItem="HIw-ME-AMf" secondAttribute="trailing" constant="39" id="0Rn-YG-hLB"/>
+                            <constraint firstItem="TU0-C2-Vrj" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="60" id="0jK-jm-SBp"/>
+                            <constraint firstItem="HIw-ME-AMf" firstAttribute="centerY" secondItem="z12-1i-GXm" secondAttribute="centerY" constant="-30" id="2N4-7X-L79"/>
+                            <constraint firstItem="6TA-ew-IH8" firstAttribute="centerX" secondItem="z12-1i-GXm" secondAttribute="centerX" id="IRN-X9-Er8"/>
+                            <constraint firstItem="HIw-ME-AMf" firstAttribute="leading" secondItem="TU0-C2-Vrj" secondAttribute="trailing" constant="34" id="JgH-9K-wze"/>
                             <constraint firstItem="W49-1l-Ffi" firstAttribute="centerX" secondItem="z12-1i-GXm" secondAttribute="centerX" id="XgS-3p-7eE"/>
-                            <constraint firstItem="El6-zb-vZD" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="29" id="ef5-h5-Kie"/>
+                            <constraint firstItem="El6-zb-vZD" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="60" id="ef5-h5-Kie"/>
+                            <constraint firstItem="6TA-ew-IH8" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="19" id="k7e-9E-jvG"/>
                             <constraint firstItem="HIw-ME-AMf" firstAttribute="centerX" secondItem="z12-1i-GXm" secondAttribute="centerX" id="nvf-D1-Nfz"/>
-                            <constraint firstItem="W49-1l-Ffi" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="29" id="uE6-nz-gSu"/>
+                            <constraint firstItem="W49-1l-Ffi" firstAttribute="top" secondItem="HIw-ME-AMf" secondAttribute="bottom" constant="60" id="uE6-nz-gSu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uc8-Ax-PEy"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="6TA-ew-IH8" id="PNT-0z-Tf0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlQ-Mz-Q6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -41,6 +41,7 @@
 		EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C401BDA28EF00D5BE6D /* hillHair.png */; settings = {ASSET_TAGS = (); }; };
 		EC543C471BDA28EF00D5BE6D /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C411BDA28EF00D5BE6D /* leg.png */; settings = {ASSET_TAGS = (); }; };
 		EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C421BDA28EF00D5BE6D /* leg2.png */; settings = {ASSET_TAGS = (); }; };
+		ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FA91BF721B7009865B7 /* Helpers.swift */; settings = {ASSET_TAGS = (); }; };
 		ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		EC543C401BDA28EF00D5BE6D /* hillHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hillHair.png; sourceTree = "<group>"; };
 		EC543C411BDA28EF00D5BE6D /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
 		EC543C421BDA28EF00D5BE6D /* leg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg2.png; sourceTree = "<group>"; };
+		ECCF2FA91BF721B7009865B7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				EC0462701BA9C0D9001CB724 /* Assets.xcassets */,
 				EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */,
 				EC0462751BA9C0D9001CB724 /* Info.plist */,
+				ECCF2FA91BF721B7009865B7 /* Helpers.swift */,
 			);
 			path = "heli-Trump";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
+				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
 				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,

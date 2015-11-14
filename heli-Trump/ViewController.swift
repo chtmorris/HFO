@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     
     var screenSize: CGRect = UIScreen.mainScreen().bounds
     
-    var timer = NSTimer()
-    var scorer = NSTimer()
+    var timer = CADisplayLink()
+    var scorer = CADisplayLink()
     
     var start = true
     var politicianDirectionOfTravel: CGFloat = 1
@@ -119,11 +119,13 @@ class ViewController: UIViewController {
             hideIntroObjects(true)
             scoreLabel.hidden = true
             
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target:self, selector: Selector("heliMove"), userInfo: nil, repeats: true)
+            timer = CADisplayLink(target: self, selector: "heliMove")
+            timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
             start = false
             
-            scorer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "scoring", userInfo: nil, repeats: true)
+            scorer = CADisplayLink(target: self, selector: "scoring")
+            scorer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
             let screenWidth = Int(screenSize.height - 50.0)
             
@@ -147,7 +149,7 @@ class ViewController: UIViewController {
         
         }
         
-        politicianDirectionOfTravel = -7
+        politicianDirectionOfTravel = -3
         
         trumpImage.removeAllAnimations()
         hillaryImage.removeAllAnimations()
@@ -160,7 +162,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        politicianDirectionOfTravel = 7
+        politicianDirectionOfTravel = 3
         
         trumpImage.removeAllAnimations()
         trumpImage.addFallingAnimation()
@@ -210,7 +212,7 @@ class ViewController: UIViewController {
         politician.center = CGPointMake(politician.center.x, politician.center.y + politicianDirectionOfTravel)
         
         for item in allObjects {
-            item.center = CGPointMake(item.center.x - 10, item.center.y)
+            item.center = CGPointMake(item.center.x - 5, item.center.y)
         }
         
         for item in obstacles {
@@ -256,7 +258,10 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        self.performSelector("showScore", withObject: nil, afterDelay: 1)
+        Helper.delay(1.0) {
+            self.showScore()
+        }
+        
     }
     
     func showScore(){
@@ -264,7 +269,10 @@ class ViewController: UIViewController {
         scoreLabel.hidden = false
         hideObjects(true)
         
-        self.performSelector("backToHomeScreen", withObject: nil, afterDelay: 2)
+        Helper.delay(2) {
+            self.backToHomeScreen()
+        }
+        
     }
     
     func backToHomeScreen(){
