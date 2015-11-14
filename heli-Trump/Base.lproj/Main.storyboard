@@ -9,7 +9,7 @@
         <!--Choose Character View Controller-->
         <scene sceneID="yRU-S3-358">
             <objects>
-                <viewController id="zq7-bo-bSa" customClass="ChooseCharacterViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCharacterViewController" id="zq7-bo-bSa" customClass="ChooseCharacterViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1EB-Ak-ecs"/>
                         <viewControllerLayoutGuide type="bottom" id="B1J-Pb-75V"/>
@@ -231,17 +231,6 @@
                                 <rect key="frame" x="464" y="20" width="142" height="49"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-DO-L6Z">
-                                <rect key="frame" x="264" y="187" width="208" height="41"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Yv8-Ii-Oha"/>
-                                    <constraint firstAttribute="width" constant="208" id="x2w-Vs-JUl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yea-Vz-NQv" customClass="TrumpCartoonView" customModule="heli_Trump" customModuleProvider="target">
                                 <rect key="frame" x="71" y="204" width="47" height="46"/>
                                 <animations/>
@@ -270,9 +259,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="top" secondItem="vAZ-Dg-w2R" secondAttribute="bottom" constant="19.5" id="0zg-9q-9hn"/>
-                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FH4-Ui-hBa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TLZ-mV-XqU" secondAttribute="trailing" constant="-20" id="G47-je-tVq"/>
-                            <constraint firstItem="PSp-DO-L6Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q8e-Cy-bjH"/>
                             <constraint firstItem="DkD-td-mjt" firstAttribute="top" secondItem="ULU-Ui-hU3" secondAttribute="bottom" constant="17.5" id="VKe-NY-c3k"/>
                             <constraint firstItem="Yea-Vz-NQv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Vuk-7M-VWG"/>
                             <constraint firstItem="ULU-Ui-hU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XQh-aG-dqE"/>
@@ -303,7 +290,6 @@
                         <outlet property="hillaryImage" destination="dpS-rR-igg" id="XL0-TF-sGo"/>
                         <outlet property="obstacle1" destination="edn-qD-7wf" id="pM8-mW-pAX"/>
                         <outlet property="obstacle2" destination="2yZ-vl-4gQ" id="ZS0-YZ-FxP"/>
-                        <outlet property="scoreLabel" destination="PSp-DO-L6Z" id="E42-Gu-ab7"/>
                         <outlet property="tapToStartLabel" destination="ULU-Ui-hU3" id="Vvy-aM-MJ5"/>
                         <outlet property="titleLabel" destination="vAZ-Dg-w2R" id="66z-SK-pXL"/>
                         <outlet property="top1" destination="aWB-Iy-YDs" id="O0m-f9-fNs"/>
@@ -326,7 +312,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="uTb-Rr-DEQ">
             <objects>
-                <viewController id="Txx-VI-e1r" customClass="GameOverViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameOverViewController" id="Txx-VI-e1r" customClass="GameOverViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iGB-tp-brq"/>
                         <viewControllerLayoutGuide type="bottom" id="axe-M1-NzP"/>
@@ -361,6 +347,9 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="1ic-w0-Q9W" id="BNn-NY-gK9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txE-dD-bJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
