@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var benImage: BenHeliView!
     
     var politician: UIView!
-    var toPass:String!
+    var selectedPolitician:String!
     
     // =========
     // Obstacles
@@ -180,11 +180,11 @@ class ViewController: UIViewController {
     // ==============
     
     func choosePolitician() {
-        if (toPass == "Hillary") {
+        if (selectedPolitician == "Hillary") {
             politician = hillaryImage
-        } else if (toPass == "Ben") {
+        } else if (selectedPolitician == "Ben") {
             politician = benImage
-        } else if (toPass == "Trump") {
+        } else if (selectedPolitician == "Trump") {
             politician = trumpImage
         } else {
             print("None of the politicians selected")
