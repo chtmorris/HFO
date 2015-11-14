@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gwB-Nj-W1k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zq7-bo-bSa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -31,7 +31,6 @@
                                 <state key="normal" title="Ben"/>
                                 <connections>
                                     <action selector="BenButtonPressed:" destination="zq7-bo-bSa" eventType="touchUpInside" id="eR2-Ig-Yxp"/>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="Y5r-aQ-QIe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El6-zb-vZD">
@@ -40,7 +39,6 @@
                                 <state key="normal" title="Trump"/>
                                 <connections>
                                     <action selector="trumpButtonPressed:" destination="zq7-bo-bSa" eventType="touchUpInside" id="jMf-0S-ng6"/>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="RyQ-oD-Sm3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TU0-C2-Vrj">
@@ -53,7 +51,6 @@
                                 <state key="normal" title="Hillary"/>
                                 <connections>
                                     <action selector="HillaryButton:" destination="zq7-bo-bSa" eventType="touchUpInside" id="10v-iV-GIg"/>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="AQ6-tV-70e"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High score: 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TA-ew-IH8">
@@ -92,12 +89,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlQ-Mz-Q6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="-265"/>
+            <point key="canvasLocation" x="157" y="-205"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamePlayViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Xv-QQ-kWU"/>
                         <viewControllerLayoutGuide type="bottom" id="Bo1-Sk-Lce"/>
@@ -327,32 +324,10 @@
             </objects>
             <point key="canvasLocation" x="157" y="954"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tF4-eB-2HC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gwB-Nj-W1k" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EGU-7v-MEw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zq7-bo-bSa" kind="relationship" relationship="rootViewController" id="ZXd-Ko-vz4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mq3-nK-6PN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-466" y="-201"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Background" width="667" height="375"/>
         <image name="Obstacle" width="35" height="73"/>
         <image name="floor" width="35" height="73"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="RyQ-oD-Sm3"/>
-    </inferredMetricsTieBreakers>
 </document>

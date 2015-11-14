@@ -259,27 +259,8 @@ class ViewController: UIViewController {
             gameOverViewController.gameScore = self.scoreNumber
             self.presentViewController(gameOverViewController, animated:true, completion:nil)
         }
-        
     }
     
-    func newGame(){
-        hideIntroObjects(false)
-        
-        politician.hidden = false
-        politician.center = CGPointMake(58, 149)
-        
-        trumpImage.removeAllAnimations()
-        benImage.removeAllAnimations()
-        hillaryImage.removeAllAnimations()
-        
-        trumpImage.addIntroAnimation()
-        benImage.addBenIntroAnimation()
-        hillaryImage.addHillIntroAnimation()
-        
-        start = true
-        
-        scoreNumber = 0
-    }
     
     func scoring(){
         scoreNumber = scoreNumber + 1        

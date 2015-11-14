@@ -34,24 +34,30 @@ class ChooseCharacterViewController: UIViewController {
     
     @IBAction func HillaryButton(sender: UIButton) {
         politicianSelected = "Hillary"
+        transitionToGamePlayVC()
     }
     
     @IBAction func BenButtonPressed(sender: UIButton) {
         politicianSelected = "Ben"
+        transitionToGamePlayVC()
     }
     
     @IBAction func trumpButtonPressed(sender: UIButton) {
         politicianSelected = "Trump"
+        transitionToGamePlayVC()
     }
-
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        let svc = segue.destinationViewController as! ViewController;
-        svc.selectedPolitician = politicianSelected
+    // =======
+    // Helpers
+    // =======
+    
+    func transitionToGamePlayVC() {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let gamePlayViewController = storyBoard.instantiateViewControllerWithIdentifier("GamePlayViewController") as! ViewController
+        gamePlayViewController.selectedPolitician = politicianSelected
+        self.presentViewController(gamePlayViewController, animated:true, completion:nil)
     }
-
+    
+    
     
 }
