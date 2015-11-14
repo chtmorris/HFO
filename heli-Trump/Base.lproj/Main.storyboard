@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="157" y="-205"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="GamePlayViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamePlayViewController" id="BYZ-38-t0r" customClass="GamePlayViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Xv-QQ-kWU"/>
                         <viewControllerLayoutGuide type="bottom" id="Bo1-Sk-Lce"/>
