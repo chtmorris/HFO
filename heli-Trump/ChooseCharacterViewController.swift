@@ -11,13 +11,18 @@ import UIKit
 class ChooseCharacterViewController: UIViewController {
 
     var textfield: String!
+    var highScore: Int = 0
+    
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-
-        // Do any additional setup after loading the view.
+        
+        highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
+        highScoreLabel.text = "High Score: \(highScore)"
     }
 
     override func didReceiveMemoryWarning() {
