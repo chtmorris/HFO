@@ -10,12 +10,11 @@ import UIKit
 
 class ChooseCharacterViewController: UIViewController {
 
-    var textfield: String!
+    var politicianSelected: String!
     var highScore: Int = 0
     
     @IBOutlet weak var highScoreLabel: UILabel!
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +30,15 @@ class ChooseCharacterViewController: UIViewController {
     }
     
     @IBAction func HillaryButton(sender: UIButton) {
-        textfield = "Hillary"
+        politicianSelected = "Hillary"
     }
     
     @IBAction func BenButtonPressed(sender: UIButton) {
-        textfield = "Ben"
+        politicianSelected = "Ben"
     }
     
     @IBAction func trumpButtonPressed(sender: UIButton) {
-        textfield = "Trump"
+        politicianSelected = "Trump"
     }
 
     
@@ -48,7 +47,7 @@ class ChooseCharacterViewController: UIViewController {
         // Pass the selected object to the new view controller.
         
         let svc = segue.destinationViewController as! ViewController;
-        svc.toPass = textfield
+        svc.selectedPolitician = politicianSelected
     }
 
     
