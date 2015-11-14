@@ -42,6 +42,7 @@
 		EC543C471BDA28EF00D5BE6D /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C411BDA28EF00D5BE6D /* leg.png */; settings = {ASSET_TAGS = (); }; };
 		EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C421BDA28EF00D5BE6D /* leg2.png */; settings = {ASSET_TAGS = (); }; };
 		ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FA91BF721B7009865B7 /* Helpers.swift */; settings = {ASSET_TAGS = (); }; };
+		ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		EC543C411BDA28EF00D5BE6D /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
 		EC543C421BDA28EF00D5BE6D /* leg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg2.png; sourceTree = "<group>"; };
 		ECCF2FA91BF721B7009865B7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCharacterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				EC0462971BAC24FA001CB724 /* coreHelitrump */,
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
+				ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */,
 				EC04626D1BA9C0D9001CB724 /* Main.storyboard */,
 				ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */,
 				EC0462701BA9C0D9001CB724 /* Assets.xcassets */,
@@ -418,6 +421,7 @@
 				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
+				ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */,
 				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,
 				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,
 				EC12B8511BDE857900873A27 /* HeliHillyView.swift in Sources */,

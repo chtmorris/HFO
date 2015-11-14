@@ -323,6 +323,49 @@
             </objects>
             <point key="canvasLocation" x="157" y="384"/>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="uTb-Rr-DEQ">
+            <objects>
+                <viewController id="Txx-VI-e1r" customClass="GameOverViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iGB-tp-brq"/>
+                        <viewControllerLayoutGuide type="bottom" id="axe-M1-NzP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ftJ-8S-CgI">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-Pt-KXM">
+                                <rect key="frame" x="324" y="196" width="88" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-w0-Q9W">
+                                <rect key="frame" x="326" y="271" width="85" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Je9-Pt-KXM" firstAttribute="centerX" secondItem="ftJ-8S-CgI" secondAttribute="centerX" id="bMX-I8-ZBE"/>
+                            <constraint firstItem="1ic-w0-Q9W" firstAttribute="top" secondItem="Je9-Pt-KXM" secondAttribute="bottom" constant="54" id="kjh-TR-PZw"/>
+                            <constraint firstItem="Je9-Pt-KXM" firstAttribute="centerY" secondItem="ftJ-8S-CgI" secondAttribute="centerY" id="oSt-XW-dJT"/>
+                            <constraint firstItem="1ic-w0-Q9W" firstAttribute="centerX" secondItem="ftJ-8S-CgI" secondAttribute="centerX" id="pzY-SH-LUE"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txE-dD-bJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="954"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tF4-eB-2HC">
             <objects>
