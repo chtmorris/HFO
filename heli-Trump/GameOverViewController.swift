@@ -9,11 +9,20 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
-
+    
+    var gameScore:Int!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scoreLabel.text = "Score: \(gameScore)"
+                
+        Helper.delay(2.0) {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let chooseCharacterViewController = storyBoard.instantiateViewControllerWithIdentifier("ChooseCharacterViewController") as! ChooseCharacterViewController
+            self.presentViewController(chooseCharacterViewController, animated:true, completion:nil)        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
