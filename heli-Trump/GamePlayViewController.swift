@@ -32,7 +32,7 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var benImage: BenHeliView!
     
     var politician: UIView!
-    var selectedPolitician:String!
+    var selectedPolitician:Characters!
     
     // =========
     // Obstacles
@@ -131,15 +131,19 @@ class GamePlayViewController: UIViewController {
                 item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
             }
             
-            func placeObstacles(objects: Array<UIImageView>, addedScreenWidth: Int){
-                for item in objects {
-                    let itemPosition = 560 + Int(objects.indexOf(item)!)*90
-                    randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6))) + addedScreenWidth
+            func placeBorderObstacles(topObjects: Array<UIImageView>, bottomObjects: Array<UIImageView>, addedScreenWidth: Int){
+                
+                for item in topObjects {
+                    let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
+                    randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
                     item.center = CGPoint(x: itemPosition, y: randomPosition)
+                    
+                    randomPosition = randomPosition + addedScreenWidth
+                    bottomObjects[Int(topObjects.indexOf(item)!)].center = CGPoint(x: itemPosition, y: randomPosition)
                 }
             }
-            placeObstacles(topObjects, addedScreenWidth: 0)
-            placeObstacles(bottomObjects, addedScreenWidth: screenWidth)
+
+            placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
         
         }
         
@@ -175,11 +179,11 @@ class GamePlayViewController: UIViewController {
     
     
     func choosePolitician() {
-        if (selectedPolitician == "Hillary") {
+        if (selectedPolitician == Characters.Hilary) {
             politician = hillaryImage
-        } else if (selectedPolitician == "Ben") {
+        } else if (selectedPolitician == Characters.Ben) {
             politician = benImage
-        } else if (selectedPolitician == "Trump") {
+        } else if (selectedPolitician == Characters.Trump) {
             politician = trumpImage
         } else {
             print("None of the politicians selected")
@@ -253,7 +257,7 @@ class GamePlayViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        Helper.delay(1.0) {
+        Helper.delay(0.2) {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let gameOverViewController = storyBoard.instantiateViewControllerWithIdentifier("GameOverViewController") as! GameOverViewController
             gameOverViewController.gameScore = self.scoreNumber

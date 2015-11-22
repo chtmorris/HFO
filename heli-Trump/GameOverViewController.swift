@@ -19,9 +19,8 @@ class GameOverViewController: UIViewController {
         scoreLabel.text = "Score: \(gameScore)"
                 
         Helper.delay(2.0) {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let chooseCharacterViewController = storyBoard.instantiateViewControllerWithIdentifier("ChooseCharacterViewController") as! ChooseCharacterViewController
-            self.presentViewController(chooseCharacterViewController, animated:true, completion:nil)        }
+            self.performSegueWithIdentifier("unwind", sender: nil)
+        }
 
     }
 
@@ -29,16 +28,5 @@ class GameOverViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

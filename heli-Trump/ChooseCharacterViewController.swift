@@ -10,7 +10,7 @@ import UIKit
 
 class ChooseCharacterViewController: UIViewController {
 
-    var politicianSelected: String!
+    var politicianSelected: Characters!
     var highScore: Int = 0
     
     @IBOutlet weak var highScoreLabel: UILabel!
@@ -22,8 +22,6 @@ class ChooseCharacterViewController: UIViewController {
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
-        politicianSelected = "NoneYet"
-        print(politicianSelected)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,19 +31,21 @@ class ChooseCharacterViewController: UIViewController {
     
     
     @IBAction func HillaryButton(sender: UIButton) {
-        politicianSelected = "Hillary"
+        politicianSelected = Characters.Hilary
         transitionToGamePlayVC()
     }
     
     @IBAction func BenButtonPressed(sender: UIButton) {
-        politicianSelected = "Ben"
+        politicianSelected = Characters.Ben
         transitionToGamePlayVC()
     }
     
     @IBAction func trumpButtonPressed(sender: UIButton) {
-        politicianSelected = "Trump"
+        politicianSelected = Characters.Trump
         transitionToGamePlayVC()
     }
+    
+    @IBAction func myUnwindAction(segue: UIStoryboardSegue) {}
     
     // =======
     // Helpers
