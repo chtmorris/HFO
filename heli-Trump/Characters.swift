@@ -21,7 +21,17 @@ enum Characters:Int {
         case .Hilary:
             return "Hilary"
         }
-    
-    
     }
+    
+//    var image {
+//        switch self {
+//        case .Trump:
+//            return TrumpCartoonView
+//        case .Ben:
+//            return BenHeliView
+//        case .Hilary:
+//            return HeliHillyView
+//        }
+//    }
+    
 }

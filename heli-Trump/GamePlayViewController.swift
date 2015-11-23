@@ -20,7 +20,7 @@ class GamePlayViewController: UIViewController {
     var timer = CADisplayLink()
     var scorer = NSTimer()
     
-    var start = true
+    var touchToStartGame = true
     var politicianDirectionOfTravel: CGFloat = 1
     var randomPosition: Int = 0
     var scoreNumber: Int = 0
@@ -73,6 +73,13 @@ class GamePlayViewController: UIViewController {
     // Loading
     // =======
     
+    class func loadFromNib(politicianSelected:Characters) -> GamePlayViewController {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let gamePlayViewController = storyBoard.instantiateViewControllerWithIdentifier("GamePlayViewController") as! GamePlayViewController
+        gamePlayViewController.selectedPolitician = politicianSelected
+        return gamePlayViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
@@ -82,7 +89,6 @@ class GamePlayViewController: UIViewController {
         bottomObjects = [bottom1, bottom2, bottom3, bottom4, bottom5, bottom6, bottom7, bottom8, bottom9, bottom10]
         topAndBottomObjects = topObjects + bottomObjects
         allObjects = topAndBottomObjects + obstacles
-        
         
         choosePolitician()
         hideOtherPoliticians()
@@ -95,13 +101,8 @@ class GamePlayViewController: UIViewController {
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         
-        start = true
+        touchToStartGame = true
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -111,39 +112,13 @@ class GamePlayViewController: UIViewController {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        if start == true {
+        if touchToStartGame == true {
+            
+            touchToStartGame = false
             hideIntroObjects(true)
-            
-            timer = CADisplayLink(target: self, selector: "heliMove")
-            timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-            
-            start = false
-            
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "scoring", userInfo: nil, repeats: true)
-            
-            let screenWidth = Int(screenSize.height - 50.0)
-            
             hideObjects(false)
-            
-            for item in obstacles {
-                let itemPosition = 570 + Int(obstacles.indexOf(item)!)*250
-                positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: item, x: itemPosition)
-                item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
-            }
-            
-            func placeBorderObstacles(topObjects: Array<UIImageView>, bottomObjects: Array<UIImageView>, addedScreenWidth: Int){
-                
-                for item in topObjects {
-                    let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
-                    randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
-                    item.center = CGPoint(x: itemPosition, y: randomPosition)
-                    
-                    randomPosition = randomPosition + addedScreenWidth
-                    bottomObjects[Int(topObjects.indexOf(item)!)].center = CGPoint(x: itemPosition, y: randomPosition)
-                }
-            }
-
-            placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
+            startTimerAndCADisplayLink()
+            moveObstaclesAcrossScreen()
         
         }
         
@@ -173,9 +148,9 @@ class GamePlayViewController: UIViewController {
     }
 
     
-    // ==============
-    // Core functions
-    // ==============
+    // ==================
+    // Pre-game functions
+    // ==================
     
     
     func choosePolitician() {
@@ -202,6 +177,43 @@ class GamePlayViewController: UIViewController {
         if politician != hillaryImage {
             hillaryImage.hidden = true
         }
+    }
+    
+    func startTimerAndCADisplayLink() {
+        timer = CADisplayLink(target: self, selector: "heliMove")
+        timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "scoring", userInfo: nil, repeats: true)
+    }
+    
+    
+    // ================
+    // Gaming functions
+    // ================
+    
+    func moveObstaclesAcrossScreen(){
+        
+        let screenWidth = Int(screenSize.height - 50.0)
+        
+        for item in obstacles {
+            let itemPosition = 570 + Int(obstacles.indexOf(item)!)*250
+            positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: item, x: itemPosition)
+            item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
+        }
+        
+        func placeBorderObstacles(topObjects: Array<UIImageView>, bottomObjects: Array<UIImageView>, addedScreenWidth: Int){
+            
+            for item in topObjects {
+                let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
+                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
+                item.center = CGPoint(x: itemPosition, y: randomPosition)
+                
+                randomPosition = randomPosition + addedScreenWidth
+                bottomObjects[Int(topObjects.indexOf(item)!)].center = CGPoint(x: itemPosition, y: randomPosition)
+            }
+        }
+        
+        placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
+
     }
     
     func heliMove(){
@@ -232,6 +244,11 @@ class GamePlayViewController: UIViewController {
         recycleObjects(bottomObjects, addedScreenWidth: screenWidth)
     }
     
+
+    // ==================
+    // End-game functions
+    // ==================
+    
     func collision(){
         
         for item in allObjects{
@@ -247,8 +264,9 @@ class GamePlayViewController: UIViewController {
     
     func endGame(){
         politician.hidden = true
-        timer .invalidate()
-        scorer .invalidate()
+        timer.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        timer.invalidate()
+        scorer.invalidate()
         
         if scoreNumber > highScore {
             highScore = scoreNumber
@@ -257,10 +275,8 @@ class GamePlayViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        Helper.delay(0.2) {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let gameOverViewController = storyBoard.instantiateViewControllerWithIdentifier("GameOverViewController") as! GameOverViewController
-            gameOverViewController.gameScore = self.scoreNumber
+        Helper.delay(1.0) {
+            let gameOverViewController = GameOverViewController.loadFromNib(self.scoreNumber)
             self.presentViewController(gameOverViewController, animated:true, completion:nil)
         }
     }
