@@ -25,11 +25,19 @@ class GamePlayViewController: UIViewController {
     var randomPosition: Int = 0
     var scoreNumber: Int = 0
     var highScore: Int = 0
+    var lives: Int = 2
+    var flashing: Bool = false
+    var level: CGFloat = 10
+    var enemyOnScreen = false
     
     @IBOutlet weak var tapToStartLabel: UILabel!
     @IBOutlet weak var trumpImage: TrumpCartoonView!
     @IBOutlet weak var hillaryImage: HeliHillyView!
     @IBOutlet weak var benImage: BenHeliView!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var firstHeart: UIImageView!
+    @IBOutlet weak var secondHeart: UIImageView!
+    @IBOutlet weak var mexicanView: MexicanView!
     
     var politician: UIView!
     var selectedPolitician:Characters!
@@ -103,6 +111,8 @@ class GamePlayViewController: UIViewController {
         
         touchToStartGame = true
         
+        mexicanView.hidden = true
+        
     }
     
     
@@ -131,6 +141,7 @@ class GamePlayViewController: UIViewController {
         trumpImage.addFlyingAnimation()
         hillaryImage.addHillFlyingAnimation()
         benImage.addBenFlyingAnimation()
+        mexicanView.addEmemyAnimateAnimation()
         
     }
     
@@ -156,10 +167,19 @@ class GamePlayViewController: UIViewController {
     func choosePolitician() {
         if (selectedPolitician == Characters.Hilary) {
             politician = hillaryImage
+            self.background.image = Characters.Hilary.background
+            self.obstacle1.image = Characters.Hilary.obstacle
+            self.obstacle2.image = Characters.Hilary.obstacle
         } else if (selectedPolitician == Characters.Ben) {
             politician = benImage
+            self.background.image = Characters.Ben.background
+            self.obstacle1.image = Characters.Ben.obstacle
+            self.obstacle2.image = Characters.Ben.obstacle
         } else if (selectedPolitician == Characters.Trump) {
             politician = trumpImage
+            self.background.image = Characters.Trump.background
+            self.obstacle1.image = Characters.Trump.obstacle
+            self.obstacle2.image = Characters.Trump.obstacle
         } else {
             print("None of the politicians selected")
         }
@@ -183,6 +203,7 @@ class GamePlayViewController: UIViewController {
         timer = CADisplayLink(target: self, selector: "heliMove")
         timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "scoring", userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "levelingUp", userInfo: nil, repeats: true)
     }
     
     
@@ -192,39 +213,50 @@ class GamePlayViewController: UIViewController {
     
     func moveObstaclesAcrossScreen(){
         
-        let screenWidth = Int(screenSize.height - 50.0)
+        let screenWidth = Int(screenSize.height)
         
         for item in obstacles {
             let itemPosition = 570 + Int(obstacles.indexOf(item)!)*250
             positionObstacle(randomPosition, screenWidth: screenWidth, obstacle: item, x: itemPosition)
-            item.frame = CGRect(x: itemPosition, y: randomPosition, width: 24, height: screenWidth/2 - 60)
+            item.frame = CGRect(x: itemPosition, y: randomPosition, width: 30, height: screenWidth/3 - 60)
         }
         
         func placeBorderObstacles(topObjects: Array<UIImageView>, bottomObjects: Array<UIImageView>, addedScreenWidth: Int){
             
             for item in topObjects {
                 let itemPosition = 560 + Int(topObjects.indexOf(item)!)*90
-                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/6)))
-                item.center = CGPoint(x: itemPosition, y: randomPosition)
+                randomPosition = Int(arc4random_uniform(UInt32(screenWidth/12)))
+                item.center = CGPoint(x: itemPosition, y: randomPosition - 10)
                 
-                randomPosition = randomPosition + addedScreenWidth
+                randomPosition = randomPosition + addedScreenWidth - 20
                 bottomObjects[Int(topObjects.indexOf(item)!)].center = CGPoint(x: itemPosition, y: randomPosition)
             }
         }
         
+        mexicanView.frame = CGRect(x: -10, y: screenWidth, width: 40, height: 71)
+        
         placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
-
+        
     }
     
     func heliMove(){
         collision()
-        let screenWidth = Int(screenSize.height - 50.0)
+        let screenWidth = Int(screenSize.height)
+        
+        
+        // MOVE OBSTACLES
         
         politician.center = CGPointMake(politician.center.x, politician.center.y + politicianDirectionOfTravel)
         
         for item in allObjects {
-            item.center = CGPointMake(item.center.x - 5, item.center.y)
+            item.center = CGPointMake(item.center.x - (self.level/2), item.center.y)
         }
+        
+        mexicanView.center = CGPointMake(mexicanView.center.x - (self.level/2), mexicanView.center.y)
+        
+        
+        
+        // RESET OBSTACLES
         
         for item in obstacles {
             if item.center.x < -10 {
@@ -232,16 +264,21 @@ class GamePlayViewController: UIViewController {
             }
         }
         
-        func recycleObjects(objects: Array<UIImageView>, addedScreenWidth: Int){
-            for item in objects {
+        func recycleObjects(topobjects: Array<UIImageView>, bottomobjects: Array<UIImageView>, addedScreenWidth: Int){
+            for item in topobjects {
+                randomPosition = Int(arc4random_uniform((UInt32(screenWidth/12))))
+                
                 if item.center.x < -70 {
-                    randomPosition = Int(arc4random_uniform((UInt32(screenWidth/6)))) + addedScreenWidth
-                    item.center = CGPoint(x: 800, y: randomPosition)
+                    item.center = CGPoint(x: 800, y: randomPosition - 10)
+                }
+                
+                if bottomObjects[Int(topObjects.indexOf(item)!)].center.x < -70 {
+                    randomPosition = randomPosition + addedScreenWidth - 20
+                    bottomObjects[Int(topObjects.indexOf(item)!)].center = CGPoint(x: 800, y: randomPosition)
                 }
             }
         }
-        recycleObjects(topObjects, addedScreenWidth: 0)
-        recycleObjects(bottomObjects, addedScreenWidth: screenWidth)
+        recycleObjects(topObjects, bottomobjects: bottomObjects, addedScreenWidth: screenWidth)
     }
     
 
@@ -253,7 +290,23 @@ class GamePlayViewController: UIViewController {
         
         for item in allObjects{
             if CGRectIntersectsRect(politician.frame, item.frame){
-                endGame()
+                if lives == 2 {
+                    flashingCharacterAndHeart(self.politician, heart: self.secondHeart)
+                    Helper.delay(1.0, closure: { () -> () in
+                        self.lives = 1
+                        self.flashing = false
+                        self.secondHeart.hidden = true
+                    })
+                } else if lives == 1 {
+                    flashingCharacterAndHeart(self.politician, heart: self.firstHeart)
+                    Helper.delay(1.0, closure: { () -> () in
+                        self.lives = 0
+                        self.flashing = false
+                        self.firstHeart.hidden = true
+                    })
+                } else {
+                    endGame()
+                }
             }
         }
         
@@ -275,9 +328,9 @@ class GamePlayViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
-        Helper.delay(1.0) {
+        Helper.delay(0.5) {
             let gameOverViewController = GameOverViewController.loadFromNib(self.scoreNumber)
-            self.presentViewController(gameOverViewController, animated:true, completion:nil)
+            self.presentViewController(gameOverViewController, animated:false, completion:nil)
         }
     }
     
@@ -305,7 +358,50 @@ class GamePlayViewController: UIViewController {
         randomPosition = Int(arc4random_uniform(UInt32(screenWidth/2)))
         randomPosition = randomPosition + 110
         obstacle.center = CGPoint(x: x, y: randomPosition)
+        
+        if obstacle.center.y > CGFloat(screenWidth - 150) && !enemyOnScreen {
+            mexicanView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 20)
+            mexicanView.hidden = false
+            enemyOnScreen = true
+            
+            Helper.delay(10) { () -> () in
+                self.enemyOnScreen = false
+            }
+        }
+        
         return obstacle.center
+    }
+    
+    func flashingCharacterAndHeart(politician: UIView, heart: UIImageView){
+        if flashing == false {
+            politician.hidden = true
+            heart.hidden = true
+            Helper.delay(0.2) { () -> () in
+                politician.hidden = false
+                heart.hidden = false
+            }
+            Helper.delay(0.4) { () -> () in
+                politician.hidden = true
+                heart.hidden = true
+            }
+            Helper.delay(0.6) { () -> () in
+                politician.hidden = false
+                heart.hidden = false
+            }
+            Helper.delay(0.8) { () -> () in
+                politician.hidden = true
+                heart.hidden = true
+            }
+            Helper.delay(1.0) { () -> () in
+                politician.hidden = false
+                heart.hidden = false
+            }
+        }
+        self.flashing = true
+    }
+    
+    func levelingUp(){
+        self.level = self.level + 1
     }
 
 }

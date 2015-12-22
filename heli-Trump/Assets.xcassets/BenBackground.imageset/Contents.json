@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "obstacle.png",
+      "filename" : "BenBackground.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "obstacle@2x.png",
+      "filename" : "BenBackground@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "obstacle@3x.png",
+      "filename" : "BenBackground@3x.png",
       "scale" : "3x"
     }
   ],

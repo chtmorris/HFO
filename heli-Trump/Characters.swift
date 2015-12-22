@@ -23,6 +23,28 @@ enum Characters:Int {
         }
     }
     
+    var background:UIImage {
+        switch self {
+        case .Trump:
+            return UIImage(named: "TrumpBackground")!
+        case .Ben:
+            return UIImage(named: "BenBackground")!
+        case .Hilary:
+            return UIImage(named: "HillaryBackground")!
+        }
+    }
+    
+    var obstacle:UIImage {
+        switch self {
+        case .Trump:
+            return UIImage(named: "TrumpObstacle")!
+        case .Ben:
+            return UIImage(named: "BenObstacle")!
+        case .Hilary:
+            return UIImage(named: "HillaryObstacle")!
+        }
+    }
+    
 //    var image {
 //        switch self {
 //        case .Trump:
