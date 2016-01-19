@@ -6,16 +6,16 @@
 //  Copyright © 2015 chtmorris. All rights reserved.
 //
 
+import iAd
 import UIKit
 import StoreKit
 
-class ChooseCharacterViewController: UIViewController {
+class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
 
-    // This list of available in-app purchases
     var products = [SKProduct]()
-    
     var politicianSelected: Characters!
     var highScore: Int = 0
+    var bannerView: ADBannerView!
     
     @IBOutlet weak var highScoreLabel: UILabel!
     
@@ -34,24 +34,27 @@ class ChooseCharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        
-        highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
-        highScoreLabel.text = "High Score: \(highScore)"
+        ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Bottom)
         
         // Set up a refresh control, call reload to start things up
-        reload()
+//        reload()
         
         // Create a Restore Purchases button and hook it up to restoreTapped
-        let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: "restoreTapped:")
-        navigationItem.rightBarButtonItem = restoreButton
+//        let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: "restoreTapped:")
+//        navigationItem.rightBarButtonItem = restoreButton
         
         // Subscribe to a notification that fires when a product is purchased.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "productPurchased:", name: IAPHelperProductPurchasedNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "productPurchased:", name: IAPHelperProductPurchasedNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
+        highScoreLabel.text = "High Score: \(highScore)"
     }
     
     
@@ -83,14 +86,6 @@ class ChooseCharacterViewController: UIViewController {
     
     // When a product is purchased, this notification fires, redraw the correct row
     func productPurchased(notification: NSNotification) {
-//        let productIdentifier = notification.object as! String
-//        for (index, product) in enumerate(products) {
-//            if product.productIdentifier == productIdentifier {
-//                print(index)
-////                tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Fade)
-//                break
-//            }
-//        }
     }
     
     
@@ -100,23 +95,26 @@ class ChooseCharacterViewController: UIViewController {
     
     @IBAction func HillaryButton(sender: UIButton) {
         politicianSelected = Characters.Hilary
+        OptionsManager.sharedInstance.characterSelected = Characters.Hilary
         transitionToGamePlayVC()
     }
     
     @IBAction func BenButtonPressed(sender: UIButton) {
         politicianSelected = Characters.Ben
+        OptionsManager.sharedInstance.characterSelected = Characters.Ben
         transitionToGamePlayVC()
     }
     
     @IBAction func trumpButtonPressed(sender: UIButton) {
         politicianSelected = Characters.Trump
+        OptionsManager.sharedInstance.characterSelected = Characters.Trump
         transitionToGamePlayVC()
     }
     
     @IBAction func myUnwindAction(segue: UIStoryboardSegue) {}
     
     // =======
-    // Helpers
+    // HELPERS
     // =======
     
     func transitionToGamePlayVC() {

@@ -68,15 +68,15 @@ public class IAPHelper : NSObject  {
 
 extension IAPHelper: SKProductsRequestDelegate {
     public func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        print("Loaded list of products...")
-        print(response.invalidProductIdentifiers)
-        let products = response.products 
+//        print("Loaded list of products...")
+//        print(response.invalidProductIdentifiers)
+        let products = response.products
         completionHandler?(success: true, products: products)
         clearRequest()
         
         // debug printing
         for p in products {
-            print("Found product: \(p.productIdentifier) \(p.localizedTitle) \(p.price.floatValue)")
+//            print("Found product: \(p.productIdentifier) \(p.localizedTitle) \(p.price.floatValue)")
         }
     }
     

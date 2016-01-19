@@ -38,6 +38,8 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var firstHeart: UIImageView!
     @IBOutlet weak var secondHeart: UIImageView!
     @IBOutlet weak var mexicanView: MexicanView!
+    @IBOutlet weak var envelopeView: CoreEnvelopeView!
+    @IBOutlet weak var egyptianView: EgyptianView!
     
     var politician: UIView!
     var selectedPolitician:Characters!
@@ -70,6 +72,8 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var top8: UIImageView!
     @IBOutlet weak var top9: UIImageView!
     @IBOutlet weak var top10: UIImageView!
+    
+    @IBOutlet weak var gameOverOverlay: UIView!
     
     var obstacles = [UIImageView]()
     var topObjects = [UIImageView]()
@@ -112,6 +116,8 @@ class GamePlayViewController: UIViewController {
         touchToStartGame = true
         
         mexicanView.hidden = true
+        envelopeView.hidden = true
+        egyptianView.hidden = true
         
     }
     
@@ -142,6 +148,8 @@ class GamePlayViewController: UIViewController {
         hillaryImage.addHillFlyingAnimation()
         benImage.addBenFlyingAnimation()
         mexicanView.addEmemyAnimateAnimation()
+        envelopeView.addUntitledAnimation()
+        egyptianView.addDanceAnimation()
         
     }
     
@@ -234,6 +242,8 @@ class GamePlayViewController: UIViewController {
         }
         
         mexicanView.frame = CGRect(x: -10, y: screenWidth, width: 40, height: 71)
+        envelopeView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
+        egyptianView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
         
         placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
         
@@ -253,7 +263,8 @@ class GamePlayViewController: UIViewController {
         }
         
         mexicanView.center = CGPointMake(mexicanView.center.x - (self.level/2), mexicanView.center.y)
-        
+        envelopeView.center = CGPointMake(envelopeView.center.x - (self.level/2), envelopeView.center.y)
+        egyptianView.center = CGPointMake(egyptianView.center.x - (self.level/1.7), egyptianView.center.y)
         
         
         // RESET OBSTACLES
@@ -328,15 +339,17 @@ class GamePlayViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
         }
         
+        
         Helper.delay(0.5) {
             let gameOverViewController = GameOverViewController.loadFromNib(self.scoreNumber)
             self.presentViewController(gameOverViewController, animated:false, completion:nil)
+            self.gameOverOverlay.backgroundColor = UIColor(red: 224/255, green: 22/255, blue: 43/255, alpha: 1)
         }
     }
     
     
     func scoring(){
-        scoreNumber = scoreNumber + 1        
+        scoreNumber = scoreNumber + 1
     }
     
     
@@ -360,8 +373,17 @@ class GamePlayViewController: UIViewController {
         obstacle.center = CGPoint(x: x, y: randomPosition)
         
         if obstacle.center.y > CGFloat(screenWidth - 150) && !enemyOnScreen {
-            mexicanView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 20)
-            mexicanView.hidden = false
+            if (selectedPolitician == Characters.Trump) {
+                mexicanView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 20)
+                mexicanView.hidden = false
+            } else if (selectedPolitician == Characters.Hilary) {
+                envelopeView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 50)
+                envelopeView.hidden = false
+            } else if (selectedPolitician == Characters.Ben) {
+                egyptianView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 70)
+                egyptianView.hidden = false
+            }
+            
             enemyOnScreen = true
             
             Helper.delay(10) { () -> () in
