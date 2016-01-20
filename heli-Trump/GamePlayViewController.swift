@@ -332,15 +332,12 @@ class GamePlayViewController: UIViewController {
         timer.invalidate()
         scorer.invalidate()
         
-        if scoreNumber > highScore {
-            highScore = scoreNumber
-            print("HighScore is: \(highScore)")
-            print("scoreNumber is: \(scoreNumber)")
-            NSUserDefaults.standardUserDefaults().setInteger(highScore, forKey: "HighScoreSaved")
-        }
-        
-        
         Helper.delay(0.5) {
+            if self.scoreNumber > self.highScore {
+                self.highScore = self.scoreNumber
+                NSUserDefaults.standardUserDefaults().setInteger(self.highScore, forKey: "HighScoreSaved")
+            }
+            
             let gameOverViewController = GameOverViewController.loadFromNib(self.scoreNumber)
             self.presentViewController(gameOverViewController, animated:false, completion:nil)
             self.gameOverOverlay.backgroundColor = UIColor(red: 224/255, green: 22/255, blue: 43/255, alpha: 1)

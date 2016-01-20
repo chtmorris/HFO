@@ -50,11 +50,8 @@
 		EC74C6F01C43DEB0002286E3 /* UpperLeftArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6EA1C43DEB0002286E3 /* UpperLeftArm.png */; };
 		EC74C6F11C43DEB0002286E3 /* UpperRightArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6EB1C43DEB0002286E3 /* UpperRightArm.png */; };
 		EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74C6F51C4488EF002286E3 /* OptionsManager.swift */; };
-		EC897BEC1C1C2776001287B5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC897BEB1C1C2776001287B5 /* StoreKit.framework */; };
 		EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */; };
 		EC915A261C3FA5E000021B8A /* HillaryEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */; };
-		ECA102B81C1840A3002941DE /* HairForceOneProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA102B71C1840A3002941DE /* HairForceOneProducts.swift */; };
-		ECA102BA1C184287002941DE /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA102B91C184287002941DE /* IAPHelper.swift */; };
 		ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA03091C2957D0008EF4A0 /* MexicanView.swift */; };
 		ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FA91BF721B7009865B7 /* Helpers.swift */; };
 		ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */; };
@@ -135,11 +132,8 @@
 		EC74C6EA1C43DEB0002286E3 /* UpperLeftArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpperLeftArm.png; sourceTree = "<group>"; };
 		EC74C6EB1C43DEB0002286E3 /* UpperRightArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpperRightArm.png; sourceTree = "<group>"; };
 		EC74C6F51C4488EF002286E3 /* OptionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsManager.swift; sourceTree = "<group>"; };
-		EC897BEB1C1C2776001287B5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreEnvelopeView.swift; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/CoreEnvelopeView.swift; sourceTree = "<group>"; };
 		EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HillaryEnvelope.png; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/images/HillaryEnvelope.png; sourceTree = "<group>"; };
-		ECA102B71C1840A3002941DE /* HairForceOneProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairForceOneProducts.swift; sourceTree = "<group>"; };
-		ECA102B91C184287002941DE /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		ECBA03091C2957D0008EF4A0 /* MexicanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MexicanView.swift; sourceTree = "<group>"; };
 		ECCF2FA91BF721B7009865B7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC56048C1C3C719500BF2D38 /* iAd.framework in Frameworks */,
-				EC897BEC1C1C2776001287B5 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				EC56048B1C3C719500BF2D38 /* iAd.framework */,
-				EC897BEB1C1C2776001287B5 /* StoreKit.framework */,
 				EC0462681BA9C0D9001CB724 /* heli-Trump */,
 				EC04627D1BA9C0D9001CB724 /* heli-TrumpTests */,
 				EC0462881BA9C0D9001CB724 /* heli-TrumpUITests */,
@@ -208,7 +200,6 @@
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				ECCF2FA91BF721B7009865B7 /* Helpers.swift */,
 				EC45D17F1C4746FE00CED29F /* iAd */,
-				ECA102BB1C184294002941DE /* In app purchases */,
 				ECA102BC1C1842B5002941DE /* GamePlay */,
 				ECA102BD1C1842C8002941DE /* Characters */,
 				EC74C6F41C4488D4002286E3 /* OptionsManager */,
@@ -364,15 +355,6 @@
 				EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */,
 			);
 			name = images;
-			sourceTree = "<group>";
-		};
-		ECA102BB1C184294002941DE /* In app purchases */ = {
-			isa = PBXGroup;
-			children = (
-				ECA102B91C184287002941DE /* IAPHelper.swift */,
-				ECA102B71C1840A3002941DE /* HairForceOneProducts.swift */,
-			);
-			name = "In app purchases";
 			sourceTree = "<group>";
 		};
 		ECA102BC1C1842B5002941DE /* GamePlay */ = {
@@ -601,7 +583,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */,
-				ECA102BA1C184287002941DE /* IAPHelper.swift in Sources */,
 				EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */,
 				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
@@ -610,7 +591,6 @@
 				ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */,
 				EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */,
 				EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */,
-				ECA102B81C1840A3002941DE /* HairForceOneProducts.swift in Sources */,
 				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,
 				EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */,
 				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,

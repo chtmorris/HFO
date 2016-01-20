@@ -8,43 +8,23 @@
 
 import iAd
 import UIKit
-import StoreKit
 
 class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
 
-    var products = [SKProduct]()
     var politicianSelected: Characters!
     var highScore: Int = 0
     var bannerView: ADBannerView!
     
     @IBOutlet weak var highScoreLabel: UILabel!
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    // priceFormatter is used to show proper, localized currency
-    lazy var priceFormatter: NSNumberFormatter = {
-        let pf = NSNumberFormatter()
-        pf.formatterBehavior = .Behavior10_4
-        pf.numberStyle = .CurrencyStyle
-        return pf
-    }()
+//    deinit {
+//        NSNotificationCenter.defaultCenter().removeObserver(self)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Bottom)
-        
-        // Set up a refresh control, call reload to start things up
-//        reload()
-        
-        // Create a Restore Purchases button and hook it up to restoreTapped
-//        let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: "restoreTapped:")
-//        navigationItem.rightBarButtonItem = restoreButton
-        
-        // Subscribe to a notification that fires when a product is purchased.
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "productPurchased:", name: IAPHelperProductPurchasedNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,37 +35,6 @@ class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
     override func viewWillAppear(animated: Bool) {
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
-    }
-    
-    
-    // ==========================
-    // IN APP PURCHASES FUNCTIONS
-    // ==========================
-    
-    // Fetch the products from iTunes connect, redisplay the table on successful completion
-    func reload() {
-        products = []
-        HairForceOneProducts.store.requestProductsWithCompletionHandler { success, products in
-            if success {
-                self.products = products
-                print("Products found in store: \(products)")
-            }
-        }
-    }
-    
-    // Restore purchases to this device.
-    func restoreTapped(sender: AnyObject) {
-        HairForceOneProducts.store.restoreCompletedTransactions()
-    }
-    
-    // Purchase the product
-    func buyButtonTapped(button: UIButton) {
-        let product = products[button.tag]
-        HairForceOneProducts.store.purchaseProduct(product)
-    }
-    
-    // When a product is purchased, this notification fires, redraw the correct row
-    func productPurchased(notification: NSNotification) {
     }
     
     
