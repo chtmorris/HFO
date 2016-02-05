@@ -8,12 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462691BA9C0D9001CB724 /* AppDelegate.swift */; };
-		EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04626B1BA9C0D9001CB724 /* ViewController.swift */; };
+		EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */; };
 		EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC04626D1BA9C0D9001CB724 /* Main.storyboard */; };
 		EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC0462701BA9C0D9001CB724 /* Assets.xcassets */; };
 		EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */; };
 		EC04627F1BA9C0D9001CB724 /* heli_TrumpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC04627E1BA9C0D9001CB724 /* heli_TrumpTests.swift */; };
 		EC04628A1BA9C0D9001CB724 /* heli_TrumpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462891BA9C0D9001CB724 /* heli_TrumpUITests.swift */; };
+		EC0462A91BAC24FA001CB724 /* body.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462991BAC24FA001CB724 /* body.png */; };
+		EC0462AA1BAC24FA001CB724 /* body@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629A1BAC24FA001CB724 /* body@2x.png */; };
+		EC0462AB1BAC24FA001CB724 /* bottom arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629B1BAC24FA001CB724 /* bottom arm.png */; };
+		EC0462AC1BAC24FA001CB724 /* bottom arm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629C1BAC24FA001CB724 /* bottom arm@2x.png */; };
+		EC0462AD1BAC24FA001CB724 /* bottom leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629D1BAC24FA001CB724 /* bottom leg.png */; };
+		EC0462AE1BAC24FA001CB724 /* bottom leg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629E1BAC24FA001CB724 /* bottom leg@2x.png */; };
+		EC0462AF1BAC24FA001CB724 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = EC04629F1BAC24FA001CB724 /* head.png */; };
+		EC0462B01BAC24FA001CB724 /* head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A01BAC24FA001CB724 /* head@2x.png */; };
+		EC0462B11BAC24FA001CB724 /* heliHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A11BAC24FA001CB724 /* heliHair.png */; };
+		EC0462B21BAC24FA001CB724 /* heliHair@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A21BAC24FA001CB724 /* heliHair@2x.png */; };
+		EC0462B31BAC24FA001CB724 /* top arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A31BAC24FA001CB724 /* top arm.png */; };
+		EC0462B41BAC24FA001CB724 /* top arm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A41BAC24FA001CB724 /* top arm@2x.png */; };
+		EC0462B51BAC24FA001CB724 /* top leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A51BAC24FA001CB724 /* top leg.png */; };
+		EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0462A61BAC24FA001CB724 /* top leg@2x.png */; };
+		EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0462A81BAC24FA001CB724 /* TrumpCartoonView.swift */; };
+		EC12B8491BDE6E9500873A27 /* benArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8431BDE6E9500873A27 /* benArm.png */; };
+		EC12B84A1BDE6E9500873A27 /* benHeadAndBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */; };
+		EC12B84B1BDE6E9500873A27 /* benLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8451BDE6E9500873A27 /* benLeg.png */; };
+		EC12B84C1BDE6E9500873A27 /* endoscope.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8461BDE6E9500873A27 /* endoscope.png */; };
+		EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8471BDE6E9500873A27 /* endoscopeFly.png */; };
+		EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC12B84E1BDE84AA00873A27 /* BenHeliView.swift */; };
+		EC12B8511BDE857900873A27 /* HeliHillyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC12B8501BDE857900873A27 /* HeliHillyView.swift */; };
+		EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45D17D1C4746D300CED29F /* Global_iAD.swift */; };
+		EC543C441BDA28EF00D5BE6D /* arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3E1BDA28EF00D5BE6D /* arm.png */; };
+		EC543C451BDA28EF00D5BE6D /* headAndBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */; };
+		EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C401BDA28EF00D5BE6D /* hillHair.png */; };
+		EC543C471BDA28EF00D5BE6D /* leg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C411BDA28EF00D5BE6D /* leg.png */; };
+		EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C421BDA28EF00D5BE6D /* leg2.png */; };
+		EC56048C1C3C719500BF2D38 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC56048B1C3C719500BF2D38 /* iAd.framework */; };
+		EC74C6EC1C43DEB0002286E3 /* EgyptianView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74C6E51C43DEB0002286E3 /* EgyptianView.swift */; };
+		EC74C6ED1C43DEB0002286E3 /* EgyptianBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6E71C43DEB0002286E3 /* EgyptianBody.png */; };
+		EC74C6EE1C43DEB0002286E3 /* LowerLeftArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6E81C43DEB0002286E3 /* LowerLeftArm.png */; };
+		EC74C6EF1C43DEB0002286E3 /* LowerRightArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6E91C43DEB0002286E3 /* LowerRightArm.png */; };
+		EC74C6F01C43DEB0002286E3 /* UpperLeftArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6EA1C43DEB0002286E3 /* UpperLeftArm.png */; };
+		EC74C6F11C43DEB0002286E3 /* UpperRightArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC74C6EB1C43DEB0002286E3 /* UpperRightArm.png */; };
+		EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74C6F51C4488EF002286E3 /* OptionsManager.swift */; };
+		EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */; };
+		EC915A261C3FA5E000021B8A /* HillaryEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */; };
+		ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA03091C2957D0008EF4A0 /* MexicanView.swift */; };
+		ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FA91BF721B7009865B7 /* Helpers.swift */; };
+		ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */; };
+		ECE04A251C0180450048A960 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE04A241C0180450048A960 /* Characters.swift */; };
+		ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */; };
+		ECF43A261C29584300CE9616 /* MexicaHead.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A201C29584300CE9616 /* MexicaHead.png */; };
+		ECF43A271C29584300CE9616 /* MexicanBody.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A211C29584300CE9616 /* MexicanBody.png */; };
+		ECF43A281C29584300CE9616 /* MexicanLowerLeftArm.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A221C29584300CE9616 /* MexicanLowerLeftArm.png */; };
+		ECF43A291C29584300CE9616 /* MexicanLowerRightArm.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A231C29584300CE9616 /* MexicanLowerRightArm.png */; };
+		ECF43A2A1C29584300CE9616 /* MexicanUpperLeftArm.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A241C29584300CE9616 /* MexicanUpperLeftArm.png */; };
+		ECF43A2B1C29584300CE9616 /* MexicanUpperRightArm.png in Resources */ = {isa = PBXBuildFile; fileRef = ECF43A251C29584300CE9616 /* MexicanUpperRightArm.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +85,7 @@
 /* Begin PBXFileReference section */
 		EC0462661BA9C0D9001CB724 /* heli-Trump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heli-Trump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0462691BA9C0D9001CB724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC04626B1BA9C0D9001CB724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EC04626E1BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC0462701BA9C0D9001CB724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC0462731BA9C0D9001CB724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +96,55 @@
 		EC0462851BA9C0D9001CB724 /* heli-TrumpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "heli-TrumpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0462891BA9C0D9001CB724 /* heli_TrumpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = heli_TrumpUITests.swift; sourceTree = "<group>"; };
 		EC04628B1BA9C0D9001CB724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC0462991BAC24FA001CB724 /* body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = body.png; sourceTree = "<group>"; };
+		EC04629A1BAC24FA001CB724 /* body@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "body@2x.png"; sourceTree = "<group>"; };
+		EC04629B1BAC24FA001CB724 /* bottom arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom arm.png"; sourceTree = "<group>"; };
+		EC04629C1BAC24FA001CB724 /* bottom arm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom arm@2x.png"; sourceTree = "<group>"; };
+		EC04629D1BAC24FA001CB724 /* bottom leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom leg.png"; sourceTree = "<group>"; };
+		EC04629E1BAC24FA001CB724 /* bottom leg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bottom leg@2x.png"; sourceTree = "<group>"; };
+		EC04629F1BAC24FA001CB724 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
+		EC0462A01BAC24FA001CB724 /* head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head@2x.png"; sourceTree = "<group>"; };
+		EC0462A11BAC24FA001CB724 /* heliHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heliHair.png; sourceTree = "<group>"; };
+		EC0462A21BAC24FA001CB724 /* heliHair@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heliHair@2x.png"; sourceTree = "<group>"; };
+		EC0462A31BAC24FA001CB724 /* top arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top arm.png"; sourceTree = "<group>"; };
+		EC0462A41BAC24FA001CB724 /* top arm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top arm@2x.png"; sourceTree = "<group>"; };
+		EC0462A51BAC24FA001CB724 /* top leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top leg.png"; sourceTree = "<group>"; };
+		EC0462A61BAC24FA001CB724 /* top leg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top leg@2x.png"; sourceTree = "<group>"; };
+		EC0462A81BAC24FA001CB724 /* TrumpCartoonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrumpCartoonView.swift; sourceTree = "<group>"; };
+		EC12B8431BDE6E9500873A27 /* benArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benArm.png; sourceTree = "<group>"; };
+		EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benHeadAndBody.png; sourceTree = "<group>"; };
+		EC12B8451BDE6E9500873A27 /* benLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = benLeg.png; sourceTree = "<group>"; };
+		EC12B8461BDE6E9500873A27 /* endoscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endoscope.png; sourceTree = "<group>"; };
+		EC12B8471BDE6E9500873A27 /* endoscopeFly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endoscopeFly.png; sourceTree = "<group>"; };
+		EC12B84E1BDE84AA00873A27 /* BenHeliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenHeliView.swift; sourceTree = "<group>"; };
+		EC12B8501BDE857900873A27 /* HeliHillyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeliHillyView.swift; sourceTree = "<group>"; };
+		EC45D17D1C4746D300CED29F /* Global_iAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global_iAD.swift; sourceTree = "<group>"; };
+		EC543C3E1BDA28EF00D5BE6D /* arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arm.png; sourceTree = "<group>"; };
+		EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headAndBody.png; sourceTree = "<group>"; };
+		EC543C401BDA28EF00D5BE6D /* hillHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hillHair.png; sourceTree = "<group>"; };
+		EC543C411BDA28EF00D5BE6D /* leg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg.png; sourceTree = "<group>"; };
+		EC543C421BDA28EF00D5BE6D /* leg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leg2.png; sourceTree = "<group>"; };
+		EC56048B1C3C719500BF2D38 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		EC74C6E51C43DEB0002286E3 /* EgyptianView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EgyptianView.swift; path = ../../../../../../Dropbox/Personal/Dev/Trump/CoreEgyptian/EgyptianView.swift; sourceTree = "<group>"; };
+		EC74C6E71C43DEB0002286E3 /* EgyptianBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EgyptianBody.png; sourceTree = "<group>"; };
+		EC74C6E81C43DEB0002286E3 /* LowerLeftArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LowerLeftArm.png; sourceTree = "<group>"; };
+		EC74C6E91C43DEB0002286E3 /* LowerRightArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LowerRightArm.png; sourceTree = "<group>"; };
+		EC74C6EA1C43DEB0002286E3 /* UpperLeftArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpperLeftArm.png; sourceTree = "<group>"; };
+		EC74C6EB1C43DEB0002286E3 /* UpperRightArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpperRightArm.png; sourceTree = "<group>"; };
+		EC74C6F51C4488EF002286E3 /* OptionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsManager.swift; sourceTree = "<group>"; };
+		EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreEnvelopeView.swift; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/CoreEnvelopeView.swift; sourceTree = "<group>"; };
+		EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HillaryEnvelope.png; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/images/HillaryEnvelope.png; sourceTree = "<group>"; };
+		ECBA03091C2957D0008EF4A0 /* MexicanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MexicanView.swift; sourceTree = "<group>"; };
+		ECCF2FA91BF721B7009865B7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		ECE04A241C0180450048A960 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCharacterViewController.swift; sourceTree = "<group>"; };
+		ECF43A201C29584300CE9616 /* MexicaHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicaHead.png; sourceTree = "<group>"; };
+		ECF43A211C29584300CE9616 /* MexicanBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicanBody.png; sourceTree = "<group>"; };
+		ECF43A221C29584300CE9616 /* MexicanLowerLeftArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicanLowerLeftArm.png; sourceTree = "<group>"; };
+		ECF43A231C29584300CE9616 /* MexicanLowerRightArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicanLowerRightArm.png; sourceTree = "<group>"; };
+		ECF43A241C29584300CE9616 /* MexicanUpperLeftArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicanUpperLeftArm.png; sourceTree = "<group>"; };
+		ECF43A251C29584300CE9616 /* MexicanUpperRightArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MexicanUpperRightArm.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC56048C1C3C719500BF2D38 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +176,7 @@
 		EC04625D1BA9C0D9001CB724 = {
 			isa = PBXGroup;
 			children = (
+				EC56048B1C3C719500BF2D38 /* iAd.framework */,
 				EC0462681BA9C0D9001CB724 /* heli-Trump */,
 				EC04627D1BA9C0D9001CB724 /* heli-TrumpTests */,
 				EC0462881BA9C0D9001CB724 /* heli-TrumpUITests */,
@@ -98,11 +198,16 @@
 			isa = PBXGroup;
 			children = (
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
-				EC04626B1BA9C0D9001CB724 /* ViewController.swift */,
+				ECCF2FA91BF721B7009865B7 /* Helpers.swift */,
+				EC45D17F1C4746FE00CED29F /* iAd */,
+				ECA102BC1C1842B5002941DE /* GamePlay */,
+				ECA102BD1C1842C8002941DE /* Characters */,
+				EC74C6F41C4488D4002286E3 /* OptionsManager */,
 				EC04626D1BA9C0D9001CB724 /* Main.storyboard */,
 				EC0462701BA9C0D9001CB724 /* Assets.xcassets */,
 				EC0462721BA9C0D9001CB724 /* LaunchScreen.storyboard */,
 				EC0462751BA9C0D9001CB724 /* Info.plist */,
+				ECED9B961C28D88C00ADCCC8 /* CoreAnimator */,
 			);
 			path = "heli-Trump";
 			sourceTree = "<group>";
@@ -123,6 +228,186 @@
 				EC04628B1BA9C0D9001CB724 /* Info.plist */,
 			);
 			path = "heli-TrumpUITests";
+			sourceTree = "<group>";
+		};
+		EC0462971BAC24FA001CB724 /* coreHelitrump */ = {
+			isa = PBXGroup;
+			children = (
+				EC0462981BAC24FA001CB724 /* images */,
+				EC0462A81BAC24FA001CB724 /* TrumpCartoonView.swift */,
+			);
+			path = coreHelitrump;
+			sourceTree = "<group>";
+		};
+		EC0462981BAC24FA001CB724 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC0462991BAC24FA001CB724 /* body.png */,
+				EC04629A1BAC24FA001CB724 /* body@2x.png */,
+				EC04629B1BAC24FA001CB724 /* bottom arm.png */,
+				EC04629C1BAC24FA001CB724 /* bottom arm@2x.png */,
+				EC04629D1BAC24FA001CB724 /* bottom leg.png */,
+				EC04629E1BAC24FA001CB724 /* bottom leg@2x.png */,
+				EC04629F1BAC24FA001CB724 /* head.png */,
+				EC0462A01BAC24FA001CB724 /* head@2x.png */,
+				EC0462A11BAC24FA001CB724 /* heliHair.png */,
+				EC0462A21BAC24FA001CB724 /* heliHair@2x.png */,
+				EC0462A31BAC24FA001CB724 /* top arm.png */,
+				EC0462A41BAC24FA001CB724 /* top arm@2x.png */,
+				EC0462A51BAC24FA001CB724 /* top leg.png */,
+				EC0462A61BAC24FA001CB724 /* top leg@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EC12B8401BDE6E9500873A27 /* coreBen */ = {
+			isa = PBXGroup;
+			children = (
+				EC12B84E1BDE84AA00873A27 /* BenHeliView.swift */,
+				EC12B8421BDE6E9500873A27 /* images */,
+			);
+			path = coreBen;
+			sourceTree = "<group>";
+		};
+		EC12B8421BDE6E9500873A27 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC12B8431BDE6E9500873A27 /* benArm.png */,
+				EC12B8441BDE6E9500873A27 /* benHeadAndBody.png */,
+				EC12B8451BDE6E9500873A27 /* benLeg.png */,
+				EC12B8461BDE6E9500873A27 /* endoscope.png */,
+				EC12B8471BDE6E9500873A27 /* endoscopeFly.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EC45D17F1C4746FE00CED29F /* iAd */ = {
+			isa = PBXGroup;
+			children = (
+				EC45D17D1C4746D300CED29F /* Global_iAD.swift */,
+			);
+			name = iAd;
+			sourceTree = "<group>";
+		};
+		EC543C3B1BDA28EF00D5BE6D /* coreHill */ = {
+			isa = PBXGroup;
+			children = (
+				EC12B8501BDE857900873A27 /* HeliHillyView.swift */,
+				EC543C3D1BDA28EF00D5BE6D /* images */,
+			);
+			path = coreHill;
+			sourceTree = "<group>";
+		};
+		EC543C3D1BDA28EF00D5BE6D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC543C3E1BDA28EF00D5BE6D /* arm.png */,
+				EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */,
+				EC543C401BDA28EF00D5BE6D /* hillHair.png */,
+				EC543C411BDA28EF00D5BE6D /* leg.png */,
+				EC543C421BDA28EF00D5BE6D /* leg2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EC74C6E41C43B68C002286E3 /* coreEgyptian */ = {
+			isa = PBXGroup;
+			children = (
+				EC74C6E51C43DEB0002286E3 /* EgyptianView.swift */,
+				EC74C6E61C43DEB0002286E3 /* images */,
+			);
+			name = coreEgyptian;
+			sourceTree = "<group>";
+		};
+		EC74C6E61C43DEB0002286E3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC74C6E71C43DEB0002286E3 /* EgyptianBody.png */,
+				EC74C6E81C43DEB0002286E3 /* LowerLeftArm.png */,
+				EC74C6E91C43DEB0002286E3 /* LowerRightArm.png */,
+				EC74C6EA1C43DEB0002286E3 /* UpperLeftArm.png */,
+				EC74C6EB1C43DEB0002286E3 /* UpperRightArm.png */,
+			);
+			name = images;
+			path = ../../../../../../Dropbox/Personal/Dev/Trump/CoreEgyptian/images;
+			sourceTree = "<group>";
+		};
+		EC74C6F41C4488D4002286E3 /* OptionsManager */ = {
+			isa = PBXGroup;
+			children = (
+				EC74C6F51C4488EF002286E3 /* OptionsManager.swift */,
+			);
+			name = OptionsManager;
+			sourceTree = "<group>";
+		};
+		EC915A211C3FA5B300021B8A /* coreEnvelope */ = {
+			isa = PBXGroup;
+			children = (
+				EC915A241C3FA5D400021B8A /* images */,
+				EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */,
+			);
+			name = coreEnvelope;
+			sourceTree = "<group>";
+		};
+		EC915A241C3FA5D400021B8A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		ECA102BC1C1842B5002941DE /* GamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				EC04626B1BA9C0D9001CB724 /* GamePlayViewController.swift */,
+				ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */,
+			);
+			name = GamePlay;
+			sourceTree = "<group>";
+		};
+		ECA102BD1C1842C8002941DE /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				ECE04A241C0180450048A960 /* Characters.swift */,
+				ECF0E7911BE4AE6F00C160BD /* ChooseCharacterViewController.swift */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		ECBA02F91C29538A008EF4A0 /* coreMexican */ = {
+			isa = PBXGroup;
+			children = (
+				ECF43A1F1C29583400CE9616 /* images */,
+				ECBA03091C2957D0008EF4A0 /* MexicanView.swift */,
+			);
+			name = coreMexican;
+			sourceTree = "<group>";
+		};
+		ECED9B961C28D88C00ADCCC8 /* CoreAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				EC74C6E41C43B68C002286E3 /* coreEgyptian */,
+				EC915A211C3FA5B300021B8A /* coreEnvelope */,
+				ECBA02F91C29538A008EF4A0 /* coreMexican */,
+				EC12B8401BDE6E9500873A27 /* coreBen */,
+				EC543C3B1BDA28EF00D5BE6D /* coreHill */,
+				EC0462971BAC24FA001CB724 /* coreHelitrump */,
+			);
+			name = CoreAnimator;
+			sourceTree = "<group>";
+		};
+		ECF43A1F1C29583400CE9616 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				ECF43A201C29584300CE9616 /* MexicaHead.png */,
+				ECF43A211C29584300CE9616 /* MexicanBody.png */,
+				ECF43A221C29584300CE9616 /* MexicanLowerLeftArm.png */,
+				ECF43A231C29584300CE9616 /* MexicanLowerRightArm.png */,
+				ECF43A241C29584300CE9616 /* MexicanUpperLeftArm.png */,
+				ECF43A251C29584300CE9616 /* MexicanUpperRightArm.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +477,12 @@
 				TargetAttributes = {
 					EC0462651BA9C0D9001CB724 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 79HLANPT5D;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					EC0462791BA9C0D9001CB724 = {
 						CreatedOnToolsVersion = 7.0;
@@ -228,9 +519,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0462AC1BAC24FA001CB724 /* bottom arm@2x.png in Resources */,
+				EC915A261C3FA5E000021B8A /* HillaryEnvelope.png in Resources */,
+				EC74C6F01C43DEB0002286E3 /* UpperLeftArm.png in Resources */,
+				EC0462AF1BAC24FA001CB724 /* head.png in Resources */,
+				ECF43A2B1C29584300CE9616 /* MexicanUpperRightArm.png in Resources */,
+				EC0462AE1BAC24FA001CB724 /* bottom leg@2x.png in Resources */,
+				ECF43A281C29584300CE9616 /* MexicanLowerLeftArm.png in Resources */,
+				EC543C451BDA28EF00D5BE6D /* headAndBody.png in Resources */,
+				EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */,
+				EC74C6F11C43DEB0002286E3 /* UpperRightArm.png in Resources */,
+				ECF43A2A1C29584300CE9616 /* MexicanUpperLeftArm.png in Resources */,
+				EC0462AB1BAC24FA001CB724 /* bottom arm.png in Resources */,
+				EC74C6ED1C43DEB0002286E3 /* EgyptianBody.png in Resources */,
+				EC74C6EE1C43DEB0002286E3 /* LowerLeftArm.png in Resources */,
+				EC12B84C1BDE6E9500873A27 /* endoscope.png in Resources */,
 				EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */,
+				EC0462B01BAC24FA001CB724 /* head@2x.png in Resources */,
+				EC0462B41BAC24FA001CB724 /* top arm@2x.png in Resources */,
+				EC0462A91BAC24FA001CB724 /* body.png in Resources */,
+				EC0462B31BAC24FA001CB724 /* top arm.png in Resources */,
+				EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */,
+				ECF43A271C29584300CE9616 /* MexicanBody.png in Resources */,
+				EC0462B51BAC24FA001CB724 /* top leg.png in Resources */,
+				EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */,
+				ECF43A291C29584300CE9616 /* MexicanLowerRightArm.png in Resources */,
+				EC12B84B1BDE6E9500873A27 /* benLeg.png in Resources */,
+				EC0462AA1BAC24FA001CB724 /* body@2x.png in Resources */,
+				EC543C441BDA28EF00D5BE6D /* arm.png in Resources */,
 				EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */,
+				EC0462B21BAC24FA001CB724 /* heliHair@2x.png in Resources */,
+				EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */,
+				EC12B8491BDE6E9500873A27 /* benArm.png in Resources */,
+				ECF43A261C29584300CE9616 /* MexicaHead.png in Resources */,
+				EC0462B11BAC24FA001CB724 /* heliHair.png in Resources */,
+				EC543C471BDA28EF00D5BE6D /* leg.png in Resources */,
+				EC12B84A1BDE6E9500873A27 /* benHeadAndBody.png in Resources */,
+				EC0462AD1BAC24FA001CB724 /* bottom leg.png in Resources */,
 				EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */,
+				EC74C6EF1C43DEB0002286E3 /* LowerRightArm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +582,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC04626C1BA9C0D9001CB724 /* ViewController.swift in Sources */,
+				ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */,
+				EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */,
+				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
+				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
+				ECE04A251C0180450048A960 /* Characters.swift in Sources */,
+				ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */,
+				EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */,
+				EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */,
+				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,
+				EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */,
+				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,
+				EC12B8511BDE857900873A27 /* HeliHillyView.swift in Sources */,
+				EC74C6EC1C43DEB0002286E3 /* EgyptianView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +735,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "heli-Trump/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-Trump";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtmorris.hairforceone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -408,10 +748,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "heli-Trump/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chtmorris.heli-Trump";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chtmorris.hairforceone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
