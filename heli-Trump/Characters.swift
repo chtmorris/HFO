@@ -23,6 +23,17 @@ enum Characters:Int {
         }
     }
     
+    var sideOnPic:String {
+        switch self {
+        case .Trump:
+            return "DonSideOn"
+        case .Ben:
+            return "BenSideOn"
+        case .Hilary:
+            return "HilSideOn"
+        }
+    }
+    
     var background:UIImage {
         switch self {
         case .Trump:
