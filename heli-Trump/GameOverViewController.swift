@@ -6,13 +6,11 @@
 //  Copyright © 2015 chtmorris. All rights reserved.
 //
 
-import iAd
 import UIKit
 
-class GameOverViewController: UIViewController, ADBannerViewDelegate {
+class GameOverViewController: UIViewController {
     
     var gameScore:Int!
-    var bannerView: ADBannerView!
     var selectedPolitician:Characters!
     var politicianQuote:String!
 
@@ -29,7 +27,6 @@ class GameOverViewController: UIViewController, ADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreLabel.text = "Score: \(gameScore)"
-        ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Top)
         
         selectedPolitician = OptionsManager.sharedInstance.characterSelected
                 
