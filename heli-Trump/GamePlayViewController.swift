@@ -34,6 +34,7 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var trumpImage: TrumpCartoonView!
     @IBOutlet weak var hillaryImage: HeliHillyView!
     @IBOutlet weak var benImage: BenHeliView!
+    @IBOutlet weak var rubioImage: CoreRubioView!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var firstHeart: UIImageView!
     @IBOutlet weak var secondHeart: UIImageView!
@@ -110,6 +111,7 @@ class GamePlayViewController: UIViewController {
         trumpImage.addIntroAnimation()
         benImage.addBenIntroAnimation()
         hillaryImage.addHillIntroAnimation()
+        rubioImage.addIntroAnimation()
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         
@@ -138,15 +140,22 @@ class GamePlayViewController: UIViewController {
         
         }
         
-        politicianDirectionOfTravel = -3
+        if politician == rubioImage {
+            politicianDirectionOfTravel = -6
+        } else {
+            politicianDirectionOfTravel = -3
+        }
+        
         
         trumpImage.removeAllAnimations()
         hillaryImage.removeAllAnimations()
         benImage.removeAllAnimations()
+        rubioImage.removeAllAnimations()
         
         trumpImage.addFlyingAnimation()
         hillaryImage.addHillFlyingAnimation()
         benImage.addBenFlyingAnimation()
+        rubioImage.addFlyingAnimation()
         mexicanView.addEmemyAnimateAnimation()
         envelopeView.addUntitledAnimation()
         egyptianView.addDanceAnimation()
@@ -164,6 +173,9 @@ class GamePlayViewController: UIViewController {
         
         benImage.removeAllAnimations()
         benImage.addBenFallingAnimation()
+        
+        rubioImage.removeAllAnimations()
+        rubioImage.addFallingAnimation()
     }
 
     
@@ -188,7 +200,12 @@ class GamePlayViewController: UIViewController {
             self.background.image = Characters.Trump.background
             self.obstacle1.image = Characters.Trump.obstacle
             self.obstacle2.image = Characters.Trump.obstacle
-        } else {
+        } else if (selectedPolitician == Characters.Rubio){
+            politician = rubioImage
+            self.background.image = Characters.Rubio.background
+            self.obstacle1.image = Characters.Rubio.obstacle
+            self.obstacle2.image = Characters.Rubio.obstacle
+        }else {
             print("None of the politicians selected")
         }
     }
@@ -204,6 +221,10 @@ class GamePlayViewController: UIViewController {
         
         if politician != hillaryImage {
             hillaryImage.hidden = true
+        }
+        
+        if politician != rubioImage {
+            rubioImage.hidden = true
         }
     }
     

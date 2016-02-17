@@ -36,6 +36,14 @@
 		EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */ = {isa = PBXBuildFile; fileRef = EC12B8471BDE6E9500873A27 /* endoscopeFly.png */; };
 		EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC12B84E1BDE84AA00873A27 /* BenHeliView.swift */; };
 		EC12B8511BDE857900873A27 /* HeliHillyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC12B8501BDE857900873A27 /* HeliHillyView.swift */; };
+		EC22E6DA1C7470A800F1AC2E /* FootFire.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D31C7470A800F1AC2E /* FootFire.png */; };
+		EC22E6DB1C7470A800F1AC2E /* HandFire.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D41C7470A800F1AC2E /* HandFire.png */; };
+		EC22E6DC1C7470A800F1AC2E /* RubioArm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D51C7470A800F1AC2E /* RubioArm.png */; };
+		EC22E6DD1C7470A800F1AC2E /* RubioBodyNew.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D61C7470A800F1AC2E /* RubioBodyNew.png */; };
+		EC22E6DE1C7470A800F1AC2E /* RubioHead.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D71C7470A800F1AC2E /* RubioHead.png */; };
+		EC22E6DF1C7470A800F1AC2E /* RubioLeftLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D81C7470A800F1AC2E /* RubioLeftLeg.png */; };
+		EC22E6E01C7470A800F1AC2E /* RubioRightLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6D91C7470A800F1AC2E /* RubioRightLeg.png */; };
+		EC22E6E21C74764F00F1AC2E /* CoreRubioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22E6E11C74764F00F1AC2E /* CoreRubioView.swift */; };
 		EC3BDC641C64B9BB0001251E /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3BDC631C64B9BB0001251E /* CharacterCell.swift */; };
 		EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45D17D1C4746D300CED29F /* Global_iAD.swift */; };
 		EC543C441BDA28EF00D5BE6D /* arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3E1BDA28EF00D5BE6D /* arm.png */; };
@@ -119,6 +127,14 @@
 		EC12B8471BDE6E9500873A27 /* endoscopeFly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endoscopeFly.png; sourceTree = "<group>"; };
 		EC12B84E1BDE84AA00873A27 /* BenHeliView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenHeliView.swift; sourceTree = "<group>"; };
 		EC12B8501BDE857900873A27 /* HeliHillyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeliHillyView.swift; sourceTree = "<group>"; };
+		EC22E6D31C7470A800F1AC2E /* FootFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootFire.png; sourceTree = "<group>"; };
+		EC22E6D41C7470A800F1AC2E /* HandFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandFire.png; sourceTree = "<group>"; };
+		EC22E6D51C7470A800F1AC2E /* RubioArm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RubioArm.png; sourceTree = "<group>"; };
+		EC22E6D61C7470A800F1AC2E /* RubioBodyNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RubioBodyNew.png; sourceTree = "<group>"; };
+		EC22E6D71C7470A800F1AC2E /* RubioHead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RubioHead.png; sourceTree = "<group>"; };
+		EC22E6D81C7470A800F1AC2E /* RubioLeftLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RubioLeftLeg.png; sourceTree = "<group>"; };
+		EC22E6D91C7470A800F1AC2E /* RubioRightLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RubioRightLeg.png; sourceTree = "<group>"; };
+		EC22E6E11C74764F00F1AC2E /* CoreRubioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreRubioView.swift; sourceTree = "<group>"; };
 		EC3BDC631C64B9BB0001251E /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		EC45D17D1C4746D300CED29F /* Global_iAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global_iAD.swift; sourceTree = "<group>"; };
 		EC543C3E1BDA28EF00D5BE6D /* arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arm.png; sourceTree = "<group>"; };
@@ -283,6 +299,30 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		EC22E6CF1C74701D00F1AC2E /* coreRubio */ = {
+			isa = PBXGroup;
+			children = (
+				EC22E6E11C74764F00F1AC2E /* CoreRubioView.swift */,
+				EC22E6D21C7470A800F1AC2E /* images */,
+			);
+			name = coreRubio;
+			sourceTree = "<group>";
+		};
+		EC22E6D21C7470A800F1AC2E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC22E6D31C7470A800F1AC2E /* FootFire.png */,
+				EC22E6D41C7470A800F1AC2E /* HandFire.png */,
+				EC22E6D51C7470A800F1AC2E /* RubioArm.png */,
+				EC22E6D61C7470A800F1AC2E /* RubioBodyNew.png */,
+				EC22E6D71C7470A800F1AC2E /* RubioHead.png */,
+				EC22E6D81C7470A800F1AC2E /* RubioLeftLeg.png */,
+				EC22E6D91C7470A800F1AC2E /* RubioRightLeg.png */,
+			);
+			name = images;
+			path = imagesRubio;
+			sourceTree = "<group>";
+		};
 		EC45D17F1C4746FE00CED29F /* iAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +430,7 @@
 		ECED9B961C28D88C00ADCCC8 /* CoreAnimator */ = {
 			isa = PBXGroup;
 			children = (
+				EC22E6CF1C74701D00F1AC2E /* coreRubio */,
 				EC74C6E41C43B68C002286E3 /* coreEgyptian */,
 				EC915A211C3FA5B300021B8A /* coreEnvelope */,
 				ECBA02F91C29538A008EF4A0 /* coreMexican */,
@@ -534,30 +575,37 @@
 				EC74C6F11C43DEB0002286E3 /* UpperRightArm.png in Resources */,
 				ECF43A2A1C29584300CE9616 /* MexicanUpperLeftArm.png in Resources */,
 				EC0462AB1BAC24FA001CB724 /* bottom arm.png in Resources */,
+				EC22E6DB1C7470A800F1AC2E /* HandFire.png in Resources */,
 				EC74C6ED1C43DEB0002286E3 /* EgyptianBody.png in Resources */,
 				EC74C6EE1C43DEB0002286E3 /* LowerLeftArm.png in Resources */,
 				EC12B84C1BDE6E9500873A27 /* endoscope.png in Resources */,
 				EC0462741BA9C0D9001CB724 /* LaunchScreen.storyboard in Resources */,
 				EC0462B01BAC24FA001CB724 /* head@2x.png in Resources */,
 				EC0462B41BAC24FA001CB724 /* top arm@2x.png in Resources */,
+				EC22E6E01C7470A800F1AC2E /* RubioRightLeg.png in Resources */,
 				EC0462A91BAC24FA001CB724 /* body.png in Resources */,
 				EC0462B31BAC24FA001CB724 /* top arm.png in Resources */,
 				EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */,
+				EC22E6DA1C7470A800F1AC2E /* FootFire.png in Resources */,
 				ECF43A271C29584300CE9616 /* MexicanBody.png in Resources */,
 				EC0462B51BAC24FA001CB724 /* top leg.png in Resources */,
 				EC12B84D1BDE6E9500873A27 /* endoscopeFly.png in Resources */,
 				ECF43A291C29584300CE9616 /* MexicanLowerRightArm.png in Resources */,
+				EC22E6DE1C7470A800F1AC2E /* RubioHead.png in Resources */,
 				EC12B84B1BDE6E9500873A27 /* benLeg.png in Resources */,
+				EC22E6DF1C7470A800F1AC2E /* RubioLeftLeg.png in Resources */,
 				EC0462AA1BAC24FA001CB724 /* body@2x.png in Resources */,
 				EC543C441BDA28EF00D5BE6D /* arm.png in Resources */,
 				EC0462711BA9C0D9001CB724 /* Assets.xcassets in Resources */,
 				EC0462B21BAC24FA001CB724 /* heliHair@2x.png in Resources */,
+				EC22E6DC1C7470A800F1AC2E /* RubioArm.png in Resources */,
 				EC543C481BDA28EF00D5BE6D /* leg2.png in Resources */,
 				EC12B8491BDE6E9500873A27 /* benArm.png in Resources */,
 				ECF43A261C29584300CE9616 /* MexicaHead.png in Resources */,
 				EC0462B11BAC24FA001CB724 /* heliHair.png in Resources */,
 				EC543C471BDA28EF00D5BE6D /* leg.png in Resources */,
 				EC12B84A1BDE6E9500873A27 /* benHeadAndBody.png in Resources */,
+				EC22E6DD1C7470A800F1AC2E /* RubioBodyNew.png in Resources */,
 				EC0462AD1BAC24FA001CB724 /* bottom leg.png in Resources */,
 				EC04626F1BA9C0D9001CB724 /* Main.storyboard in Resources */,
 				EC74C6EF1C43DEB0002286E3 /* LowerRightArm.png in Resources */,
@@ -588,6 +636,7 @@
 				EC3BDC641C64B9BB0001251E /* CharacterCell.swift in Sources */,
 				ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */,
 				EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */,
+				EC22E6E21C74764F00F1AC2E /* CoreRubioView.swift in Sources */,
 				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,

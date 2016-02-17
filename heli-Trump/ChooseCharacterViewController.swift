@@ -44,7 +44,7 @@ class ChooseCharacterViewController: UIViewController, UICollectionViewDataSourc
     // ========================
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -64,7 +64,7 @@ class ChooseCharacterViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let _ = collectionView.cellForItemAtIndexPath(indexPath) as? CharacterCell {
             politicianSelected = Characters(rawValue: indexPath.row)
-            OptionsManager.sharedInstance.characterSelected = Characters.Hilary
+            OptionsManager.sharedInstance.characterSelected = Characters(rawValue: indexPath.row)!
             transitionToGamePlayVC()
         }
     }

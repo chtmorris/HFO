@@ -32,7 +32,7 @@ class GameOverViewController: UIViewController, ADBannerViewDelegate {
         ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Top)
         
         selectedPolitician = OptionsManager.sharedInstance.characterSelected
-        
+                
         politicianQuote = selectedPolitician.quote[Int(arc4random_uniform(UInt32(selectedPolitician.quote.count)))]
         quoteLabel.text = politicianQuote
 

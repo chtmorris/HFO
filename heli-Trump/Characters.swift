@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Characters:Int {
-    case Trump = 0, Ben, Hilary
+    case Trump = 0, Ben, Rubio, Hilary, Bernie
     
     var title:String {
         switch self {
@@ -20,6 +20,10 @@ enum Characters:Int {
             return "Ben"
         case .Hilary:
             return "Hilary"
+        case .Rubio:
+            return "Rubio"
+        case .Bernie:
+            return "Bernie"
         }
     }
     
@@ -31,6 +35,10 @@ enum Characters:Int {
             return "BenSideOn"
         case .Hilary:
             return "HilSideOn"
+        case .Rubio:
+            return "RubioSideOn"
+        case .Bernie:
+            return "BernieSideOn"
         }
     }
     
@@ -42,6 +50,10 @@ enum Characters:Int {
             return UIImage(named: "BenBackground")!
         case .Hilary:
             return UIImage(named: "HillaryBackground")!
+        case .Rubio:
+            return UIImage(named: "RubioBackground")!
+        case .Bernie:
+            return UIImage(named: "HillaryBackground")!
         }
     }
     
@@ -52,6 +64,10 @@ enum Characters:Int {
         case .Ben:
             return UIImage(named: "BenObstacle")!
         case .Hilary:
+            return UIImage(named: "HillaryObstacle")!
+        case .Rubio:
+            return UIImage(named: "rubioObstacle")!
+        case .Bernie:
             return UIImage(named: "HillaryObstacle")!
         }
     }
@@ -107,6 +123,12 @@ enum Characters:Int {
                 "\"We have a lot of kids who don't know what work means. They think work is a four-letter word.\"",
                 "\"I have said that I'm not running and I'm having a great time being pres — being a first-term senator.\"",
                 "\"Don’t let anybody tell you that it’s corporations and businesses that create jobs.\""
+            ]
+        case .Rubio:
+            return ["\"No Quotes yet\""
+            ]
+        case .Bernie:
+            return ["\"No Quotes yet\""
             ]
         }
     }

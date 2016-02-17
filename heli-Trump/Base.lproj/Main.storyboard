@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zq7-bo-bSa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zq7-bo-bSa">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -218,6 +218,10 @@
                                 <rect key="frame" x="71" y="179" width="35" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PW-FU-kmh" customClass="CoreRubioView" customModule="heli_Trump" customModuleProvider="target">
+                                <rect key="frame" x="100" y="184" width="35" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-yN-pbB" customClass="BenHeliView" customModule="heli_Trump" customModuleProvider="target">
                                 <rect key="frame" x="77" y="145" width="29" height="51"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -299,6 +303,7 @@
                         <outlet property="mexicanView" destination="C8Q-l3-Ykb" id="5oN-UR-wMg"/>
                         <outlet property="obstacle1" destination="edn-qD-7wf" id="pM8-mW-pAX"/>
                         <outlet property="obstacle2" destination="2yZ-vl-4gQ" id="ZS0-YZ-FxP"/>
+                        <outlet property="rubioImage" destination="7PW-FU-kmh" id="1pV-8F-sF5"/>
                         <outlet property="secondHeart" destination="dPi-yb-B7r" id="kfk-7K-20s"/>
                         <outlet property="tapToStartLabel" destination="ULU-Ui-hU3" id="Vvy-aM-MJ5"/>
                         <outlet property="top1" destination="aWB-Iy-YDs" id="O0m-f9-fNs"/>
