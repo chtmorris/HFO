@@ -222,6 +222,10 @@
                                 <rect key="frame" x="100" y="184" width="35" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Knt-Y1-3RE" customClass="BernieView" customModule="heli_Trump" customModuleProvider="target">
+                                <rect key="frame" x="100" y="150" width="39" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-yN-pbB" customClass="BenHeliView" customModule="heli_Trump" customModuleProvider="target">
                                 <rect key="frame" x="77" y="145" width="29" height="51"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -285,6 +289,7 @@
                     <connections>
                         <outlet property="background" destination="TLZ-mV-XqU" id="hza-gn-HCV"/>
                         <outlet property="benImage" destination="Kcm-yN-pbB" id="PWW-TX-Xn3"/>
+                        <outlet property="bernieImage" destination="Knt-Y1-3RE" id="FN5-jX-1t8"/>
                         <outlet property="bottom1" destination="ftH-d6-iog" id="nQj-gm-ddq"/>
                         <outlet property="bottom10" destination="NGv-wi-LCH" id="NbM-XK-bDE"/>
                         <outlet property="bottom2" destination="XcT-KI-VSS" id="FT7-kU-pXv"/>

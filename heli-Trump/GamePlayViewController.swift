@@ -41,6 +41,7 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var mexicanView: MexicanView!
     @IBOutlet weak var envelopeView: CoreEnvelopeView!
     @IBOutlet weak var egyptianView: EgyptianView!
+    @IBOutlet weak var bernieImage: BernieView!
     
     var politician: UIView!
     var selectedPolitician:Characters!
@@ -112,6 +113,7 @@ class GamePlayViewController: UIViewController {
         benImage.addBenIntroAnimation()
         hillaryImage.addHillIntroAnimation()
         rubioImage.addIntroAnimation()
+        bernieImage.addIntroAnimation()
         
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         
@@ -140,42 +142,57 @@ class GamePlayViewController: UIViewController {
         
         }
         
-        if politician == rubioImage {
+        politicianDirectionOfTravel = -3
+        
+        switch politician {
+        case trumpImage:
+            trumpImage.removeAllAnimations()
+            trumpImage.addFlyingAnimation()
+            mexicanView.addEmemyAnimateAnimation()
+        case hillaryImage:
+            hillaryImage.removeAllAnimations()
+            hillaryImage.addHillFlyingAnimation()
+            envelopeView.addUntitledAnimation()
+        case benImage:
+            benImage.removeAllAnimations()
+            benImage.addBenFlyingAnimation()
+            egyptianView.addDanceAnimation()
+        case rubioImage:
+            rubioImage.removeAllAnimations()
+            rubioImage.addFlyingAnimation()
             politicianDirectionOfTravel = -6
-        } else {
-            politicianDirectionOfTravel = -3
+        case bernieImage:
+            bernieImage.removeAllAnimations()
+            bernieImage.addFlyingAnimation()
+        default:
+            print("no politician selected")
         }
-        
-        
-        trumpImage.removeAllAnimations()
-        hillaryImage.removeAllAnimations()
-        benImage.removeAllAnimations()
-        rubioImage.removeAllAnimations()
-        
-        trumpImage.addFlyingAnimation()
-        hillaryImage.addHillFlyingAnimation()
-        benImage.addBenFlyingAnimation()
-        rubioImage.addFlyingAnimation()
-        mexicanView.addEmemyAnimateAnimation()
-        envelopeView.addUntitledAnimation()
-        egyptianView.addDanceAnimation()
         
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         politicianDirectionOfTravel = 3
         
-        trumpImage.removeAllAnimations()
-        trumpImage.addFallingAnimation()
-        
-        hillaryImage.removeAllAnimations()
-        hillaryImage.addHillFallingAnimation()
-        
-        benImage.removeAllAnimations()
-        benImage.addBenFallingAnimation()
-        
-        rubioImage.removeAllAnimations()
-        rubioImage.addFallingAnimation()
+        switch politician {
+        case trumpImage:
+            trumpImage.removeAllAnimations()
+            trumpImage.addFallingAnimation()
+        case hillaryImage:
+            hillaryImage.removeAllAnimations()
+            hillaryImage.addHillFallingAnimation()
+        case benImage:
+            benImage.removeAllAnimations()
+            benImage.addBenFallingAnimation()
+        case rubioImage:
+            rubioImage.removeAllAnimations()
+            rubioImage.addFallingAnimation()
+        case bernieImage:
+            bernieImage.removeAllAnimations()
+            bernieImage.addFallingAnimation()
+        default:
+            print("no politician selected")
+        }
+
     }
 
     
@@ -205,7 +222,12 @@ class GamePlayViewController: UIViewController {
             self.background.image = Characters.Rubio.background
             self.obstacle1.image = Characters.Rubio.obstacle
             self.obstacle2.image = Characters.Rubio.obstacle
-        }else {
+        } else if (selectedPolitician == Characters.Bernie){
+            politician = bernieImage
+            self.background.image = Characters.Bernie.background
+            self.obstacle1.image = Characters.Bernie.obstacle
+            self.obstacle2.image = Characters.Bernie.obstacle
+        } else {
             print("None of the politicians selected")
         }
     }
@@ -225,6 +247,10 @@ class GamePlayViewController: UIViewController {
         
         if politician != rubioImage {
             rubioImage.hidden = true
+        }
+        
+        if politician != bernieImage {
+            bernieImage.hidden = true
         }
     }
     
@@ -262,9 +288,16 @@ class GamePlayViewController: UIViewController {
             }
         }
         
-        mexicanView.frame = CGRect(x: -10, y: screenWidth, width: 40, height: 71)
-        envelopeView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
-        egyptianView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
+        switch politician {
+        case trumpImage:
+            mexicanView.frame = CGRect(x: -10, y: screenWidth, width: 40, height: 71)
+        case hillaryImage:
+            envelopeView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
+        case benImage:
+            egyptianView.frame = CGRect(x: -10, y: screenWidth, width: 50, height: 71)
+        default:
+            break
+        }
         
         placeBorderObstacles(topObjects, bottomObjects: bottomObjects, addedScreenWidth: screenWidth)
         
@@ -283,11 +316,17 @@ class GamePlayViewController: UIViewController {
             item.center = CGPointMake(item.center.x - (self.level/2), item.center.y)
         }
         
-        mexicanView.center = CGPointMake(mexicanView.center.x - (self.level/2), mexicanView.center.y)
-        envelopeView.center = CGPointMake(envelopeView.center.x - (self.level/2), envelopeView.center.y)
-        egyptianView.center = CGPointMake(egyptianView.center.x - (self.level/1.7), egyptianView.center.y)
-        
-        
+        switch politician {
+        case trumpImage:
+            mexicanView.center = CGPointMake(mexicanView.center.x - (self.level/2), mexicanView.center.y)
+        case hillaryImage:
+            envelopeView.center = CGPointMake(envelopeView.center.x - (self.level/2), envelopeView.center.y)
+        case benImage:
+            egyptianView.center = CGPointMake(egyptianView.center.x - (self.level/1.7), egyptianView.center.y)
+        default:
+            break
+        }
+
         // RESET OBSTACLES
         
         for item in obstacles {
@@ -391,16 +430,33 @@ class GamePlayViewController: UIViewController {
         obstacle.center = CGPoint(x: x, y: randomPosition)
         
         if obstacle.center.y > CGFloat(screenWidth - 150) && !enemyOnScreen {
-            if (selectedPolitician == Characters.Trump) {
+            
+            switch politician {
+            case trumpImage:
                 mexicanView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 20)
                 mexicanView.hidden = false
-            } else if (selectedPolitician == Characters.Hilary) {
+            case hillaryImage:
                 envelopeView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 50)
                 envelopeView.hidden = false
-            } else if (selectedPolitician == Characters.Ben) {
+            case benImage:
                 egyptianView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 70)
                 egyptianView.hidden = false
+            default:
+                break
             }
+            
+            
+//            
+//            if (selectedPolitician == Characters.Trump) {
+//                mexicanView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 20)
+//                mexicanView.hidden = false
+//            } else if (selectedPolitician == Characters.Hilary) {
+//                envelopeView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 50)
+//                envelopeView.hidden = false
+//            } else if (selectedPolitician == Characters.Ben) {
+//                egyptianView.center = CGPoint(x: obstacle.center.x, y: obstacle.center.y + 70)
+//                egyptianView.hidden = false
+//            }
             
             enemyOnScreen = true
             
