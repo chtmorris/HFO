@@ -51,7 +51,6 @@
 		EC22E6F01C7496B300F1AC2E /* BernieLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC22E6EA1C7496B300F1AC2E /* BernieLeg.png */; };
 		EC22E6F21C74999900F1AC2E /* BernieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22E6F11C74999900F1AC2E /* BernieView.swift */; };
 		EC3BDC641C64B9BB0001251E /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3BDC631C64B9BB0001251E /* CharacterCell.swift */; };
-		EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45D17D1C4746D300CED29F /* Global_iAD.swift */; };
 		EC543C441BDA28EF00D5BE6D /* arm.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3E1BDA28EF00D5BE6D /* arm.png */; };
 		EC543C451BDA28EF00D5BE6D /* headAndBody.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */; };
 		EC543C461BDA28EF00D5BE6D /* hillHair.png in Resources */ = {isa = PBXBuildFile; fileRef = EC543C401BDA28EF00D5BE6D /* hillHair.png */; };
@@ -148,7 +147,6 @@
 		EC22E6EA1C7496B300F1AC2E /* BernieLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BernieLeg.png; sourceTree = "<group>"; };
 		EC22E6F11C74999900F1AC2E /* BernieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BernieView.swift; sourceTree = "<group>"; };
 		EC3BDC631C64B9BB0001251E /* CharacterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
-		EC45D17D1C4746D300CED29F /* Global_iAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global_iAD.swift; sourceTree = "<group>"; };
 		EC543C3E1BDA28EF00D5BE6D /* arm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arm.png; sourceTree = "<group>"; };
 		EC543C3F1BDA28EF00D5BE6D /* headAndBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headAndBody.png; sourceTree = "<group>"; };
 		EC543C401BDA28EF00D5BE6D /* hillHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hillHair.png; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				ECCF2FA91BF721B7009865B7 /* Helpers.swift */,
-				EC45D17F1C4746FE00CED29F /* iAd */,
 				ECA102BC1C1842B5002941DE /* GamePlay */,
 				ECA102BD1C1842C8002941DE /* Characters */,
 				EC74C6F41C4488D4002286E3 /* OptionsManager */,
@@ -355,14 +352,6 @@
 			);
 			name = images;
 			path = imagesBern;
-			sourceTree = "<group>";
-		};
-		EC45D17F1C4746FE00CED29F /* iAd */ = {
-			isa = PBXGroup;
-			children = (
-				EC45D17D1C4746D300CED29F /* Global_iAD.swift */,
-			);
-			name = iAd;
 			sourceTree = "<group>";
 		};
 		EC543C3B1BDA28EF00D5BE6D /* coreHill */ = {
@@ -684,7 +673,6 @@
 				ECE04A251C0180450048A960 /* Characters.swift in Sources */,
 				ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */,
 				EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */,
-				EC45D17E1C4746D300CED29F /* Global_iAD.swift in Sources */,
 				ECF0E7921BE4AE6F00C160BD /* ChooseCharacterViewController.swift in Sources */,
 				EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */,
 				EC0462B81BAC24FA001CB724 /* TrumpCartoonView.swift in Sources */,
