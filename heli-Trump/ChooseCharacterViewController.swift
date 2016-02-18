@@ -14,6 +14,7 @@ class ChooseCharacterViewController: UIViewController, UICollectionViewDataSourc
     
     var politicianSelected: Characters!
     var highScore: Int = 0
+    var firstLaunch = true
     
     @IBOutlet weak var highScoreLabel: UILabel!
     
@@ -36,6 +37,10 @@ class ChooseCharacterViewController: UIViewController, UICollectionViewDataSourc
     override func viewWillAppear(animated: Bool) {
         highScore = NSUserDefaults.standardUserDefaults().integerForKey("HighScoreSaved")
         highScoreLabel.text = "High Score: \(highScore)"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        showSwipeTipIfNeeded()
     }
     
     
@@ -79,6 +84,34 @@ class ChooseCharacterViewController: UIViewController, UICollectionViewDataSourc
         let gamePlayViewController = GamePlayViewController.loadFromNib(politicianSelected)
         self.presentViewController(gamePlayViewController, animated:true, completion:nil)
     }
+    
+    private func showSwipeTipIfNeeded() {
+        // Check for first launch
+//        if Defaults[BCToolTip.CreateSignal.rawValue].intValue == 0 {
+//            
+//            firstLaunch = NSUserDefaults.standardUserDefaults().integerForKey("firstLaunch")
+        
+        if firstLaunch == true {
+            
+            // Show tool tip for creating a BatCall
+            
+            let rightPadding:CGFloat = 6
+            let diameter:CGFloat = 50
+//            let containerFrame = containerView.frame
+            let maskFrame = CGRectMake(0, 0, 0, 0)
+            let vc = FocusViewController.loadFromNib(.Circle,
+                maskFrame: maskFrame
+//                message: "Hi",
+//                labelInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            )
+            presentViewController(vc, animated: true, completion: nil)
+            
+            // Increment
+//            Defaults[BCToolTip.CreateSignal.rawValue]++
+        }
+        
+    }
+
     
     
     

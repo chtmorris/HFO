@@ -66,6 +66,9 @@
 		EC74C6F61C4488EF002286E3 /* OptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74C6F51C4488EF002286E3 /* OptionsManager.swift */; };
 		EC915A231C3FA5CC00021B8A /* CoreEnvelopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */; };
 		EC915A261C3FA5E000021B8A /* HillaryEnvelope.png in Resources */ = {isa = PBXBuildFile; fileRef = EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */; };
+		ECACC8721C75A9400061D95D /* FocusTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8711C75A9400061D95D /* FocusTransitionManager.swift */; };
+		ECACC8741C75A9AC0061D95D /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACC8731C75A9AC0061D95D /* FocusViewController.swift */; };
+		ECACC8761C75AA180061D95D /* Focus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECACC8751C75AA180061D95D /* Focus.storyboard */; };
 		ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA03091C2957D0008EF4A0 /* MexicanView.swift */; };
 		ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FA91BF721B7009865B7 /* Helpers.swift */; };
 		ECCF2FAC1BF72983009865B7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */; };
@@ -162,6 +165,9 @@
 		EC74C6F51C4488EF002286E3 /* OptionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsManager.swift; sourceTree = "<group>"; };
 		EC915A221C3FA5CC00021B8A /* CoreEnvelopeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreEnvelopeView.swift; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/CoreEnvelopeView.swift; sourceTree = "<group>"; };
 		EC915A251C3FA5E000021B8A /* HillaryEnvelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HillaryEnvelope.png; path = ../../../../../../Dropbox/Personal/Dev/Trump/coreHill/images/HillaryEnvelope.png; sourceTree = "<group>"; };
+		ECACC8711C75A9400061D95D /* FocusTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusTransitionManager.swift; sourceTree = "<group>"; };
+		ECACC8731C75A9AC0061D95D /* FocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
+		ECACC8751C75AA180061D95D /* Focus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Focus.storyboard; sourceTree = "<group>"; };
 		ECBA03091C2957D0008EF4A0 /* MexicanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MexicanView.swift; sourceTree = "<group>"; };
 		ECCF2FA91BF721B7009865B7 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ECCF2FAB1BF72983009865B7 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 			children = (
 				EC0462691BA9C0D9001CB724 /* AppDelegate.swift */,
 				ECCF2FA91BF721B7009865B7 /* Helpers.swift */,
+				ECACC86F1C75A90E0061D95D /* FocusViewController */,
 				ECA102BC1C1842B5002941DE /* GamePlay */,
 				ECA102BD1C1842C8002941DE /* Characters */,
 				EC74C6F41C4488D4002286E3 /* OptionsManager */,
@@ -441,6 +448,24 @@
 			name = Characters;
 			sourceTree = "<group>";
 		};
+		ECACC86F1C75A90E0061D95D /* FocusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8701C75A91F0061D95D /* Transition */,
+				ECACC8731C75A9AC0061D95D /* FocusViewController.swift */,
+				ECACC8751C75AA180061D95D /* Focus.storyboard */,
+			);
+			name = FocusViewController;
+			sourceTree = "<group>";
+		};
+		ECACC8701C75A91F0061D95D /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				ECACC8711C75A9400061D95D /* FocusTransitionManager.swift */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
 		ECBA02F91C29538A008EF4A0 /* coreMexican */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +639,7 @@
 				EC0462B31BAC24FA001CB724 /* top arm.png in Resources */,
 				EC0462B61BAC24FA001CB724 /* top leg@2x.png in Resources */,
 				EC22E6DA1C7470A800F1AC2E /* FootFire.png in Resources */,
+				ECACC8761C75AA180061D95D /* Focus.storyboard in Resources */,
 				ECF43A271C29584300CE9616 /* MexicanBody.png in Resources */,
 				EC0462B51BAC24FA001CB724 /* top leg.png in Resources */,
 				EC22E6EF1C7496B300F1AC2E /* BernieFire.png in Resources */,
@@ -662,12 +688,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECACC8721C75A9400061D95D /* FocusTransitionManager.swift in Sources */,
 				EC3BDC641C64B9BB0001251E /* CharacterCell.swift in Sources */,
 				ECBA030A1C2957D0008EF4A0 /* MexicanView.swift in Sources */,
 				EC04626C1BA9C0D9001CB724 /* GamePlayViewController.swift in Sources */,
 				EC22E6E21C74764F00F1AC2E /* CoreRubioView.swift in Sources */,
 				ECCF2FAA1BF721B7009865B7 /* Helpers.swift in Sources */,
 				EC12B84F1BDE84AA00873A27 /* BenHeliView.swift in Sources */,
+				ECACC8741C75A9AC0061D95D /* FocusViewController.swift in Sources */,
 				EC22E6F21C74999900F1AC2E /* BernieView.swift in Sources */,
 				EC04626A1BA9C0D9001CB724 /* AppDelegate.swift in Sources */,
 				ECE04A251C0180450048A960 /* Characters.swift in Sources */,
