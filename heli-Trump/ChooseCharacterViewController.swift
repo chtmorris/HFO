@@ -6,14 +6,15 @@
 //  Copyright © 2015 chtmorris. All rights reserved.
 //
 
-import iAd
 import UIKit
 
-class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
+class ChooseCharacterViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var politicianSelected: Characters!
     var highScore: Int = 0
-    var bannerView: ADBannerView!
+    var firstLaunch = 0
     
     @IBOutlet weak var highScoreLabel: UILabel!
     
@@ -24,7 +25,8 @@ class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Bottom)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,27 +39,39 @@ class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
         highScoreLabel.text = "High Score: \(highScore)"
     }
     
-    
-    // ===================
-    // CHARACTER SELECTION
-    // ===================
-    
-    @IBAction func HillaryButton(sender: UIButton) {
-        politicianSelected = Characters.Hilary
-        OptionsManager.sharedInstance.characterSelected = Characters.Hilary
-        transitionToGamePlayVC()
+    override func viewDidAppear(animated: Bool) {
+        showSwipeTipIfNeeded()
     }
     
-    @IBAction func BenButtonPressed(sender: UIButton) {
-        politicianSelected = Characters.Ben
-        OptionsManager.sharedInstance.characterSelected = Characters.Ben
-        transitionToGamePlayVC()
+    
+    // ========================
+    // CHARACTER COLLECTIONVIEW
+    // ========================
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
     
-    @IBAction func trumpButtonPressed(sender: UIButton) {
-        politicianSelected = Characters.Trump
-        OptionsManager.sharedInstance.characterSelected = Characters.Trump
-        transitionToGamePlayVC()
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CharacterImageCell", forIndexPath: indexPath)
+        
+        if let cell = cell as? CharacterCell {
+            cell.configure(UIImage(named: Characters(rawValue: indexPath.row)!.sideOnPic))
+        }
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .Horizontal
+        }
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let _ = collectionView.cellForItemAtIndexPath(indexPath) as? CharacterCell {
+            politicianSelected = Characters(rawValue: indexPath.row)
+            OptionsManager.sharedInstance.characterSelected = Characters(rawValue: indexPath.row)!
+            transitionToGamePlayVC()
+        }
     }
     
     @IBAction func myUnwindAction(segue: UIStoryboardSegue) {}
@@ -71,6 +85,22 @@ class ChooseCharacterViewController: UIViewController, ADBannerViewDelegate {
         self.presentViewController(gamePlayViewController, animated:true, completion:nil)
     }
     
+    private func showSwipeTipIfNeeded() {
+        // Check for first launch
+        firstLaunch = NSUserDefaults.standardUserDefaults().integerForKey("firstLaunch")
+        
+        if firstLaunch == 0 {
+            
+            let maskFrame = CGRectMake(0, 0, 0, 0)
+            let vc = FocusViewController.loadFromNib(.Circle,
+                maskFrame: maskFrame
+            )
+            presentViewController(vc, animated: true, completion: nil)
+            
+            // Set firstLaunch to false
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "firstLaunch")
+        }
     
+    }
     
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Focus View Controller-->
+        <scene sceneID="w9Q-Jw-vAc">
+            <objects>
+                <viewController storyboardIdentifier="FocusViewController" id="Str-bp-LtI" customClass="FocusViewController" customModule="heli_Trump" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fWE-nF-38s"/>
+                        <viewControllerLayoutGuide type="bottom" id="M88-2T-vpi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hr9-DP-5DZ">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJh-5s-R8n">
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe for more characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgx-VH-OpR">
+                                        <rect key="frame" x="216.5" y="223" width="303.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwipeCircles" translatesAutoresizingMaskIntoConstraints="NO" id="Nw8-LR-Nag">
+                                        <rect key="frame" x="261" y="314" width="214" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="KGp-Uo-55g"/>
+                                            <constraint firstAttribute="width" constant="214" id="Nxp-Xp-VLQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.47843137254901957" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vgx-VH-OpR" firstAttribute="centerY" secondItem="FJh-5s-R8n" secondAttribute="centerY" constant="30" id="5Hn-jD-FXA"/>
+                                    <constraint firstItem="Vgx-VH-OpR" firstAttribute="centerX" secondItem="FJh-5s-R8n" secondAttribute="centerX" id="9Td-Kb-FA7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nw8-LR-Nag" secondAttribute="bottom" constant="55" id="Vs2-Ju-4XH"/>
+                                    <constraint firstItem="Nw8-LR-Nag" firstAttribute="centerX" secondItem="FJh-5s-R8n" secondAttribute="centerX" id="eci-tK-wH5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M88-2T-vpi" firstAttribute="top" secondItem="FJh-5s-R8n" secondAttribute="bottom" id="427-Oo-8dl"/>
+                            <constraint firstAttribute="trailing" secondItem="FJh-5s-R8n" secondAttribute="trailing" id="EpV-wY-RTS"/>
+                            <constraint firstItem="FJh-5s-R8n" firstAttribute="top" secondItem="Hr9-DP-5DZ" secondAttribute="top" id="IEj-ui-bSS"/>
+                            <constraint firstItem="FJh-5s-R8n" firstAttribute="leading" secondItem="Hr9-DP-5DZ" secondAttribute="leading" id="VYM-yR-R7s"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGi-Qt-1Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="344"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SwipeCircles" width="138" height="47"/>
+    </resources>
+</document>

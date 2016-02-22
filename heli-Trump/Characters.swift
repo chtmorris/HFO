@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Characters:Int {
-    case Trump = 0, Ben, Hilary
+    case Trump = 0, Ben, Rubio, Hilary, Bernie
     
     var title:String {
         switch self {
@@ -20,6 +20,25 @@ enum Characters:Int {
             return "Ben"
         case .Hilary:
             return "Hilary"
+        case .Rubio:
+            return "Rubio"
+        case .Bernie:
+            return "Bernie"
+        }
+    }
+    
+    var sideOnPic:String {
+        switch self {
+        case .Trump:
+            return "DonSideOn"
+        case .Ben:
+            return "BenSideOn"
+        case .Hilary:
+            return "HilSideOn"
+        case .Rubio:
+            return "RubioSideOn"
+        case .Bernie:
+            return "BernieSideOn"
         }
     }
     
@@ -31,6 +50,10 @@ enum Characters:Int {
             return UIImage(named: "BenBackground")!
         case .Hilary:
             return UIImage(named: "HillaryBackground")!
+        case .Rubio:
+            return UIImage(named: "RubioBackground")!
+        case .Bernie:
+            return UIImage(named: "BernieBackground")!
         }
     }
     
@@ -42,6 +65,10 @@ enum Characters:Int {
             return UIImage(named: "BenObstacle")!
         case .Hilary:
             return UIImage(named: "HillaryObstacle")!
+        case .Rubio:
+            return UIImage(named: "rubioObstacle")!
+        case .Bernie:
+            return UIImage(named: "bernieObstacle")!
         }
     }
     
@@ -96,6 +123,34 @@ enum Characters:Int {
                 "\"We have a lot of kids who don't know what work means. They think work is a four-letter word.\"",
                 "\"I have said that I'm not running and I'm having a great time being pres — being a first-term senator.\"",
                 "\"Don’t let anybody tell you that it’s corporations and businesses that create jobs.\""
+            ]
+        case .Rubio:
+            return ["\"The only people that follow the law are law-abiding people.\"",
+                "\"40% of the people who come here illegally come legally.\"",
+                "\"The federal government does all kinds of things it shouldn’t be doing. It regulates bathrooms.\"",
+                "\"He became a conservative, even though he got his news in Spanish.\"",
+                "\"America is not a planet!\"",
+                "\"If this bill has something in it that gives gay couples immigration rights and so forth, it kills the bill. I'm done\"",
+                "\"Whether the Earth was created in 7 days, or 7 actual eras, I’m not sure we’ll ever be able to answer that. It’s one of the great mysteries.\"",
+                "\"I’m not a scientist, man. I can tell you what recorded history says, I can tell you what the Bible says.\"",
+                "\"I don’t agree with the notion that... there are actions we can take today that would actually have an impact on what’s happening in our climate.\"",
+                "\"You’ve created an incentive for people not just to look forward to having more abortions, but being able to sell that fetal tissue.\"",
+                "\"I am also aware California has a drought — and that’s why I made sure I brought my own water.\"",
+                "\"Radical terrorism cannot be solved by intellect.\"",
+                "\"We need more welders and less philosophers.\""
+            ]
+        case .Bernie:
+            return ["\"Bernie Sanders has a D-minus voting rating from the NRA.\"",
+                "\"Iraq, the worst foreign policy blunder in the history of this country.\"",
+                "\"The only way we really transform America…is through a political revolution.\"",
+                "\"Our government is going to work for all of us, not just a handful of billionaires.\"",
+                "\"I am the only candidate running for president who is not a billionaire.\"",
+                "\"I disagree with Hillary Clinton on virtually everything.\"",
+                "\"For many, the American dream has become a nightmare.\"",
+                "\"I'm not a Democrat, I'm an Independent, but I caucus with the Democrats.\"",
+                "\"If a financial institution is too big to fail, it is too big to exist.\"",
+                "\"I don't consider myself a pariah.\"",
+                "\"Finland is no utopia.\""
             ]
         }
     }
